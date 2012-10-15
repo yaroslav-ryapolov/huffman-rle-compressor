@@ -1,13 +1,13 @@
 package test.com.harrycodeman;
 
-import com.harrycodeman.StringRleCompressor;
+import com.harrycodeman.SameSymbolsStringRleCompressor;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class RleCompressorTest {
+public class SameSymbolsStringRleCompressorTest {
 
     @Before
     public void before() throws Exception {
@@ -20,7 +20,7 @@ public class RleCompressorTest {
     @Test
     public void testOneCharRepetitionCompress() throws Exception {
         String expectedResult = "3a";
-        StringRleCompressor compressor = new StringRleCompressor("aaa");
+        SameSymbolsStringRleCompressor compressor = new SameSymbolsStringRleCompressor("aaa");
 
         assertEquals(expectedResult, compressor.compress());
     }
@@ -28,7 +28,7 @@ public class RleCompressorTest {
     @Test
     public void testTwoCharRepetitionCompress() throws Exception {
         String expectedResult = "3a2b";
-        StringRleCompressor compressor = new StringRleCompressor("aaabb");
+        SameSymbolsStringRleCompressor compressor = new SameSymbolsStringRleCompressor("aaabb");
 
         assertEquals(expectedResult, compressor.compress());
     }
@@ -36,7 +36,7 @@ public class RleCompressorTest {
     @Test
     public void testOneCharCompress() throws Exception {
         String expectedResult = "a";
-        StringRleCompressor compressor = new StringRleCompressor("a");
+        SameSymbolsStringRleCompressor compressor = new SameSymbolsStringRleCompressor("a");
 
         assertEquals(expectedResult, compressor.compress());
     }
@@ -44,8 +44,8 @@ public class RleCompressorTest {
     @Test
     public void testDifferentLastCharCompress() throws Exception {
         String expectedResult = "3a2bc";
-        StringRleCompressor compressor = new StringRleCompressor("aaabbc");
+        SameSymbolsStringRleCompressor compressor = new SameSymbolsStringRleCompressor("aaabbc");
 
         assertEquals(expectedResult, compressor.compress());
     }
-} 
+}
