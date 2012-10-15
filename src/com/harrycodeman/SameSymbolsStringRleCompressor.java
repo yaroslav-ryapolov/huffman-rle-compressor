@@ -26,10 +26,10 @@ public class SameSymbolsStringRleCompressor {
     }
 
     private String prepareSameSymbolsCompressedBlock(char symbol) {
-        if (sameSymbolsCounter > 1) {
+        if (sameSymbolsCounter > 0) {
             return "" + sameSymbolsCounter + symbol;
         }
-        return "" + symbol;
+        return "";
     }
 
     private void resetSameSymbolsCounter() {

@@ -35,7 +35,7 @@ public class SameSymbolsStringRleCompressorTest {
 
     @Test
     public void testOneCharCompress() throws Exception {
-        String expectedResult = "a";
+        String expectedResult = "1a";
         SameSymbolsStringRleCompressor compressor = new SameSymbolsStringRleCompressor("a");
 
         assertEquals(expectedResult, compressor.compress());
@@ -43,7 +43,7 @@ public class SameSymbolsStringRleCompressorTest {
 
     @Test
     public void testDifferentLastCharCompress() throws Exception {
-        String expectedResult = "3a2bc";
+        String expectedResult = "3a2b1c";
         SameSymbolsStringRleCompressor compressor = new SameSymbolsStringRleCompressor("aaabbc");
 
         assertEquals(expectedResult, compressor.compress());
