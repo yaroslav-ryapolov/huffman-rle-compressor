@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c601d356-f788-4d61-b6a9-f64e45081852" name="Default" comment="Add more functions to different char sequence compression classes.">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+    <list default="true" id="c601d356-f788-4d61-b6a9-f64e45081852" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/com/harrycodeman/DifferentSymbolsStringRleCompressorTest.java" afterPath="$PROJECT_DIR$/src/test/com/harrycodeman/DifferentSymbolsStringRleCompressorTest.java" />
     </list>
     <ignored path="huffman-rle-compressor.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -570,7 +568,15 @@
       <created>1350298263840</created>
       <updated>1350298263840</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Set some preferences. Rename variable with incorrect name.">
+      <created>1350319110963</created>
+      <updated>1350319110963</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Set some preferences. Rename variable with incorrect name.">
+      <created>1350319130941</created>
+      <updated>1350319130941</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -637,7 +643,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add more functions to different char sequence compression classes." />
+    <option name="LAST_COMMIT_MESSAGE" value="Set some preferences. Rename variable with incorrect name." />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -655,6 +661,7 @@
     <MESSAGE value="Correct one char compression for same symbols compressor." />
     <MESSAGE value="Create different char sequence compression classes." />
     <MESSAGE value="Add more functions to different char sequence compression classes." />
+    <MESSAGE value="Set some preferences. Rename variable with incorrect name." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
