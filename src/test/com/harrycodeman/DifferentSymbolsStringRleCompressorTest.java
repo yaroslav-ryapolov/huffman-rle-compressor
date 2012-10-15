@@ -34,10 +34,10 @@ public class DifferentSymbolsStringRleCompressorTest {
 
     @Test
     public void testSequenceOfSameCharCompress() {
-        String expetedResult = "-1a-1a-1a";
+        String expectedResult = "-1a-1a-1a";
         DifferentSymbolsStringRleCompressor compressor = new DifferentSymbolsStringRleCompressor("aaa");
 
-        assertEquals(expetedResult, compressor.compress());
+        assertEquals(expectedResult, compressor.compress());
     }
 
     @Test
