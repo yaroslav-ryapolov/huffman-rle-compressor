@@ -23,4 +23,28 @@ public class DifferentSymbolsStringRleCompressorTest {
 
         assertEquals(expectedResult, compressor.compress());
     }
+
+    @Test
+    public void testSequenceOfDifferentCharCompress() {
+        String expectedResult = "-3abc";
+        DifferentSymbolsStringRleCompressor compressor = new DifferentSymbolsStringRleCompressor("abc");
+
+        assertEquals(expectedResult, compressor.compress());
+    }
+
+    @Test
+    public void testSequenceOfSameCharCompress() {
+        String expetedResult = "-1a-1a-1a";
+        DifferentSymbolsStringRleCompressor compressor = new DifferentSymbolsStringRleCompressor("aaa");
+
+        assertEquals(expetedResult, compressor.compress());
+    }
+
+    @Test
+    public void testLastTwoSameCharCompress() {
+        String expectedResult = "-3abc-1c";
+        DifferentSymbolsStringRleCompressor compressor = new DifferentSymbolsStringRleCompressor("abcc");
+
+        assertEquals(expectedResult, compressor.compress());
+    }
 }
