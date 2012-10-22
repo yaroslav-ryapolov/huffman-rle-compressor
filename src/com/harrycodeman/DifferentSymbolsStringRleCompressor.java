@@ -22,13 +22,17 @@ public class DifferentSymbolsStringRleCompressor {
                     incrementCounter(s);
                     p = s;
                 } else {
-                    result += "-" + counter + sequence;
+                    result += prepareCompressedBlock();
                     resetCounter(s);
                 }
             }
         }
-        result += "-" + counter + sequence;
-        return result;
+        return result + prepareCompressedBlock();
+    }
+
+    private String prepareCompressedBlock()
+    {
+        return "-" + counter + sequence;
     }
 
     private void resetCounter(char s) {

@@ -3,6 +3,7 @@ package com.harrycodeman;
 public class SameSymbolsStringRleCompressor {
     private char[] symbols;
     private int sameSymbolsCounter = 0;
+    private char previous;
 
     public SameSymbolsStringRleCompressor(String toCompress) {
         symbols = toCompress.toCharArray();
@@ -10,33 +11,32 @@ public class SameSymbolsStringRleCompressor {
 
     public String compress() {
         String result = "";
-        char p = symbols[0];
+        previous = symbols[0];
         for (char s : symbols) {
-            if (s == p) {
-                incrementSameSymbolsCounter();
+            if (s == previous) {
+                incrementCounter();
             } else {
-                result += prepareSameSymbolsCompressedBlock(p);
-                p = s;
-                resetSameSymbolsCounter();
+                result += prepareCompressedBlock(previous);
+                previous = s;
+                resetCounter();
             }
         }
-
-        result += prepareSameSymbolsCompressedBlock(p);
+        result += prepareCompressedBlock(previous);
         return result;
     }
 
-    private String prepareSameSymbolsCompressedBlock(char symbol) {
+    private String prepareCompressedBlock(char symbol) {
         if (sameSymbolsCounter > 0) {
             return "" + sameSymbolsCounter + symbol;
         }
         return "";
     }
 
-    private void resetSameSymbolsCounter() {
+    private void resetCounter() {
         sameSymbolsCounter = 1;
     }
 
-    private void incrementSameSymbolsCounter() {
+    private void incrementCounter() {
         sameSymbolsCounter++;
     }
 }
