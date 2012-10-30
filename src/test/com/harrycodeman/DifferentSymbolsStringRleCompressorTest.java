@@ -8,14 +8,6 @@ import org.junit.Test;
 import static junit.framework.Assert.assertEquals;
 
 public class DifferentSymbolsStringRleCompressorTest {
-    @Before
-    public void setUp() throws Exception {
-    }
-
-    @After
-    public void tearDown() throws Exception {
-    }
-
     @Test
     public void testOneCharCompress() {
         String expectedResult = "-1a";
