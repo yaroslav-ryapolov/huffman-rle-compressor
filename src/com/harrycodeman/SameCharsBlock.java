@@ -1,5 +1,7 @@
 package com.harrycodeman;
 
+import com.sun.javaws.exceptions.InvalidArgumentException;
+
 public class SameCharsBlock implements ICharsBlock {
     private char symbol;
     private int count;
@@ -9,7 +11,16 @@ public class SameCharsBlock implements ICharsBlock {
         count = 0;
     }
 
-    public void addSymbol() {
+    @Override
+    public char getLastSymbol() {
+        return symbol;
+    }
+
+    @Override
+    public void addSymbol(char s) throws Exception {
+        if (s != symbol) {
+            throw new Exception("Different symbols in SameCharsBlock!");
+        }
         count++;
     }
 
