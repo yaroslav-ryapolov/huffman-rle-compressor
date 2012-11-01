@@ -1,7 +1,8 @@
 package com.harrycodeman;
 
 public interface ICharsBlock {
-    char getLastSymbol();
+    boolean isSymbolSuitableForBlock(char s);
+    char popLastSymbol() throws Exception;
     void addSymbol(char s) throws Exception;
     String getCompressedString();
     String getUncompressedString();

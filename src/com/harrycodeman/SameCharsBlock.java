@@ -1,7 +1,5 @@
 package com.harrycodeman;
 
-import com.sun.javaws.exceptions.InvalidArgumentException;
-
 public class SameCharsBlock implements ICharsBlock {
     private char symbol;
     private int count;
@@ -12,7 +10,17 @@ public class SameCharsBlock implements ICharsBlock {
     }
 
     @Override
-    public char getLastSymbol() {
+    public boolean isSymbolSuitableForBlock(char s) {
+        return symbol == s;
+    }
+
+    @Override
+    public char popLastSymbol() throws Exception {
+        if (count == 0) {
+            throw new Exception("Attempt to pop from empty block");
+        }
+
+        count--;
         return symbol;
     }
 
