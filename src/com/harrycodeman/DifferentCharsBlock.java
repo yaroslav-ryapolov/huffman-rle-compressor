@@ -1,7 +1,13 @@
 package com.harrycodeman;
 
+import java.util.Stack;
+
 public class DifferentCharsBlock implements ICharsBlock {
     private String symbols = "";
+
+    public DifferentCharsBlock(char s1, char s2) {
+        symbols = "" + s1 + s2;
+    }
 
     @Override
     public boolean isSymbolSuitableForBlock(char s) {
@@ -9,14 +15,9 @@ public class DifferentCharsBlock implements ICharsBlock {
     }
 
     @Override
-    public char popLastSymbol() throws Exception {
-        if (symbols.length() == 0) {
-            throw new Exception("Attempt to pop from empty block");
-        }
-
-        char result = getLastSymbol();
-        symbols = symbols.substring(0, symbols.length());
-        return result;
+    public void displaceUnsuitableSymbols(Stack<Character> stack) {
+        stack.push(getLastSymbol());
+        symbols = symbols.substring(0, symbols.length() - 1);
     }
 
     private char getLastSymbol() {

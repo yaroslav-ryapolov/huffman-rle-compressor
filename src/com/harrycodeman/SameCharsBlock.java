@@ -1,12 +1,14 @@
 package com.harrycodeman;
 
+import java.util.Stack;
+
 public class SameCharsBlock implements ICharsBlock {
     private char symbol;
     private int count;
 
-    public SameCharsBlock(char symbol) {
+    public SameCharsBlock(char symbol, int count) {
         this.symbol = symbol;
-        count = 0;
+        this.count = count;
     }
 
     @Override
@@ -15,13 +17,7 @@ public class SameCharsBlock implements ICharsBlock {
     }
 
     @Override
-    public char popLastSymbol() throws Exception {
-        if (count == 0) {
-            throw new Exception("Attempt to pop from empty block");
-        }
-
-        count--;
-        return symbol;
+    public void displaceUnsuitableSymbols(Stack<Character> stack) {
     }
 
     @Override

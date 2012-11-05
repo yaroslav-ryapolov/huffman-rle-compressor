@@ -23,13 +23,13 @@ public class StringRleCompressorTest {
     @Test
     public void testOneCharCompress() throws Exception {
         StringRleCompressor compressor = new StringRleCompressor("a");
-        assertEquals("-1a", compressor.compress());
+        assertEquals("1a", compressor.compress());
     }
 
     @Test
     public void testDifferentLastCharCompress() throws Exception {
         StringRleCompressor compressor = new StringRleCompressor("aaabbc");
-        assertEquals("3a2b-1c", compressor.compress());
+        assertEquals("3a2b1c", compressor.compress());
     }
 
     @Test
