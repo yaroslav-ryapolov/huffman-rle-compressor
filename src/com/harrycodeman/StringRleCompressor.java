@@ -7,16 +7,16 @@ import java.util.Stack;
 public class StringRleCompressor {
     private List<ICharsBlock> blocks = new ArrayList<ICharsBlock>();
     private ICharsBlock currentSameBlock;
-    private char[] symbols;
     private Stack<Character> stack = new Stack<Character>();
+    private ICompressCharStream stream;
 
     public StringRleCompressor(String toCompress) {
-        symbols = toCompress.toCharArray();
+        stream = new StringCompressCharStream(toCompress);
     }
 
     public String compress() throws Exception {
-        for (char s : symbols) {
-            AddSymbol(s);
+        while (stream.canRead()) {
+            AddSymbol(stream.getNextChar());
         }
         flushStack();
         return getCompressedStringFromBlocks();
@@ -63,9 +63,7 @@ public class StringRleCompressor {
         if (currentSameBlock == null) {
             currentSameBlock = new SameCharsBlock(stack.pop(), 1);
         }
-        if (currentSameBlock != null) {
-            blocks.add(currentSameBlock);
-        }
+        blocks.add(currentSameBlock);
     }
 
     private String getCompressedStringFromBlocks() {
