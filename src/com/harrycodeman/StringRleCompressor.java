@@ -5,24 +5,26 @@ import java.util.List;
 import java.util.Stack;
 
 public class StringRleCompressor {
-    private List<ICharsBlock> blocks = new ArrayList<ICharsBlock>();
-    private ICharsBlock currentSameBlock;
-    private Stack<Character> stack = new Stack<Character>();
-    private ICompressCharStream stream;
+    private List<IBytesBlock> blocks = new ArrayList<IBytesBlock>();
+    private IBytesBlock currentSameBlock;
+    private Stack<Integer> stack = new Stack<Integer>();
+    private ICompressByteStream stream;
 
     public StringRleCompressor(String toCompress) {
-        stream = new StringCompressCharStream(toCompress);
+        stream = new StringCompressByteStream(toCompress);
     }
 
     public String compress() throws Exception {
         while (stream.canRead()) {
             AddSymbol(stream.getNextChar());
         }
+        stream.close();
+
         flushStack();
         return getCompressedStringFromBlocks();
     }
 
-    private void AddSymbol(char s) throws Exception {
+    private void AddSymbol(int s) throws Exception {
         if (currentSameBlock == null) {
             CreateNewBlockOrCollectStack(s);
         }
@@ -31,20 +33,20 @@ public class StringRleCompressor {
         }
     }
 
-    private void CreateNewBlockOrCollectStack(char s) throws Exception {
+    private void CreateNewBlockOrCollectStack(int s) throws Exception {
         if (stack.empty()) {
             stack.push(s);
         }
         else if (stack.peek() == s) {
-            currentSameBlock = new SameCharsBlock(s, stack.size() + 1);
+            currentSameBlock = new SameBytesBlock(s, stack.size() + 1);
             stack.pop();
         }
         else {
-            currentSameBlock = new DifferentCharsBlock(stack.pop(), s);
+            currentSameBlock = new DifferentBytesBlock(stack.pop(), s);
         }
     }
 
-    private void AddSymbolToBlockOrFinishBlock(char s) throws Exception {
+    private void AddSymbolToBlockOrFinishBlock(int s) throws Exception {
         if (currentSameBlock.isSymbolSuitableForBlock(s)) {
             currentSameBlock.addSymbol(s);
         } else {
@@ -52,23 +54,23 @@ public class StringRleCompressor {
         }
     }
 
-    private void resetCounter(char newChar) throws Exception {
+    private void resetCounter(int newSymbol) throws Exception {
         currentSameBlock.displaceUnsuitableSymbols(stack);
         blocks.add(currentSameBlock);
         currentSameBlock = null;
-        stack.push(newChar);
+        stack.push(newSymbol);
     }
 
     private void flushStack() throws Exception {
         if (currentSameBlock == null) {
-            currentSameBlock = new SameCharsBlock(stack.pop(), 1);
+            currentSameBlock = new SameBytesBlock(stack.pop(), 1);
         }
         blocks.add(currentSameBlock);
     }
 
     private String getCompressedStringFromBlocks() {
         String result = "";
-        for (ICharsBlock block : blocks) {
+        for (IBytesBlock block : blocks) {
             result += block.getCompressedString();
         }
         return result;
