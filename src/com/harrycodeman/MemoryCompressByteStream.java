@@ -3,10 +3,10 @@ package com.harrycodeman;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 
-public class StringCompressByteStream implements ICompressByteStream {
+public class MemoryCompressByteStream implements ICompressByteStream {
     private ByteArrayInputStream stream;
 
-    public StringCompressByteStream(String symbols) {
+    public MemoryCompressByteStream(String symbols) {
         byte[] bytes = ConvertToByteArray(symbols.toCharArray());
         stream = new ByteArrayInputStream(bytes);
     }
