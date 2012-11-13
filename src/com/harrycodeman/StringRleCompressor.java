@@ -11,7 +11,7 @@ public class StringRleCompressor {
     private ICompressByteStream stream;
 
     public StringRleCompressor(String toCompress) {
-        stream = new StringCompressByteStream(toCompress);
+        stream = new MemoryCompressByteStream(toCompress);
     }
 
     public String compress() throws Exception {
