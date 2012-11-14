@@ -4,24 +4,24 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
-public class StringRleCompressor {
+public class BytesRleCompressor {
     private List<IBytesBlock> blocks = new ArrayList<IBytesBlock>();
     private IBytesBlock currentSameBlock;
     private Stack<Integer> stack = new Stack<Integer>();
     private ICompressByteStream stream;
 
-    public StringRleCompressor(String toCompress) {
-        stream = new MemoryCompressByteStream(toCompress);
+    public BytesRleCompressor(ICompressByteStream streamToCompress) {
+        stream = streamToCompress;
     }
 
-    public String compress() throws Exception {
+    public List<IBytesBlock> compress() throws Exception {
         while (stream.canRead()) {
             AddSymbol(stream.getNextChar());
         }
         stream.close();
 
         flushStack();
-        return getCompressedStringFromBlocks();
+        return blocks;
     }
 
     private void AddSymbol(int s) throws Exception {

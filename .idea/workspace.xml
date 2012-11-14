@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c601d356-f788-4d61-b6a9-f64e45081852" name="Default" comment="File workspace.xml changed? I don't know why!">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/harrycodeman/BytesRleCompressor.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/harrycodeman/DifferentBytesBlock.java" afterPath="$PROJECT_DIR$/src/com/harrycodeman/DifferentBytesBlock.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/harrycodeman/IBytesBlock.java" afterPath="$PROJECT_DIR$/src/com/harrycodeman/IBytesBlock.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/harrycodeman/MemoryCompressByteStream.java" afterPath="$PROJECT_DIR$/src/com/harrycodeman/MemoryCompressByteStream.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/harrycodeman/SameBytesBlock.java" afterPath="$PROJECT_DIR$/src/com/harrycodeman/SameBytesBlock.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/com/harrycodeman/StringRleCompressorTest.java" afterPath="$PROJECT_DIR$/src/test/com/harrycodeman/StringRleCompressorTest.java" />
+      <change type="MOVED" beforePath="D:\GitHub\huffman-rle-compressor\src\com\harrycodeman\StringRleCompressor.java" afterPath="$PROJECT_DIR$/src/com/harrycodeman/BytesRleCompressor.java" />
     </list>
     <ignored path="huffman-rle-compressor.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -87,11 +89,8 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/com/harrycodeman/DifferentCharsBlock.java" />
-        <option value="$PROJECT_DIR$/src/com/harrycodeman/ICompressStream.java" />
         <option value="$PROJECT_DIR$/src/com/harrycodeman/ByteRleCompressor.java" />
         <option value="$PROJECT_DIR$/src/com/harrycodeman/ICompressCharStream.java" />
-        <option value="$PROJECT_DIR$/src/com/harrycodeman/StringRleCompressor.java" />
         <option value="$PROJECT_DIR$/src/com/harrycodeman/SameCharsBlock.java" />
         <option value="$PROJECT_DIR$/src/com/harrycodeman/ICharsBlock.java" />
         <option value="$PROJECT_DIR$/src/com/harrycodeman/StringCompressCharStream.java" />
@@ -103,6 +102,9 @@
         <option value="$PROJECT_DIR$/src/com/harrycodeman/IBytesBlock.java" />
         <option value="$PROJECT_DIR$/src/com/harrycodeman/SameBytesBlock.java" />
         <option value="$PROJECT_DIR$/src/com/harrycodeman/DifferentBytesBlock.java" />
+        <option value="$PROJECT_DIR$/src/test/com/harrycodeman/StringRleCompressorTest.java" />
+        <option value="$PROJECT_DIR$/src/com/harrycodeman/StringRleCompressor.java" />
+        <option value="$PROJECT_DIR$/src/com/harrycodeman/BytesRleCompressor.java" />
       </list>
     </option>
   </component>
@@ -217,12 +219,16 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope">
-        <subPane subId="Project Files">
+      <pane id="PackagesPane">
+        <subPane>
           <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
+            <PATH_ELEMENT>
+              <option name="myItemId" value="huffman-rle-compressor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="huffman-rle-compressor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -287,16 +293,12 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane">
-        <subPane>
+      <pane id="Scope">
+        <subPane subId="Project Files">
           <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="huffman-rle-compressor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="huffman-rle-compressor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -319,9 +321,9 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers" value="true" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="dynamic.classpath" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -441,6 +443,24 @@
         <option name="Maven.BeforeRunTask" enabled="false" />
       </method>
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Make" enabled="true" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+      </method>
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -466,24 +486,6 @@
       <envs />
       <properties />
       <listeners />
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="Make" enabled="true" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-      </method>
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method>
         <option name="AntTarget" enabled="false" />
         <option name="BuildArtifacts" enabled="false" />
@@ -739,62 +741,72 @@
         <state line="2" column="0" selection-start="9" selection-end="9" vertical-scroll-proportion="0.052505966" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/harrycodeman/StringRleCompressor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="17" selection-start="224" selection-end="224" vertical-scroll-proportion="0.23826715" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/harrycodeman/ICompressByteStream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="23" selection-start="148" selection-end="148" vertical-scroll-proportion="0.23826715" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/com/harrycodeman/ByteToHexStringConvertorTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="5" selection-start="324" selection-end="324" vertical-scroll-proportion="0.21002387">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/com/harrycodeman/StringRleCompressorTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="44" selection-start="639" selection-end="639" vertical-scroll-proportion="0.36754176">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/harrycodeman/MemoryCompressByteStream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="0" selection-start="621" selection-end="621" vertical-scroll-proportion="0.39618137">
-          <folding />
-        </state>
+        <state line="11" column="5" selection-start="324" selection-end="324" vertical-scroll-proportion="0.21002387" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/harrycodeman/ByteToHexStringConvertor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="25" selection-start="228" selection-end="228" vertical-scroll-proportion="0.0">
+        <state line="6" column="25" selection-start="228" selection-end="228" vertical-scroll-proportion="0.1575179">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/harrycodeman/IBytesBlock.java">
+    <entry file="file://$PROJECT_DIR$/src/com/harrycodeman/ICompressByteStream.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="21" selection-start="285" selection-end="285" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/harrycodeman/DifferentBytesBlock.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="9" selection-start="943" selection-end="943" vertical-scroll-proportion="0.26491648">
+        <state line="4" column="17" selection-start="73" selection-end="73" vertical-scroll-proportion="0.10501193">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/harrycodeman/SameBytesBlock.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="43" selection-start="1049" selection-end="1049" vertical-scroll-proportion="0.55369925">
+        <state line="32" column="21" selection-start="717" selection-end="717" vertical-scroll-proportion="0.59599334">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/harrycodeman/IBytesBlock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="40" selection-start="168" selection-end="168" vertical-scroll-proportion="0.1575179">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/harrycodeman/DifferentBytesBlock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="46" column="5" selection-start="1071" selection-end="1071" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/harrycodeman/MemoryCompressByteStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="0" selection-start="621" selection-end="621" vertical-scroll-proportion="0.6978297">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/harrycodeman/BytesRleCompressor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="39" selection-start="344" selection-end="344" vertical-scroll-proportion="0.21002387">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/com/harrycodeman/StringRleCompressorTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="74" column="63" selection-start="2911" selection-end="2911" vertical-scroll-proportion="1.9427208">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#418#431#0" expanded="true" />
+            <element signature="e#762#775#0" expanded="true" />
+            <element signature="e#1147#1160#0" expanded="true" />
+            <element signature="e#1492#1505#0" expanded="true" />
+            <element signature="e#1946#1959#0" expanded="true" />
+            <element signature="e#2548#2561#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

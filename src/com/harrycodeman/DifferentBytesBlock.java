@@ -33,6 +33,11 @@ public class DifferentBytesBlock implements IBytesBlock {
     }
 
     @Override
+    public int size() {
+        return symbols.size();
+    }
+
+    @Override
     public String getCompressedString() {
         String result = "";
         for (int s : symbols) {

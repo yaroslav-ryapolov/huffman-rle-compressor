@@ -29,6 +29,11 @@ public class SameBytesBlock implements IBytesBlock {
     }
 
     @Override
+    public int size() {
+        return count;
+    }
+
+    @Override
     public String getCompressedString() {
         if (count > 0) {
             return "" + count + getSymbolChar();
