@@ -7,4 +7,5 @@ public interface IBytesBlock {
     void displaceUnsuitableSymbols(Stack<Integer> stack);
     void addSymbol(int s) throws Exception;
     String getCompressedString();
+    String toHexString();
 }

@@ -39,4 +39,18 @@ public class SameBytesBlock implements IBytesBlock {
     private char getSymbolChar() {
         return (char)symbol;
     }
+
+    @Override
+    public String toHexString() {
+        String hex = ByteToHexStringConvertor.Convert(symbol);
+        return "(" + count + ") " + hex + " ||| " + GetUncompressedString(hex) + "\n";
+    }
+
+    private String GetUncompressedString(String hex) {
+        String uncompressed = "";
+        for (int i = 0; i < count; i++) {
+            uncompressed += hex + " ";
+        }
+        return uncompressed;
+    }
 }

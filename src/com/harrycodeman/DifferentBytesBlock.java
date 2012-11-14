@@ -44,4 +44,18 @@ public class DifferentBytesBlock implements IBytesBlock {
     private char getSymbolChar(int s) {
         return (char)s;
     }
+
+    @Override
+    public String toHexString() {
+        String hex = getSymbolsAsHex();
+        return "(-" + symbols.size() + ") " + hex + "||| " + hex + "\n";
+    }
+
+    private String getSymbolsAsHex() {
+        String hex = "";
+        for (int s : symbols) {
+            hex += ByteToHexStringConvertor.Convert(s) + " ";
+        }
+        return hex;
+    }
 }
