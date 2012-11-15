@@ -47,7 +47,7 @@ public class SameBytesBlock implements IBytesBlock {
 
     @Override
     public String toHexString() {
-        String hex = ByteToHexStringConvertor.Convert(symbol);
+        String hex = ToHexStringConvertor.ConvertByte(symbol);
         return "(" + count + ") " + hex + " ||| " + GetUncompressedString(hex) + "\n";
     }
 

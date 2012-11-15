@@ -8,7 +8,7 @@ import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
-public class StringRleCompressorTest {
+public class BytesRleCompressorTest {
     @Test
     public void testOneCharRepetitionCompress() throws Exception {
         BytesRleCompressor compressor = getCompressorForString("aaa");
