@@ -59,7 +59,7 @@ public class DifferentBytesBlock implements IBytesBlock {
     private String getSymbolsAsHex() {
         String hex = "";
         for (int s : symbols) {
-            hex += ToHexStringConvertor.ConvertByte(s) + " ";
+            hex += ToHexStringConverter.ConvertByte(s) + " ";
         }
         return hex;
     }

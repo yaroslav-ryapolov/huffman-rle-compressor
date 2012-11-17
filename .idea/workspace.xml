@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c601d356-f788-4d61-b6a9-f64e45081852" name="Default" comment="File workspace.xml changed? I don't know why!">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/com/harrycodeman/ToHexStringConvertorTest.java" />
-      <change type="DELETED" beforePath="D:\GitHub\huffman-rle-compressor\src\test\com\harrycodeman\ByteToHexStringConvertorTest.java" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/com/harrycodeman/ToHexStringConverterTest.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/com/harrycodeman/ToHexStringConvertorTest.java" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/harrycodeman/ToHexStringConvertor.java" afterPath="$PROJECT_DIR$/src/com/harrycodeman/ToHexStringConverter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/harrycodeman/DifferentBytesBlock.java" afterPath="$PROJECT_DIR$/src/com/harrycodeman/DifferentBytesBlock.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/harrycodeman/SameBytesBlock.java" afterPath="$PROJECT_DIR$/src/com/harrycodeman/SameBytesBlock.java" />
-      <change type="MOVED" beforePath="D:\GitHub\huffman-rle-compressor\src\com\harrycodeman\ByteToHexStringConvertor.java" afterPath="$PROJECT_DIR$/src/com/harrycodeman/ToHexStringConvertor.java" />
-      <change type="MOVED" beforePath="D:\GitHub\huffman-rle-compressor\src\test\com\harrycodeman\StringRleCompressorTest.java" afterPath="$PROJECT_DIR$/src/test/com/harrycodeman/BytesRleCompressorTest.java" />
     </list>
     <ignored path="huffman-rle-compressor.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -76,7 +75,26 @@
     <favorites_list name="huffman-rle-compressor" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="ToHexStringConverter.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/harrycodeman/ToHexStringConverter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="39" selection-start="346" selection-end="346" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ToHexStringConverterTest.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/com/harrycodeman/ToHexStringConverterTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="29" column="9" selection-start="721" selection-end="721" vertical-scroll-proportion="0.44444445">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -89,8 +107,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/com/harrycodeman/ICharsBlock.java" />
-        <option value="$PROJECT_DIR$/src/com/harrycodeman/StringCompressCharStream.java" />
         <option value="$PROJECT_DIR$/src/com/harrycodeman/StringCompressByteStream.java" />
         <option value="$PROJECT_DIR$/src/com/harrycodeman/CompressByteStream.java" />
         <option value="$PROJECT_DIR$/src/com/harrycodeman/MemoryCompressByteStream.java" />
@@ -101,10 +117,12 @@
         <option value="$PROJECT_DIR$/src/test/com/harrycodeman/ByteToHexStringConvertorTest.java" />
         <option value="$PROJECT_DIR$/src/test/com/harrycodeman/StringRleCompressorTest.java" />
         <option value="$PROJECT_DIR$/src/test/com/harrycodeman/BytesRleCompressorTest.java" />
-        <option value="$PROJECT_DIR$/src/com/harrycodeman/SameBytesBlock.java" />
         <option value="$PROJECT_DIR$/src/com/harrycodeman/DifferentBytesBlock.java" />
-        <option value="$PROJECT_DIR$/src/test/com/harrycodeman/ToHexStringConvertorTest.java" />
         <option value="$PROJECT_DIR$/src/com/harrycodeman/ToHexStringConvertor.java" />
+        <option value="$PROJECT_DIR$/src/test/com/harrycodeman/ToHexStringConvertorTest.java" />
+        <option value="$PROJECT_DIR$/src/com/harrycodeman/SameBytesBlock.java" />
+        <option value="$PROJECT_DIR$/src/test/com/harrycodeman/ToHexStringConverterTest.java" />
+        <option value="$PROJECT_DIR$/src/com/harrycodeman/ToHexStringConverter.java" />
       </list>
     </option>
   </component>
@@ -112,10 +130,10 @@
     <option name="jreName" value="1.6" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1696" />
-    <option name="height" value="1026" />
+    <option name="x" value="-1" />
+    <option name="y" value="25" />
+    <option name="width" value="1026" />
+    <option name="height" value="576" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -229,6 +247,20 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="huffman-rle-compressor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="huffman-rle-compressor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -264,10 +296,6 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="harrycodeman" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -285,20 +313,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="harrycodeman" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="PackagesPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="huffman-rle-compressor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="huffman-rle-compressor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -331,7 +345,7 @@
       <recent name="com.harrycodeman" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ToHexStringConvertorTest.testConvertDifferentSymbolsInteger">
+  <component name="RunManager" selected="JUnit.Full prject test">
     <configuration default="false" name="test.com.harrycodeman" type="JUnit" factoryName="JUnit" temporary="true">
       <module name="huffman-rle-compressor" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -376,12 +390,12 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <configuration default="false" name="ToHexStringConvertorTest.testConvertEmptyInteger" type="JUnit" factoryName="JUnit" temporary="true">
+    <configuration default="false" name="ToHexStringConverterTest.testConvertEmptyInteger" type="JUnit" factoryName="JUnit" temporary="true">
       <module name="huffman-rle-compressor" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="test.com.harrycodeman" />
-      <option name="MAIN_CLASS_NAME" value="test.com.harrycodeman.ToHexStringConvertorTest" />
+      <option name="MAIN_CLASS_NAME" value="test.com.harrycodeman.ToHexStringConverterTest" />
       <option name="METHOD_NAME" value="testConvertEmptyInteger" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -398,12 +412,12 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <configuration default="false" name="ToHexStringConvertorTest.testConvertFullInteger" type="JUnit" factoryName="JUnit" temporary="true">
+    <configuration default="false" name="ToHexStringConverterTest.testConvertFullInteger" type="JUnit" factoryName="JUnit" temporary="true">
       <module name="huffman-rle-compressor" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="test.com.harrycodeman" />
-      <option name="MAIN_CLASS_NAME" value="test.com.harrycodeman.ToHexStringConvertorTest" />
+      <option name="MAIN_CLASS_NAME" value="test.com.harrycodeman.ToHexStringConverterTest" />
       <option name="METHOD_NAME" value="testConvertFullInteger" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -420,12 +434,12 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <configuration default="false" name="ToHexStringConvertorTest.testConvertDifferentSymbolsInteger" type="JUnit" factoryName="JUnit" temporary="true">
+    <configuration default="false" name="ToHexStringConverterTest.testConvertDifferentSymbolsInteger" type="JUnit" factoryName="JUnit" temporary="true">
       <module name="huffman-rle-compressor" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="test.com.harrycodeman" />
-      <option name="MAIN_CLASS_NAME" value="test.com.harrycodeman.ToHexStringConvertorTest" />
+      <option name="MAIN_CLASS_NAME" value="test.com.harrycodeman.ToHexStringConverterTest" />
       <option name="METHOD_NAME" value="testConvertDifferentSymbolsInteger" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -591,9 +605,9 @@
       <item index="0" class="java.lang.String" itemvalue="JUnit.test.com.harrycodeman" />
       <item index="1" class="java.lang.String" itemvalue="JUnit.BytesRleCompressorTest.testSameDifferentSameCharsCompress" />
       <item index="2" class="java.lang.String" itemvalue="JUnit.Full prject test" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.ToHexStringConvertorTest.testConvertEmptyInteger" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.ToHexStringConvertorTest.testConvertFullInteger" />
-      <item index="5" class="java.lang.String" itemvalue="JUnit.ToHexStringConvertorTest.testConvertDifferentSymbolsInteger" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.ToHexStringConverterTest.testConvertEmptyInteger" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.ToHexStringConverterTest.testConvertFullInteger" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.ToHexStringConverterTest.testConvertDifferentSymbolsInteger" />
     </list>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
@@ -661,9 +675,29 @@
     <option name="localTasksCounter" value="9" />
     <servers />
   </component>
+  <component name="TodoView" selected-index="0">
+    <todo-panel id="selected-file">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="default-changelist">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
-    <editor active="false" />
+    <frame x="-1" y="25" width="1026" height="576" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32946634" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -672,18 +706,18 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19467214" sideWeight="0.22969837" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Kotlin" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3283237" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32714617" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32946634" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39975476" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19435929" sideWeight="0.72369945" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27630058" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3739754" sideWeight="0.5174014" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4825986" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32947975" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Kotlin" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32946634" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24954017" sideWeight="0.6716763" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -776,49 +810,41 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/harrycodeman/BytesRleCompressor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="35" selection-start="772" selection-end="772" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="27" column="35" selection-start="772" selection-end="772" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/com/harrycodeman/BytesRleCompressorTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="18" selection-start="199" selection-end="199" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/harrycodeman/SameBytesBlock.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="21" selection-start="1277" selection-end="1277" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="10" column="18" selection-start="199" selection-end="199" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/harrycodeman/IBytesBlock.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="40" selection-start="168" selection-end="168" vertical-scroll-proportion="0.22036728">
-          <folding />
-        </state>
+        <state line="6" column="40" selection-start="168" selection-end="168" vertical-scroll-proportion="0.22036728" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/harrycodeman/DifferentBytesBlock.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="31" selection-start="1223" selection-end="1223" vertical-scroll-proportion="0.55926543">
+        <state line="54" column="31" selection-start="1223" selection-end="1223" vertical-scroll-proportion="0.55926543" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/harrycodeman/SameBytesBlock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="47" column="13" selection-start="975" selection-end="975" vertical-scroll-proportion="0.22222222">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/harrycodeman/ToHexStringConvertor.java">
+    <entry file="file://$PROJECT_DIR$/src/com/harrycodeman/ToHexStringConverter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="42" selection-start="997" selection-end="997" vertical-scroll-proportion="0.5225376">
+        <state line="9" column="39" selection-start="346" selection-end="346" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/com/harrycodeman/ToHexStringConvertorTest.java">
+    <entry file="file://$PROJECT_DIR$/src/test/com/harrycodeman/ToHexStringConverterTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="31" selection-start="887" selection-end="887" vertical-scroll-proportion="0.6327212">
+        <state line="29" column="9" selection-start="721" selection-end="721" vertical-scroll-proportion="0.44444445">
           <folding />
         </state>
       </provider>
