@@ -5,6 +5,9 @@ import java.util.List;
 import java.util.Stack;
 
 public class DifferentBytesBlock implements IBytesBlock {
+    // TODO: move to abstract class
+    private final int MAX_COUNT = 128;
+
     private List<Integer> symbols = new ArrayList<Integer>();
 
     public DifferentBytesBlock(int s1, int s2) {
@@ -15,6 +18,11 @@ public class DifferentBytesBlock implements IBytesBlock {
     @Override
     public boolean isSymbolSuitableForBlock(int s) {
         return s != getLastSymbol();
+    }
+
+    @Override
+    public boolean isBlockFull() {
+        return symbols.size() >= MAX_COUNT;
     }
 
     @Override
@@ -30,6 +38,7 @@ public class DifferentBytesBlock implements IBytesBlock {
     @Override
     public void addSymbol(int s) {
         symbols.add(s);
+        //TODO: throw Exception if too big count or same symbol
     }
 
     @Override
@@ -59,7 +68,7 @@ public class DifferentBytesBlock implements IBytesBlock {
     private String getSymbolsAsHex() {
         String hex = "";
         for (int s : symbols) {
-            hex += ToHexStringConverter.ConvertByte(s) + " ";
+            hex += ToHexStringConverter.convertByte(s) + " ";
         }
         return hex;
     }

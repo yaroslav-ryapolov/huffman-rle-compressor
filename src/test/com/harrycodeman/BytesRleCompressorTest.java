@@ -75,12 +75,160 @@ public class BytesRleCompressorTest {
         assertBlockListEquals(expected, compressor.compress());
     }
 
+    @Test
+    public void test130SameCharsCompress() throws Exception {
+        BytesRleCompressor compressor = getCompressorForString("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+        List<IBytesBlock> expected = new ArrayList<IBytesBlock>();
+        expected.add(new SameBytesBlock((int)'a', 128));
+        expected.add(new SameBytesBlock((int)'a', 2));
+
+        assertBlockListEquals(expected, compressor.compress());
+    }
+
+    @Test
+    public void test130DifferentCharsCompress() throws Exception {
+        BytesRleCompressor compressor = getCompressorForString("qwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiop");
+        List<IBytesBlock> expected = new ArrayList<IBytesBlock>();
+        DifferentBytesBlock differentBlock = new DifferentBytesBlock((int)'q', (int)'w');
+        differentBlock.addSymbol((int)'e');
+        differentBlock.addSymbol((int)'r');
+        differentBlock.addSymbol((int)'t');
+        differentBlock.addSymbol((int)'y');
+        differentBlock.addSymbol((int)'u');
+        differentBlock.addSymbol((int)'i');
+        differentBlock.addSymbol((int)'o');
+        differentBlock.addSymbol((int)'p');
+        differentBlock.addSymbol((int)'q');
+        differentBlock.addSymbol((int)'w');
+        differentBlock.addSymbol((int)'e');
+        differentBlock.addSymbol((int)'r');
+        differentBlock.addSymbol((int)'t');
+        differentBlock.addSymbol((int)'y');
+        differentBlock.addSymbol((int)'u');
+        differentBlock.addSymbol((int)'i');
+        differentBlock.addSymbol((int)'o');
+        differentBlock.addSymbol((int)'p');
+        differentBlock.addSymbol((int)'q');
+        differentBlock.addSymbol((int)'w');
+        differentBlock.addSymbol((int)'e');
+        differentBlock.addSymbol((int)'r');
+        differentBlock.addSymbol((int)'t');
+        differentBlock.addSymbol((int)'y');
+        differentBlock.addSymbol((int)'u');
+        differentBlock.addSymbol((int)'i');
+        differentBlock.addSymbol((int)'o');
+        differentBlock.addSymbol((int)'p');
+        differentBlock.addSymbol((int)'q');
+        differentBlock.addSymbol((int)'w');
+        differentBlock.addSymbol((int)'e');
+        differentBlock.addSymbol((int)'r');
+        differentBlock.addSymbol((int)'t');
+        differentBlock.addSymbol((int)'y');
+        differentBlock.addSymbol((int)'u');
+        differentBlock.addSymbol((int)'i');
+        differentBlock.addSymbol((int)'o');
+        differentBlock.addSymbol((int)'p');
+        differentBlock.addSymbol((int)'q');
+        differentBlock.addSymbol((int)'w');
+        differentBlock.addSymbol((int)'e');
+        differentBlock.addSymbol((int)'r');
+        differentBlock.addSymbol((int)'t');
+        differentBlock.addSymbol((int)'y');
+        differentBlock.addSymbol((int)'u');
+        differentBlock.addSymbol((int)'i');
+        differentBlock.addSymbol((int)'o');
+        differentBlock.addSymbol((int)'p');
+        differentBlock.addSymbol((int)'q');
+        differentBlock.addSymbol((int)'w');
+        differentBlock.addSymbol((int)'e');
+        differentBlock.addSymbol((int)'r');
+        differentBlock.addSymbol((int)'t');
+        differentBlock.addSymbol((int)'y');
+        differentBlock.addSymbol((int)'u');
+        differentBlock.addSymbol((int)'i');
+        differentBlock.addSymbol((int)'o');
+        differentBlock.addSymbol((int)'p');
+        differentBlock.addSymbol((int)'q');
+        differentBlock.addSymbol((int)'w');
+        differentBlock.addSymbol((int)'e');
+        differentBlock.addSymbol((int)'r');
+        differentBlock.addSymbol((int)'t');
+        differentBlock.addSymbol((int)'y');
+        differentBlock.addSymbol((int)'u');
+        differentBlock.addSymbol((int)'i');
+        differentBlock.addSymbol((int)'o');
+        differentBlock.addSymbol((int)'p');
+        differentBlock.addSymbol((int)'q');
+        differentBlock.addSymbol((int)'w');
+        differentBlock.addSymbol((int)'e');
+        differentBlock.addSymbol((int)'r');
+        differentBlock.addSymbol((int)'t');
+        differentBlock.addSymbol((int)'y');
+        differentBlock.addSymbol((int)'u');
+        differentBlock.addSymbol((int)'i');
+        differentBlock.addSymbol((int)'o');
+        differentBlock.addSymbol((int)'p');
+        differentBlock.addSymbol((int)'q');
+        differentBlock.addSymbol((int)'w');
+        differentBlock.addSymbol((int)'e');
+        differentBlock.addSymbol((int)'r');
+        differentBlock.addSymbol((int)'t');
+        differentBlock.addSymbol((int)'y');
+        differentBlock.addSymbol((int)'u');
+        differentBlock.addSymbol((int)'i');
+        differentBlock.addSymbol((int)'o');
+        differentBlock.addSymbol((int)'p');
+        differentBlock.addSymbol((int)'q');
+        differentBlock.addSymbol((int)'w');
+        differentBlock.addSymbol((int)'e');
+        differentBlock.addSymbol((int)'r');
+        differentBlock.addSymbol((int)'t');
+        differentBlock.addSymbol((int)'y');
+        differentBlock.addSymbol((int)'u');
+        differentBlock.addSymbol((int)'i');
+        differentBlock.addSymbol((int)'o');
+        differentBlock.addSymbol((int)'p');
+        differentBlock.addSymbol((int)'q');
+        differentBlock.addSymbol((int)'w');
+        differentBlock.addSymbol((int)'e');
+        differentBlock.addSymbol((int)'r');
+        differentBlock.addSymbol((int)'t');
+        differentBlock.addSymbol((int)'y');
+        differentBlock.addSymbol((int)'u');
+        differentBlock.addSymbol((int)'i');
+        differentBlock.addSymbol((int)'o');
+        differentBlock.addSymbol((int)'p');
+        differentBlock.addSymbol((int)'q');
+        differentBlock.addSymbol((int)'w');
+        differentBlock.addSymbol((int)'e');
+        differentBlock.addSymbol((int)'r');
+        differentBlock.addSymbol((int)'t');
+        differentBlock.addSymbol((int)'y');
+        differentBlock.addSymbol((int)'u');
+        differentBlock.addSymbol((int)'i');
+        differentBlock.addSymbol((int)'o');
+        differentBlock.addSymbol((int)'p');
+        differentBlock.addSymbol((int)'q');
+        differentBlock.addSymbol((int)'w');
+        differentBlock.addSymbol((int)'e');
+        differentBlock.addSymbol((int)'r');
+        differentBlock.addSymbol((int)'t');
+        differentBlock.addSymbol((int)'y');
+        differentBlock.addSymbol((int)'u');
+        differentBlock.addSymbol((int)'i');
+        expected.add(differentBlock);
+        differentBlock = new DifferentBytesBlock((int)'o', (int)'p');
+        expected.add(differentBlock);
+        assertBlockListEquals(expected, compressor.compress());
+    }
+
     private BytesRleCompressor getCompressorForString(String s) {
         ICompressByteStream stream = new MemoryCompressByteStream(s);
         return new BytesRleCompressor(stream);
     }
 
     private void assertBlockListEquals(List<IBytesBlock> expected, List<IBytesBlock> actual) {
+        // TODO: add check for symbols
         assertEquals(expected.size(), actual.size());
         int size = expected.size();
         for (int i = 0; i < size; i++) {

@@ -3,6 +3,9 @@ package com.harrycodeman;
 import java.util.Stack;
 
 public class SameBytesBlock implements IBytesBlock {
+    // TODO: move to abstract class
+    private final int MAX_COUNT = 128;
+
     private int symbol;
     private int count;
 
@@ -17,6 +20,11 @@ public class SameBytesBlock implements IBytesBlock {
     }
 
     @Override
+    public boolean isBlockFull() {
+        return count >= MAX_COUNT;
+    }
+
+    @Override
     public void displaceUnsuitableSymbols(Stack<Integer> stack) {
     }
 
@@ -26,6 +34,8 @@ public class SameBytesBlock implements IBytesBlock {
             throw new Exception("Different symbols in SameBytesBlock!");
         }
         count++;
+        // TODO: throw Exception if too big count
+        // TODO: specialize exception
     }
 
     @Override
@@ -48,7 +58,7 @@ public class SameBytesBlock implements IBytesBlock {
     @Override
     public String toHexString() {
         //        TODO: BitSet!!!
-        String hex = ToHexStringConverter.ConvertByte(symbol);
+        String hex = ToHexStringConverter.convertByte(symbol);
         return "(" + count + ") " + hex + " ||| " + GetUncompressedString(hex) + "\n";
     }
 

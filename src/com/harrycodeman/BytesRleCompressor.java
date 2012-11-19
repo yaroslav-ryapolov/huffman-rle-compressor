@@ -6,7 +6,7 @@ import java.util.Stack;
 
 public class BytesRleCompressor {
     private List<IBytesBlock> blocks = new ArrayList<IBytesBlock>();
-    private IBytesBlock currentSameBlock;
+    private IBytesBlock currentBlock;
     private Stack<Integer> stack = new Stack<Integer>();
     private ICompressByteStream stream;
 
@@ -25,7 +25,7 @@ public class BytesRleCompressor {
     }
 
     private void AddSymbol(int s) throws Exception {
-        if (currentSameBlock == null) {
+        if (currentBlock == null) {
             CreateNewBlockOrCollectStack(s);
         }
         else {
@@ -38,34 +38,37 @@ public class BytesRleCompressor {
             stack.push(s);
         }
         else if (stack.peek() == s) {
-            currentSameBlock = new SameBytesBlock(s, stack.size() + 1);
+            currentBlock = new SameBytesBlock(s, stack.size() + 1);
             stack.pop();
         }
         else {
-            currentSameBlock = new DifferentBytesBlock(stack.pop(), s);
+            currentBlock = new DifferentBytesBlock(stack.pop(), s);
         }
     }
 
     private void AddSymbolToBlockOrFinishBlock(int s) throws Exception {
-        if (currentSameBlock.isSymbolSuitableForBlock(s)) {
-            currentSameBlock.addSymbol(s);
+        if (currentBlock.isBlockFull()) {
+            resetCounter(s);
+        }
+        else if (currentBlock.isSymbolSuitableForBlock(s)) {
+            currentBlock.addSymbol(s);
         } else {
+            currentBlock.displaceUnsuitableSymbols(stack);
             resetCounter(s);
         }
     }
 
     private void resetCounter(int newSymbol) throws Exception {
-        currentSameBlock.displaceUnsuitableSymbols(stack);
-        blocks.add(currentSameBlock);
-        currentSameBlock = null;
+        blocks.add(currentBlock);
+        currentBlock = null;
         stack.push(newSymbol);
     }
 
     private void flushStack() throws Exception {
-        if (currentSameBlock == null) {
-            currentSameBlock = new SameBytesBlock(stack.pop(), 1);
+        if (currentBlock == null) {
+            currentBlock = new SameBytesBlock(stack.pop(), 1);
         }
-        blocks.add(currentSameBlock);
+        blocks.add(currentBlock);
     }
 
     private String getCompressedStringFromBlocks() {
