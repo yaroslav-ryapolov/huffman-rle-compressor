@@ -19,10 +19,6 @@ public class MemoryCompressByteStream implements ICompressByteStream {
         return result;
     }
 
-    public MemoryCompressByteStream(byte[] symbols) {
-        stream = new ByteArrayInputStream(symbols);
-    }
-
     @Override
     public boolean canRead() {
         return stream.available() > 0;

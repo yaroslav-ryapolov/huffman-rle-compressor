@@ -5,8 +5,8 @@ import java.util.List;
 import java.util.Stack;
 
 public class BytesRleCompressor {
-    private List<IBytesBlock> blocks = new ArrayList<IBytesBlock>();
-    private IBytesBlock currentBlock;
+    private List<BytesBlock> blocks = new ArrayList<BytesBlock>();
+    private BytesBlock currentBlock;
     private Stack<Integer> stack = new Stack<Integer>();
     private ICompressByteStream stream;
 
@@ -14,7 +14,7 @@ public class BytesRleCompressor {
         stream = streamToCompress;
     }
 
-    public List<IBytesBlock> compress() throws Exception {
+    public List<BytesBlock> compress() throws Exception {
         while (stream.canRead()) {
             AddSymbol(stream.getNextChar());
         }
@@ -69,13 +69,5 @@ public class BytesRleCompressor {
             currentBlock = new SameBytesBlock(stack.pop(), 1);
         }
         blocks.add(currentBlock);
-    }
-
-    private String getCompressedStringFromBlocks() {
-        String result = "";
-        for (IBytesBlock block : blocks) {
-            result += block.getCompressedString();
-        }
-        return result;
     }
 }

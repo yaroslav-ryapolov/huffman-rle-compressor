@@ -1,11 +1,8 @@
 package com.harrycodeman;
 
-import java.util.Stack;
+import java.io.IOException;
 
-public class SameBytesBlock implements IBytesBlock {
-    // TODO: move to abstract class
-    private final int MAX_COUNT = 128;
-
+public class SameBytesBlock extends BytesBlock implements ICompressByteStream {
     private int symbol;
     private int count;
 
@@ -20,22 +17,8 @@ public class SameBytesBlock implements IBytesBlock {
     }
 
     @Override
-    public boolean isBlockFull() {
-        return count >= MAX_COUNT;
-    }
-
-    @Override
-    public void displaceUnsuitableSymbols(Stack<Integer> stack) {
-    }
-
-    @Override
-    public void addSymbol(int s) throws Exception {
-        if (s != symbol) {
-            throw new Exception("Different symbols in SameBytesBlock!");
-        }
+    protected void addSymbolOverridden(int s) {
         count++;
-        // TODO: throw Exception if too big count
-        // TODO: specialize exception
     }
 
     @Override
@@ -44,20 +27,7 @@ public class SameBytesBlock implements IBytesBlock {
     }
 
     @Override
-    public String getCompressedString() {
-        if (count > 0) {
-            return "" + count + getSymbolChar();
-        }
-        return "";
-    }
-
-    private char getSymbolChar() {
-        return (char)symbol;
-    }
-
-    @Override
     public String toHexString() {
-        //        TODO: BitSet!!!
         String hex = ToHexStringConverter.convertByte(symbol);
         return "(" + count + ") " + hex + " ||| " + GetUncompressedString(hex) + "\n";
     }
@@ -68,5 +38,23 @@ public class SameBytesBlock implements IBytesBlock {
             uncompressed += hex + " ";
         }
         return uncompressed;
+    }
+
+    private int streamIndex = 0;
+
+    @Override
+    public boolean canRead() {
+        return streamIndex < count;
+    }
+
+    @Override
+    public int getNextChar() {
+        streamIndex++;
+        return symbol;
+    }
+
+    @Override
+    public void close() throws IOException {
+        streamIndex = 0;
     }
 }

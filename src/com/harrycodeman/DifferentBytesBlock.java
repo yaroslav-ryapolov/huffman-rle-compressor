@@ -1,13 +1,11 @@
 package com.harrycodeman;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
-public class DifferentBytesBlock implements IBytesBlock {
-    // TODO: move to abstract class
-    private final int MAX_COUNT = 128;
-
+public class DifferentBytesBlock extends BytesBlock implements ICompressByteStream {
     private List<Integer> symbols = new ArrayList<Integer>();
 
     public DifferentBytesBlock(int s1, int s2) {
@@ -21,11 +19,6 @@ public class DifferentBytesBlock implements IBytesBlock {
     }
 
     @Override
-    public boolean isBlockFull() {
-        return symbols.size() >= MAX_COUNT;
-    }
-
-    @Override
     public void displaceUnsuitableSymbols(Stack<Integer> stack) {
         stack.push(getLastSymbol());
         symbols.remove(symbols.size() - 1);
@@ -36,27 +29,13 @@ public class DifferentBytesBlock implements IBytesBlock {
     }
 
     @Override
-    public void addSymbol(int s) {
+    protected void addSymbolOverridden(int s) {
         symbols.add(s);
-        //TODO: throw Exception if too big count or same symbol
     }
 
     @Override
     public int size() {
         return symbols.size();
-    }
-
-    @Override
-    public String getCompressedString() {
-        String result = "";
-        for (int s : symbols) {
-            result += getSymbolChar(s);
-        }
-        return "-" + symbols.size() + result;
-    }
-
-    private char getSymbolChar(int s) {
-        return (char)s;
     }
 
     @Override
@@ -71,5 +50,22 @@ public class DifferentBytesBlock implements IBytesBlock {
             hex += ToHexStringConverter.convertByte(s) + " ";
         }
         return hex;
+    }
+
+    private int streamIndex = 0;
+
+    @Override
+    public boolean canRead() {
+        return streamIndex < size();
+    }
+
+    @Override
+    public int getNextChar() {
+        return symbols.get(streamIndex++);
+    }
+
+    @Override
+    public void close() throws IOException {
+        streamIndex = 0;
     }
 }
