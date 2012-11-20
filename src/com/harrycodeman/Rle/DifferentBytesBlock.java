@@ -1,20 +1,31 @@
-package com.harrycodeman;
+package com.harrycodeman.rle;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
-public class DifferentBytesBlock extends BytesBlock implements ICompressByteStream {
+public class DifferentBytesBlock extends BytesBlock {
     private List<Integer> symbols = new ArrayList<Integer>();
 
-    public DifferentBytesBlock(int s1, int s2) {
-        symbols.add(s1);
-        symbols.add(s2);
+    public DifferentBytesBlock(String symbols) throws Exception {
+        for (int s : symbols.toCharArray()) {
+            this.symbols.add(s);
+        }
+        if (isBlockOverflowed()) {
+            throw new Exception("Attempt to create overflowed block!");
+        }
+    }
+
+    public DifferentBytesBlock(int s1, int s2) throws Exception {
+        addSymbol(s1);
+        addSymbol(s2);
     }
 
     @Override
     public boolean isSymbolSuitableForBlock(int s) {
+        if (symbols.isEmpty()) {
+            return true;
+        }
         return s != getLastSymbol();
     }
 
@@ -52,20 +63,12 @@ public class DifferentBytesBlock extends BytesBlock implements ICompressByteStre
         return hex;
     }
 
-    private int streamIndex = 0;
-
     @Override
-    public boolean canRead() {
-        return streamIndex < size();
-    }
-
-    @Override
-    public int getNextChar() {
-        return symbols.get(streamIndex++);
-    }
-
-    @Override
-    public void close() throws IOException {
-        streamIndex = 0;
+    public boolean equals(Object value) {
+        if (value.getClass() != DifferentBytesBlock.class) {
+            return false;
+        }
+        DifferentBytesBlock typedValue = (DifferentBytesBlock)value;
+        return symbols.equals(typedValue.symbols);
     }
 }

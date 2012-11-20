@@ -1,4 +1,4 @@
-package com.harrycodeman;
+package com.harrycodeman.rle;
 
 import java.util.Stack;
 
@@ -16,7 +16,7 @@ public abstract class BytesBlock {
     }
 
     public boolean isBlockFull() {
-        return size() >= MAX_LENGTH;
+        return size() == MAX_LENGTH;
     }
 
     public abstract int size();
@@ -27,4 +27,8 @@ public abstract class BytesBlock {
     }
 
     public abstract String toHexString();
+
+    protected boolean isBlockOverflowed() {
+        return size() > MAX_LENGTH;
+    }
 }

@@ -1,10 +1,9 @@
-package test.com.harrycodeman;
+package test.com.harrycodeman.rle;
 
-import com.harrycodeman.ToHexStringConverter;
+import com.harrycodeman.rle.ToHexStringConverter;
 import org.junit.Test;
 
 import static junit.framework.Assert.assertEquals;
-import static org.junit.Assert.assertArrayEquals;
 
 public class ToHexStringConverterTest {
     @Test

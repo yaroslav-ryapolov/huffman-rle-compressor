@@ -1,14 +1,15 @@
-package com.harrycodeman;
+package com.harrycodeman.rle;
 
-import java.io.IOException;
-
-public class SameBytesBlock extends BytesBlock implements ICompressByteStream {
+public class SameBytesBlock extends BytesBlock {
     private int symbol;
     private int count;
 
-    public SameBytesBlock(int symbol, int count) {
+    public SameBytesBlock(int symbol, int count) throws Exception {
         this.symbol = symbol;
         this.count = count;
+        if (isBlockOverflowed()) {
+            throw new Exception("Attempt to create overflowed block!");
+        }
     }
 
     @Override
@@ -40,21 +41,13 @@ public class SameBytesBlock extends BytesBlock implements ICompressByteStream {
         return uncompressed;
     }
 
-    private int streamIndex = 0;
-
     @Override
-    public boolean canRead() {
-        return streamIndex < count;
-    }
-
-    @Override
-    public int getNextChar() {
-        streamIndex++;
-        return symbol;
-    }
-
-    @Override
-    public void close() throws IOException {
-        streamIndex = 0;
+    public boolean equals(Object value) {
+        if (value.getClass() != SameBytesBlock.class) {
+            return false;
+        }
+        SameBytesBlock typedValue = (SameBytesBlock)value;
+        return size() == typedValue.size()
+            && symbol == typedValue.symbol;
     }
 }

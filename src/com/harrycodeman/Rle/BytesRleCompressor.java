@@ -1,4 +1,4 @@
-package com.harrycodeman;
+package com.harrycodeman.rle;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +16,7 @@ public class BytesRleCompressor {
 
     public List<BytesBlock> compress() throws Exception {
         while (stream.canRead()) {
-            AddSymbol(stream.getNextChar());
+            addSymbol(stream.getNextChar());
         }
         stream.close();
 
@@ -24,16 +24,16 @@ public class BytesRleCompressor {
         return blocks;
     }
 
-    private void AddSymbol(int s) throws Exception {
+    private void addSymbol(int s) throws Exception {
         if (currentBlock == null) {
-            CreateNewBlockOrCollectStack(s);
+            createNewBlockOrCollectStack(s);
         }
         else {
-            AddSymbolToBlockOrFinishBlock(s);
+            addSymbolToBlockOrFinishBlock(s);
         }
     }
 
-    private void CreateNewBlockOrCollectStack(int s) throws Exception {
+    private void createNewBlockOrCollectStack(int s) throws Exception {
         if (stack.empty()) {
             stack.push(s);
         }
@@ -46,7 +46,7 @@ public class BytesRleCompressor {
         }
     }
 
-    private void AddSymbolToBlockOrFinishBlock(int s) throws Exception {
+    private void addSymbolToBlockOrFinishBlock(int s) throws Exception {
         if (currentBlock.isBlockFull()) {
             resetCounter(s);
         }

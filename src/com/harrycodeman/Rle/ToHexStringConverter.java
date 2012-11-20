@@ -1,7 +1,4 @@
-package com.harrycodeman;
-
-import java.util.ArrayList;
-import java.util.List;
+package com.harrycodeman.rle;
 
 public class ToHexStringConverter {
     private static final char[] hexChars =

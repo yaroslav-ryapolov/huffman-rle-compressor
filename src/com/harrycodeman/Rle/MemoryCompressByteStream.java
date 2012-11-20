@@ -1,4 +1,4 @@
-package com.harrycodeman;
+package com.harrycodeman.rle;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
