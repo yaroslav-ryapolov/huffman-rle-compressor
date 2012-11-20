@@ -2,7 +2,7 @@ package com.harrycodeman.rle;
 
 import java.util.Stack;
 
-public abstract class BytesBlock {
+public abstract class BytesBlock implements Iterable<Integer> {
     private final int MAX_LENGTH = 128;
 
     public void addSymbol(int s) throws Exception {

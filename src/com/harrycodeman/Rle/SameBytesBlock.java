@@ -1,6 +1,30 @@
 package com.harrycodeman.rle;
 
-public class SameBytesBlock extends BytesBlock {
+import java.util.Iterator;
+
+public class SameBytesBlock extends BytesBlock implements Iterable<Integer> {
+    private class BlockIterator implements Iterator<Integer> {
+        private int index = 0;
+
+        public BlockIterator(SameBytesBlock block) {
+        }
+
+        @Override
+        public boolean hasNext() {
+            return index < size();
+        }
+
+        @Override
+        public Integer next() {
+            index++;
+            return symbol;
+        }
+
+        @Override
+        public void remove() {
+        }
+    }
+
     private int symbol;
     private int count;
 
@@ -10,6 +34,10 @@ public class SameBytesBlock extends BytesBlock {
         if (isBlockOverflowed()) {
             throw new Exception("Attempt to create overflowed block!");
         }
+    }
+
+    public int getSymbol() {
+        return symbol;
     }
 
     @Override
@@ -29,16 +57,12 @@ public class SameBytesBlock extends BytesBlock {
 
     @Override
     public String toHexString() {
-        String hex = ToHexStringConverter.convertByte(symbol);
-        return "(" + count + ") " + hex + " ||| " + GetUncompressedString(hex) + "\n";
+        return "";
     }
 
-    private String GetUncompressedString(String hex) {
-        String uncompressed = "";
-        for (int i = 0; i < count; i++) {
-            uncompressed += hex + " ";
-        }
-        return uncompressed;
+    @Override
+    public Iterator<Integer> iterator() {
+        return new BlockIterator(this);
     }
 
     @Override
