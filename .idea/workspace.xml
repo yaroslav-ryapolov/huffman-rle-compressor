@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c601d356-f788-4d61-b6a9-f64e45081852" name="Default" comment="File workspace.xml changed? I don't know why!`">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/harrycodeman/huffman/CountedByte.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/harrycodeman/huffman/BytesCounter.java" afterPath="$PROJECT_DIR$/src/com/harrycodeman/huffman/BytesCounter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/harrycodeman/rle/BytesBlock.java" afterPath="$PROJECT_DIR$/src/com/harrycodeman/rle/BytesBlock.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/harrycodeman/rle/DifferentBytesBlock.java" afterPath="$PROJECT_DIR$/src/com/harrycodeman/rle/DifferentBytesBlock.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/harrycodeman/rle/SameBytesBlock.java" afterPath="$PROJECT_DIR$/src/com/harrycodeman/rle/SameBytesBlock.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/com/harrycodeman/huffman/BytesCounterTest.java" afterPath="$PROJECT_DIR$/src/test/com/harrycodeman/huffman/BytesCounterTest.java" />
-    </list>
+    <list default="true" id="c601d356-f788-4d61-b6a9-f64e45081852" name="Default" comment="File workspace.xml changed? I don't know why!`" />
     <ignored path="huffman-rle-compressor.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
