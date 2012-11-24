@@ -26,8 +26,6 @@ public abstract class BytesBlock implements Iterable<Integer> {
     public void displaceUnsuitableSymbols(Stack<Integer> stack) {
     }
 
-    public abstract String toHexString();
-
     protected boolean isBlockOverflowed() {
         return size() > MAX_LENGTH;
     }

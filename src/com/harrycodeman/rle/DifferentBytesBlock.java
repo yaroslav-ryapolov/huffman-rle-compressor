@@ -68,12 +68,6 @@ public class DifferentBytesBlock extends BytesBlock {
         return symbols.size();
     }
 
-    @Override
-    public String toHexString() {
-        String hex = getSymbolsAsHex();
-        return "(-" + symbols.size() + ") " + hex + "||| " + hex + "\n";
-    }
-
     private String getSymbolsAsHex() {
         String hex = "";
         for (int s : symbols) {

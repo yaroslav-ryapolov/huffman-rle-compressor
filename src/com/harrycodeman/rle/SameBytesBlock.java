@@ -56,11 +56,6 @@ public class SameBytesBlock extends BytesBlock implements Iterable<Integer> {
     }
 
     @Override
-    public String toHexString() {
-        return "";
-    }
-
-    @Override
     public Iterator<Integer> iterator() {
         return new BlockIterator(this);
     }
