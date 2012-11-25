@@ -68,20 +68,12 @@ public class DifferentBytesBlock extends BytesBlock {
         return symbols.size();
     }
 
-    private String getSymbolsAsHex() {
-        String hex = "";
-        for (int s : symbols) {
-            hex += ToHexStringConverter.convertByte(s) + " ";
-        }
-        return hex;
-    }
-
     @Override
-    public boolean equals(Object value) {
-        if (value.getClass() != DifferentBytesBlock.class) {
+    public boolean equals(Object other) {
+        if (other.getClass() != DifferentBytesBlock.class) {
             return false;
         }
-        DifferentBytesBlock typedValue = (DifferentBytesBlock)value;
+        DifferentBytesBlock typedValue = (DifferentBytesBlock)other;
         return symbols.equals(typedValue.symbols);
     }
 

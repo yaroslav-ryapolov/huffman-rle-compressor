@@ -1,5 +1,7 @@
 package test.com.harrycodeman.rle;
 
+import com.harrycodeman.ICompressByteStream;
+import com.harrycodeman.MemoryCompressByteStream;
 import com.harrycodeman.rle.*;
 import org.junit.Test;
 

@@ -6,9 +6,6 @@ public class SameBytesBlock extends BytesBlock implements Iterable<Integer> {
     private class BlockIterator implements Iterator<Integer> {
         private int index = 0;
 
-        public BlockIterator(SameBytesBlock block) {
-        }
-
         @Override
         public boolean hasNext() {
             return index < size();
@@ -57,15 +54,15 @@ public class SameBytesBlock extends BytesBlock implements Iterable<Integer> {
 
     @Override
     public Iterator<Integer> iterator() {
-        return new BlockIterator(this);
+        return new BlockIterator();
     }
 
     @Override
-    public boolean equals(Object value) {
-        if (value.getClass() != SameBytesBlock.class) {
+    public boolean equals(Object other) {
+        if (other.getClass() != SameBytesBlock.class) {
             return false;
         }
-        SameBytesBlock typedValue = (SameBytesBlock)value;
+        SameBytesBlock typedValue = (SameBytesBlock)other;
         return size() == typedValue.size()
             && symbol == typedValue.symbol;
     }

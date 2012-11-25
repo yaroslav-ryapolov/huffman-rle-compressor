@@ -1,13 +1,15 @@
 package com.harrycodeman.rle;
 
+import com.harrycodeman.ICompressByteStream;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
 public class BytesRleCompressor {
     private List<BytesBlock> blocks = new ArrayList<BytesBlock>();
-    private BytesBlock currentBlock;
     private Stack<Integer> stack = new Stack<Integer>();
+    private BytesBlock currentBlock;
     private ICompressByteStream stream;
 
     public BytesRleCompressor(ICompressByteStream streamToCompress) {
@@ -15,11 +17,10 @@ public class BytesRleCompressor {
     }
 
     public List<BytesBlock> compress() throws Exception {
-        while (stream.canRead()) {
-            addSymbol(stream.getNextChar());
+        for (int s : stream) {
+            addSymbol(s);
         }
         stream.close();
-
         flushStack();
         return blocks;
     }

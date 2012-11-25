@@ -11,7 +11,7 @@ import java.util.Collection;
 
 import static junit.framework.Assert.assertEquals;
 
-public class BytesBlocksToHexStringConverterTest {
+public class BytesBlocksToHexStringConverterTest extends BytesBlocksToHexStringConverter {
     @Test
     public void testOneSameBytesBlockConvert() throws Exception {
         Collection<BytesBlock> blocks = new ArrayList<BytesBlock>();
@@ -32,7 +32,25 @@ public class BytesBlocksToHexStringConverterTest {
         blocks.add(new DifferentBytesBlock("abc"));
         blocks.add(new SameBytesBlock('a', 3));
         blocks.add(new DifferentBytesBlock("bc"));
-        assertEquals("(-3: xFD) x61 x62 x63  |  x61 x62 x63\n(3: x02) x61  |  x61 x61 x61\n(-2: xFE) x62 x63  |  x62 x63",
+        assertEquals(
+            "(-3: xFD) x61 x62 x63  |  x61 x62 x63\n" +
+            "(3: x02) x61  |  x61 x61 x61\n" +
+            "(-2: xFE) x62 x63  |  x62 x63",
             BytesBlocksToHexStringConverter.convert(blocks));
+    }
+
+    @Test
+    public void testConvertEmptyByte() {
+        assertEquals("x00", toHexString(0));
+    }
+
+    @Test
+    public void testConvertFullByte() {
+        assertEquals("xFF", toHexString(255));
+    }
+
+    @Test
+    public void testDifferentSymbolsByte() {
+        assertEquals("x3A", toHexString(58));
     }
 }

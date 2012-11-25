@@ -5,14 +5,29 @@ import java.util.Collection;
 import static java.lang.String.format;
 
 public class BytesBlocksToHexStringConverter {
+    private static final char[] hexChars = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E',
+        'F' };
+
     public static String convert(Collection<BytesBlock> blocks) {
         BytesBlocksToHexStringConverter converter = new BytesBlocksToHexStringConverter();
         return converter.convertBlocks(blocks);
     }
 
+    protected static String toHexString(int s) {
+        final char prefix = 'x';
+        return "" + prefix + getSymbol(s, 1) + getSymbol(s, 0);
+    }
+
+    private static char getSymbol(int s, int numberFromRight) {
+        final int mask = 15;
+        int shift = numberFromRight*4;
+        int i = (s >> shift) & mask;
+        return hexChars[i];
+    }
+
     private StringBuilder result = new StringBuilder();
 
-    private BytesBlocksToHexStringConverter() {
+    protected BytesBlocksToHexStringConverter() {
     }
 
     private String convertBlocks(Collection<BytesBlock> blocks) {
@@ -45,7 +60,7 @@ public class BytesBlocksToHexStringConverter {
     }
 
     private void appendBlockSizePart(int actualSize, int convertedSize) {
-        result.append(format("(%1$s: %2$s)", actualSize, ToHexStringConverter.convertByte(convertedSize)));
+        result.append(format("(%1$s: %2$s)", actualSize, toHexString(convertedSize)));
     }
 
     private void appendSpace() {
@@ -53,7 +68,7 @@ public class BytesBlocksToHexStringConverter {
     }
 
     private void appendSymbolAsHexString(int s) {
-        result.append(ToHexStringConverter.convertByte(s));
+        result.append(toHexString(s));
     }
 
     private void appendInlineDelimiter() {
