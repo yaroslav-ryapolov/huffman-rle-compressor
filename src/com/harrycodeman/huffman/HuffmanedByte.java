@@ -1,9 +1,9 @@
 package com.harrycodeman.huffman;
 
-public class HuffmanedByte implements Comparable<HuffmanedByte> {
+public class HuffmanedByte implements ICountedObject {
     private int value;
     private int reps;
-    private String code;
+    private String code = "";
 
     public HuffmanedByte(int value) {
         this.value = value;
@@ -12,6 +12,11 @@ public class HuffmanedByte implements Comparable<HuffmanedByte> {
     public HuffmanedByte(int value, int reps) {
         this(value);
         this.reps = reps;
+    }
+
+    public HuffmanedByte(int value, int reps, String code) {
+        this(value, reps);
+        this.code = code;
     }
 
     public int getValue() {
@@ -41,17 +46,21 @@ public class HuffmanedByte implements Comparable<HuffmanedByte> {
 
     @Override
     public boolean equals(Object other) {
-        // TODO: add comparision by code!!!
-        if (other.getClass() != HuffmanedByte.class) {
+        if (other == null
+            || other.getClass() != HuffmanedByte.class) {
             return false;
         }
-        HuffmanedByte typedOther = (HuffmanedByte)other;
-        return getValue() == typedOther.getValue()
-            && getReps() == typedOther.getReps();
+        return equals((HuffmanedByte)other);
+    }
+
+    public boolean equals(HuffmanedByte other) {
+        return getValue() == other.getValue()
+            && getReps() == other.getReps()
+            && getCode().equals(other.getCode());
     }
 
     @Override
-    public int compareTo(HuffmanedByte other) {
+    public int compareTo(ICountedObject other) {
         return getReps() - other.getReps();
     }
 }

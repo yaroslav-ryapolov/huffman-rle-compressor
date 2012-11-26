@@ -55,20 +55,26 @@ public class PrefixCodesTableForCompressTest extends PrefixCodesTableForCompress
             new HuffmanTreeNode(
                 new HuffmanTreeNode(
                     new HuffmanTreeNode(
-                        new HuffmanTreeNode(new HuffmanedByte(100, 1)),
-                        new HuffmanTreeNode(new HuffmanedByte(101, 2))
+                        new HuffmanTreeNode(new HuffmanedByte(100, 1, "0000")),
+                        new HuffmanTreeNode(new HuffmanedByte(101, 2, "0001")),
+                        false
                     ),
-                    new HuffmanTreeNode(new HuffmanedByte(102, 4))
+                    new HuffmanTreeNode(new HuffmanedByte(102, 4, "001")),
+                    false
                 ),
-                new HuffmanTreeNode(new HuffmanedByte(105, 8))
+                new HuffmanTreeNode(new HuffmanedByte(105, 8, "01")),
+                false
             ),
             new HuffmanTreeNode(
-                new HuffmanTreeNode(new HuffmanedByte(106, 10)),
+                new HuffmanTreeNode(new HuffmanedByte(106, 10, "10")),
                 new HuffmanTreeNode(
-                    new HuffmanTreeNode(new HuffmanedByte(103, 5)),
-                    new HuffmanTreeNode(new HuffmanedByte(104, 6))
-                )
-            )
+                    new HuffmanTreeNode(new HuffmanedByte(103, 5, "110")),
+                    new HuffmanTreeNode(new HuffmanedByte(104, 6, "111")),
+                    false
+                ),
+                false
+            ),
+            false
         );
         assertEquals(expected, table.getRoot());
     }

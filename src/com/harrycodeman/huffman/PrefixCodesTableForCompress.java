@@ -2,8 +2,12 @@ package com.harrycodeman.huffman;
 
 import com.harrycodeman.ICompressByteStream;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+
+import static java.util.Collections.sort;
 
 public class PrefixCodesTableForCompress {
     protected static PrefixCodesTableForCompress getPrefixTableForMap(Map<Integer, HuffmanedByte> mapOfBytes) {
@@ -38,7 +42,28 @@ public class PrefixCodesTableForCompress {
     }
 
     private void buildHuffmanTree() {
-        // TODO: implement huffman tree build algorithm
+        List<ICountedObject> huffmanedBytes = new ArrayList<ICountedObject>(mapOfBytes.values());
+        while (huffmanedBytes.size() > 1) {
+            sort(huffmanedBytes);
+            huffmanedBytes.add(new HuffmanTreeNode(popFirst(huffmanedBytes), popFirst(huffmanedBytes)));
+        }
+        root = extractRoot(huffmanedBytes.get(0));
+    }
+
+    private static HuffmanTreeNode popFirst(List<ICountedObject> list) {
+        ICountedObject result = list.get(0);
+        list.remove(0);
+        if (result.getClass() == HuffmanedByte.class) {
+            return new HuffmanTreeNode((HuffmanedByte)result);
+        }
+        return (HuffmanTreeNode)result;
+    }
+
+    private static HuffmanTreeNode extractRoot(ICountedObject value) {
+        if (value.getClass() == HuffmanedByte.class) {
+            return new HuffmanTreeNode((HuffmanedByte)value);
+        }
+        return (HuffmanTreeNode)value;
     }
 
     private Map<Integer, HuffmanedByte> mapOfBytes = new HashMap<Integer, HuffmanedByte>();
