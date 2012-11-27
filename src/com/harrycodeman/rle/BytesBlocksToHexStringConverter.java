@@ -14,6 +14,8 @@ public class BytesBlocksToHexStringConverter {
     }
 
     protected static String toHexString(int s) {
+        // TODO: remove prefix!
+        // TODO: merge with HaffmanTreeNodes methods
         final char prefix = 'x';
         return "" + prefix + getSymbol(s, 1) + getSymbol(s, 0);
     }
