@@ -16,14 +16,14 @@ public class BytesBlocksToHexStringConverterTest extends BytesBlocksToHexStringC
     public void testOneSameBytesBlockConvert() throws Exception {
         Collection<BytesBlock> blocks = new ArrayList<BytesBlock>();
         blocks.add(new SameBytesBlock('a', 3));
-        assertEquals("(3: x02) x61  |  x61 x61 x61", BytesBlocksToHexStringConverter.convert(blocks));
+        assertEquals("(3: 02) 61  |  61 61 61", BytesBlocksToHexStringConverter.convert(blocks));
     }
 
     @Test
     public void testOneDifferentBytesBlockConvert() throws Exception {
         Collection<BytesBlock> blocks = new ArrayList<BytesBlock>();
         blocks.add(new DifferentBytesBlock("abc"));
-        assertEquals("(-3: xFD) x61 x62 x63  |  x61 x62 x63", BytesBlocksToHexStringConverter.convert(blocks));
+        assertEquals("(-3: FD) 61 62 63  |  61 62 63", BytesBlocksToHexStringConverter.convert(blocks));
     }
 
     @Test
@@ -33,24 +33,9 @@ public class BytesBlocksToHexStringConverterTest extends BytesBlocksToHexStringC
         blocks.add(new SameBytesBlock('a', 3));
         blocks.add(new DifferentBytesBlock("bc"));
         assertEquals(
-            "(-3: xFD) x61 x62 x63  |  x61 x62 x63\n" +
-            "(3: x02) x61  |  x61 x61 x61\n" +
-            "(-2: xFE) x62 x63  |  x62 x63",
+            "(-3: FD) 61 62 63  |  61 62 63\n" +
+            "(3: 02) 61  |  61 61 61\n" +
+            "(-2: FE) 62 63  |  62 63",
             BytesBlocksToHexStringConverter.convert(blocks));
-    }
-
-    @Test
-    public void testConvertEmptyByte() {
-        assertEquals("x00", toHexString(0));
-    }
-
-    @Test
-    public void testConvertFullByte() {
-        assertEquals("xFF", toHexString(255));
-    }
-
-    @Test
-    public void testDifferentSymbolsByte() {
-        assertEquals("x3A", toHexString(58));
     }
 }

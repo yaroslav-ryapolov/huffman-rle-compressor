@@ -2,12 +2,10 @@ package com.harrycodeman.huffman;
 
 import com.harrycodeman.ICompressByteStream;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-
-import static java.util.Collections.sort;
+import java.util.SortedSet;
+import java.util.TreeSet;
 
 public class PrefixCodesTableForCompress {
     protected static PrefixCodesTableForCompress getPrefixTableForMap(Map<Integer, HuffmanedByte> mapOfBytes) {
@@ -42,24 +40,21 @@ public class PrefixCodesTableForCompress {
     }
 
     private void buildHuffmanTree() {
-        List<ICountedObject> huffmanedBytes = new ArrayList<ICountedObject>(mapOfBytes.values());
+        TreeSet<ICountedObject> huffmanedBytes = new TreeSet<ICountedObject>(mapOfBytes.values());
         while (huffmanedBytes.size() > 1) {
-            sort(huffmanedBytes);
-            huffmanedBytes.add(new HuffmanTreeNode(popFirst(huffmanedBytes), popFirst(huffmanedBytes)));
+            huffmanedBytes.add(new HuffmanTreeNode(popFirstAsHuffmanTreeNode(huffmanedBytes),
+                    popFirstAsHuffmanTreeNode(huffmanedBytes)));
         }
-        root = extractRoot(huffmanedBytes.get(0));
+        root = convertToHuffmanTreeNode(huffmanedBytes.first());
     }
 
-    private static HuffmanTreeNode popFirst(List<ICountedObject> list) {
-        ICountedObject result = list.get(0);
-        list.remove(0);
-        if (result.getClass() == HuffmanedByte.class) {
-            return new HuffmanTreeNode((HuffmanedByte)result);
-        }
-        return (HuffmanTreeNode)result;
+    private static HuffmanTreeNode popFirstAsHuffmanTreeNode(SortedSet<ICountedObject> huffmanedBytes) {
+        ICountedObject result = huffmanedBytes.first();
+        huffmanedBytes.remove(result);
+        return convertToHuffmanTreeNode(result);
     }
 
-    private static HuffmanTreeNode extractRoot(ICountedObject value) {
+    private static HuffmanTreeNode convertToHuffmanTreeNode(ICountedObject value) {
         if (value.getClass() == HuffmanedByte.class) {
             return new HuffmanTreeNode((HuffmanedByte)value);
         }

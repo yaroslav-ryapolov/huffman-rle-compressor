@@ -1,13 +1,15 @@
 package com.harrycodeman.huffman;
 
+import com.harrycodeman.ByteToHexStringConverter;
+
 import java.util.ArrayList;
 import java.util.List;
 
 import static java.lang.Math.max;
 
 public class HuffmanTreeNode implements ICountedObject {
-    private static final char[] hexChars = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E',
-            'F' };
+    private final static String TOP_CODE = "0";
+    private final static String BOTTOM_CODE = "1";
 
     private HuffmanedByte value;
     private HuffmanTreeNode top;
@@ -19,14 +21,17 @@ public class HuffmanTreeNode implements ICountedObject {
     }
 
     public HuffmanTreeNode(HuffmanTreeNode top, HuffmanTreeNode bottom) {
-        top.appendCode("0");
-        this.top = top;
-        bottom.appendCode("1");
-        this.bottom = bottom;
-        levelFromLeaf = max(top.getLevelFromLeaf(), bottom.getLevelFromLeaf()) + 1;
+        setTopAndBottom(top, bottom);
+        top.appendCode(TOP_CODE);
+        bottom.appendCode(BOTTOM_CODE);
+
     }
 
     public HuffmanTreeNode(HuffmanTreeNode top, HuffmanTreeNode bottom, boolean withoutAppend) {
+        setTopAndBottom(top, bottom);
+    }
+
+    private void setTopAndBottom(HuffmanTreeNode top, HuffmanTreeNode bottom) {
         this.top = top;
         this.bottom = bottom;
         levelFromLeaf = max(top.getLevelFromLeaf(), bottom.getLevelFromLeaf()) + 1;
@@ -110,34 +115,38 @@ public class HuffmanTreeNode implements ICountedObject {
 
     private List<String> composeStringPresentationOfValue(int level) {
         List<String> result = new ArrayList<String>(level + 1);
-        int spaceCount = (2 << level) - 1;
-        int blankLineSpaceCount = 4 << level;
-        result.add(generateSpaceString(spaceCount) + toHexString(value.getValue()) + generateSpaceString(spaceCount));
+        int stringLength = pow2IntoValuePlusTwo(level);
+        result.add(getLeafNodeString(stringLength));
+        return addBlankLines(level, stringLength, result);
+    }
+
+    private String getLeafNodeString(int stringLength) {
+        String borderSpaces = generateSpaceString(stringLength/2 - 1);
+        return borderSpaces + ByteToHexStringConverter.toHexString(value.getValue()) + borderSpaces;
+    }
+
+    private static List<String> addBlankLines(int level, int stringLength, List<String> result) {
+        String blankLine = generateSpaceString(stringLength);
         for (int i = 0; i < level; i++) {
-            result.add(generateSpaceString(blankLineSpaceCount));
+            result.add(blankLine);
         }
         return result;
     }
 
-    private static String toHexString(int s) {
-        return "" + getSymbol(s, 1) + getSymbol(s, 0);
-    }
-
-    private static char getSymbol(int s, int numberFromRight) {
-        final int mask = 15;
-        int shift = numberFromRight*4;
-        int i = (s >> shift) & mask;
-        return hexChars[i];
-    }
-
     private List<String> composeStringPresentationOfNotLeafNode(int level) {
         List<String> result = new ArrayList<String>(level + 1);
-        int spaceCount = (1 << level) - 1;
-        int hyphenCount = 2 << level;
-        result.add(generateSpaceString(spaceCount) +
-                "0" + generateHyphenString(hyphenCount) + "1" +
-                generateSpaceString(spaceCount));
+        result.add(getNotLeafNodeString(level));
+        return addNotLeafChildrenStrings(level, result);
+    }
 
+    private static String getNotLeafNodeString(int level) {
+        int stringLength = pow2IntoValuePlusTwo(level);
+        String spaces = generateSpaceString(stringLength/4 - 1);
+        String hyphens = generateHyphenString(stringLength/2);
+        return spaces + TOP_CODE + hyphens + BOTTOM_CODE + spaces;
+    }
+
+    private List<String> addNotLeafChildrenStrings(int level, List<String> result) {
         List<String> topResult = top.composeStringPresentation(level - 1);
         List<String> bottomResult = bottom.composeStringPresentation(level - 1);
         for (int i = 0; i < level; i++) {
@@ -146,18 +155,22 @@ public class HuffmanTreeNode implements ICountedObject {
         return result;
     }
 
+    private static int pow2IntoValuePlusTwo(int value) {
+        return 4 << value;
+    }
+
     private static String generateSpaceString(int count) {
-        String result = "";
-        for (int i = 0; i < count; i++) {
-            result += " ";
-        }
-        return result;
+        return generateString(count, ' ');
     }
 
     private static String generateHyphenString(int count) {
-        String result ="";
+        return generateString(count, '-');
+    }
+
+    private static String generateString(int count, char value) {
+        String result = "";
         for (int i = 0; i < count; i++) {
-            result += "-";
+            result += value;
         }
         return result;
     }

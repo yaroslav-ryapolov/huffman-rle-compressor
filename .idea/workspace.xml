@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c601d356-f788-4d61-b6a9-f64e45081852" name="Default" comment="File workspace.xml changed? I don't know why!`">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/com/harrycodeman/huffman/HuffmanTreeNodeTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/harrycodeman/ByteToHexStringConverter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/com/harrycodeman/ByteToHexStringConverterTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/harrycodeman/huffman/HuffmanTreeNode.java" afterPath="$PROJECT_DIR$/src/com/harrycodeman/huffman/HuffmanTreeNode.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/harrycodeman/huffman/PrefixCodesTableForCompress.java" afterPath="$PROJECT_DIR$/src/com/harrycodeman/huffman/PrefixCodesTableForCompress.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/harrycodeman/rle/BytesBlocksToHexStringConverter.java" afterPath="$PROJECT_DIR$/src/com/harrycodeman/rle/BytesBlocksToHexStringConverter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/com/harrycodeman/rle/BytesBlocksToHexStringConverterTest.java" afterPath="$PROJECT_DIR$/src/test/com/harrycodeman/rle/BytesBlocksToHexStringConverterTest.java" />
     </list>
     <ignored path="huffman-rle-compressor.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -73,57 +76,7 @@
     <favorites_list name="huffman-rle-compressor" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="HuffmanTreeNode.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/harrycodeman/huffman/HuffmanTreeNode.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="107" column="61" selection-start="2889" selection-end="2889" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#3011#3019#0" expanded="true" />
-                <element signature="e#3821#3829#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HuffmanTreeNodeTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/com/harrycodeman/huffman/HuffmanTreeNodeTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="78" selection-start="1161" selection-end="1161" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PrefixCodesTableForCompressTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/com/harrycodeman/huffman/PrefixCodesTableForCompressTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="77" column="10" selection-start="2176" selection-end="3184" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BytesBlocksToHexStringConverter.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/harrycodeman/rle/BytesBlocksToHexStringConverter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="52" selection-start="629" selection-end="629" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PrefixCodesTableForCompress.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/harrycodeman/huffman/PrefixCodesTableForCompress.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="81" column="0" selection-start="2554" selection-end="2554" vertical-scroll-proportion="0.57995224">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -143,22 +96,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/test/com/harrycodeman/rle/BytesBlocksToHexStringConverterTest.java" />
-        <option value="$PROJECT_DIR$/src/com/harrycodeman/huffman/CompressPrefixCodesTable.java" />
-        <option value="$PROJECT_DIR$/src/com/harrycodeman/huffman/CountedByte.java" />
         <option value="$PROJECT_DIR$/src/com/harrycodeman/rle/SameBytesBlock.java" />
         <option value="$PROJECT_DIR$/src/com/harrycodeman/rle/DifferentBytesBlock.java" />
         <option value="$PROJECT_DIR$/src/test/com/harrycodeman/huffman/BytesCounterTest.java" />
         <option value="$PROJECT_DIR$/src/test/com/harrycodeman/huffman/CompressPrefixCodesTableTest.java" />
         <option value="$PROJECT_DIR$/src/test/com/harrycodeman/huffman/prefixCodesTableForCompressTest.java" />
         <option value="$PROJECT_DIR$/src/com/harrycodeman/huffman/ICountedObject.java" />
-        <option value="$PROJECT_DIR$/src/com/harrycodeman/huffman/PrefixCodesTableForCompress.java" />
         <option value="$PROJECT_DIR$/src/com/harrycodeman/huffman/HuffmanedByte.java" />
         <option value="$PROJECT_DIR$/src/test/com/harrycodeman/huffman/PrefixCodesTableForCompressTest.java" />
         <option value="$PROJECT_DIR$/src/com/harrycodeman/huffman/BytesCounter.java" />
-        <option value="$PROJECT_DIR$/src/com/harrycodeman/huffman/HuffmanTreeNode.java" />
         <option value="$PROJECT_DIR$/src/test/com/harrycodeman/huffman/HuffmanTreeNodeTest.java" />
         <option value="$PROJECT_DIR$/src/com/harrycodeman/rle/BytesBlocksToHexStringConverter.java" />
+        <option value="$PROJECT_DIR$/src/test/com/harrycodeman/rle/BytesBlocksToHexStringConverterTest.java" />
+        <option value="$PROJECT_DIR$/src/test/com/harrycodeman/ByteToHexStringConverterTest.java" />
+        <option value="$PROJECT_DIR$/src/com/harrycodeman/ByteToHexStringConverter.java" />
+        <option value="$PROJECT_DIR$/src/com/harrycodeman/huffman/PrefixCodesTableForCompress.java" />
+        <option value="$PROJECT_DIR$/src/com/harrycodeman/huffman/HuffmanTreeNode.java" />
       </list>
     </option>
   </component>
@@ -288,16 +241,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="PackagesPane">
         <subPane>
           <PATH>
@@ -308,6 +251,16 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="huffman-rle-compressor" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -345,6 +298,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="harrycodeman" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="huffman-rle-compressor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="huffman-rle-compressor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="harrycodeman" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="huffman" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -416,16 +395,16 @@
   </component>
   <component name="PropertiesComponent">
     <property name="project.structure.last.edited" value="SDKs" />
-    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="232" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="OverrideImplement.combined" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="231" />
+    <property name="OverrideImplement.combined" value="true" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="232" />
-    <property name="MemberChooser.sorted" value="false" />
-    <property name="recentsLimit" value="5" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="recentsLimit" value="5" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="232" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="232" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="906" />
@@ -447,15 +426,15 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers" value="true" />
-    <property name="dynamic.classpath" value="false" />
     <property name="options.searchVisible" value="true" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="test.com.harrycodeman" />
       <recent name="test.com.harrycodeman.huffman" />
       <recent name="com.harrycodeman.huffman" />
       <recent name="test.com.harrycodeman.rle" />
-      <recent name="test.com.harrycodeman" />
       <recent name="com.harrycodeman.Rle" />
     </key>
   </component>
@@ -599,24 +578,6 @@
         <option name="Maven.BeforeRunTask" enabled="false" />
       </method>
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="Make" enabled="true" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-      </method>
-    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -642,6 +603,24 @@
       <envs />
       <properties />
       <listeners />
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Make" enabled="true" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method>
         <option name="AntTarget" enabled="false" />
         <option name="BuildArtifacts" enabled="false" />
@@ -821,13 +800,12 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32946634" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32991803" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31213874" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37687862" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19467214" sideWeight="0.22969837" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32947975" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.60231215" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30057803" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3283237" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -837,6 +815,7 @@
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="99" y="125" width="826" height="376" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31213874" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Kotlin" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24954017" sideWeight="0.6716763" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -908,44 +887,9 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/harrycodeman/ICompressByteStream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="61" selection-start="117" selection-end="117" vertical-scroll-proportion="0.16176471" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/harrycodeman/MemoryCompressByteStream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="40" selection-start="687" selection-end="687" vertical-scroll-proportion="0.44630072" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/com/harrycodeman/rle/BytesBlocksToHexStringConverterTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="40" selection-start="1915" selection-end="1915" vertical-scroll-proportion="1.1862745" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/harrycodeman/rle/BytesBlock.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="22" selection-start="78" selection-end="78" vertical-scroll-proportion="0.10784314" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/harrycodeman/rle/BytesRleCompressor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="5" selection-start="499" selection-end="499" vertical-scroll-proportion="0.3150358" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/harrycodeman/rle/SameBytesBlock.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="38" selection-start="1269" selection-end="1269" vertical-scroll-proportion="0.6433824" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/harrycodeman/rle/DifferentBytesBlock.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="71" column="38" selection-start="1668" selection-end="1668" vertical-scroll-proportion="0.50119334" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/harrycodeman/huffman/ICountedObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="65" selection-start="100" selection-end="100" vertical-scroll-proportion="0.078125" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/harrycodeman/huffman/HuffmanedByte.java">
@@ -953,54 +897,101 @@
         <state line="16" column="19" selection-start="360" selection-end="360" vertical-scroll-proportion="0.37037036" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/com/harrycodeman/huffman/PrefixCodesTableForCompressTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="77" column="10" selection-start="2176" selection-end="3184" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.7.0_05/src.zip!/java/lang/Math.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="593" column="33" selection-start="23777" selection-end="23777" vertical-scroll-proportion="-0.056384742">
-          <folding />
-        </state>
+        <state line="593" column="33" selection-start="23777" selection-end="23777" vertical-scroll-proportion="-0.056384742" />
       </provider>
     </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.10.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="40" selection-start="397" selection-end="397" vertical-scroll-proportion="0.4517454">
+        <state line="11" column="40" selection-start="397" selection-end="397" vertical-scroll-proportion="0.4517454" />
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_05/src.zip!/java/lang/annotation/RetentionPolicy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="17" selection-start="582" selection-end="582" vertical-scroll-proportion="0.3321859">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/com/harrycodeman/huffman/HuffmanTreeNodeTest.java">
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.10.jar!/org/junit/Test.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="78" selection-start="1161" selection-end="1161" vertical-scroll-proportion="0.0">
+        <state line="7" column="18" selection-start="302" selection-end="302" vertical-scroll-proportion="0.23741007">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/com/harrycodeman/ByteToHexStringConverterTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="43" selection-start="201" selection-end="201" vertical-scroll-proportion="0.18872549">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/harrycodeman/ByteToHexStringConverter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="45" selection-start="252" selection-end="252" vertical-scroll-proportion="0.16438356">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/harrycodeman/rle/BytesBlocksToHexStringConverter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="37" selection-start="664" selection-end="664" vertical-scroll-proportion="0.45833334">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/harrycodeman/rle/BytesRleCompressor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="30" selection-start="531" selection-end="531" vertical-scroll-proportion="0.37745097">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/harrycodeman/huffman/ICountedObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="17" selection-start="52" selection-end="52" vertical-scroll-proportion="0.05392157">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/com/harrycodeman/huffman/PrefixCodesTableForCompressTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="38" selection-start="38" selection-end="38" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/com/harrycodeman/rle/BytesBlocksToHexStringConverterTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="0" selection-start="1583" selection-end="1583" vertical-scroll-proportion="0.8138425">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/harrycodeman/huffman/HuffmanTreeNode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="107" column="61" selection-start="2889" selection-end="2889" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3011#3019#0" expanded="true" />
-            <element signature="e#3821#3829#0" expanded="true" />
-          </folding>
+        <state line="132" column="22" selection-start="3762" selection-end="3762" vertical-scroll-proportion="3.3341289">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/harrycodeman/rle/BytesBlocksToHexStringConverter.java">
+    <entry file="file://$PROJECT_DIR$/src/test/com/harrycodeman/huffman/HuffmanTreeNodeTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="52" selection-start="629" selection-end="629" vertical-scroll-proportion="0.0">
+        <state line="40" column="17" selection-start="1828" selection-end="1828" vertical-scroll-proportion="0.71121716">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/harrycodeman/huffman/PrefixCodesTableForCompress.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="81" column="0" selection-start="2554" selection-end="2554" vertical-scroll-proportion="0.57995224">
-          <folding />
+        <state line="50" column="86" selection-start="1739" selection-end="1739" vertical-scroll-proportion="0.55369925">
+          <folding>
+            <element signature="e#1329#1345#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

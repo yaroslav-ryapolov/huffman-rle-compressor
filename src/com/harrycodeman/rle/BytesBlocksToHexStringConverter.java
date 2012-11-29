@@ -1,30 +1,15 @@
 package com.harrycodeman.rle;
 
+import com.harrycodeman.ByteToHexStringConverter;
+
 import java.util.Collection;
 
 import static java.lang.String.format;
 
 public class BytesBlocksToHexStringConverter {
-    private static final char[] hexChars = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E',
-        'F' };
-
     public static String convert(Collection<BytesBlock> blocks) {
         BytesBlocksToHexStringConverter converter = new BytesBlocksToHexStringConverter();
         return converter.convertBlocks(blocks);
-    }
-
-    protected static String toHexString(int s) {
-        // TODO: remove prefix!
-        // TODO: merge with HaffmanTreeNodes methods
-        final char prefix = 'x';
-        return "" + prefix + getSymbol(s, 1) + getSymbol(s, 0);
-    }
-
-    private static char getSymbol(int s, int numberFromRight) {
-        final int mask = 15;
-        int shift = numberFromRight*4;
-        int i = (s >> shift) & mask;
-        return hexChars[i];
     }
 
     private StringBuilder result = new StringBuilder();
@@ -62,7 +47,7 @@ public class BytesBlocksToHexStringConverter {
     }
 
     private void appendBlockSizePart(int actualSize, int convertedSize) {
-        result.append(format("(%1$s: %2$s)", actualSize, toHexString(convertedSize)));
+        result.append(format("(%1$s: %2$s)", actualSize, ByteToHexStringConverter.toHexString(convertedSize)));
     }
 
     private void appendSpace() {
@@ -70,7 +55,7 @@ public class BytesBlocksToHexStringConverter {
     }
 
     private void appendSymbolAsHexString(int s) {
-        result.append(toHexString(s));
+        result.append(ByteToHexStringConverter.toHexString(s));
     }
 
     private void appendInlineDelimiter() {
