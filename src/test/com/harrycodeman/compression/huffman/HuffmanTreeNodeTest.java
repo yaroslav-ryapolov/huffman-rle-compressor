@@ -1,7 +1,7 @@
-package test.com.harrycodeman.huffman;
+package test.com.harrycodeman.compression.huffman;
 
-import com.harrycodeman.huffman.HuffmanTreeNode;
-import com.harrycodeman.huffman.HuffmanedByte;
+import com.harrycodeman.compression.huffman.HuffmanTreeNode;
+import com.harrycodeman.compression.huffman.HuffmanedByte;
 import org.junit.Test;
 
 import static junit.framework.Assert.assertEquals;

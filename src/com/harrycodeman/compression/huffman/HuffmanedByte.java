@@ -1,4 +1,4 @@
-package com.harrycodeman.huffman;
+package com.harrycodeman.compression.huffman;
 
 public class HuffmanedByte implements ICountedObject {
     private int value;

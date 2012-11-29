@@ -1,4 +1,4 @@
-package com.harrycodeman.rle;
+package com.harrycodeman.compression.rle;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -6,24 +6,6 @@ import java.util.List;
 import java.util.Stack;
 
 public class DifferentBytesBlock extends BytesBlock {
-    private class BlockIterator implements Iterator<Integer> {
-        private int index = 0;
-
-        @Override
-        public boolean hasNext() {
-            return index < size();
-        }
-
-        @Override
-        public Integer next() {
-            return symbols.get(index++);
-        }
-
-        @Override
-        public void remove() {
-        }
-    }
-
     private List<Integer> symbols = new ArrayList<Integer>();
 
     public DifferentBytesBlock(String symbols) throws Exception {
@@ -79,6 +61,6 @@ public class DifferentBytesBlock extends BytesBlock {
 
     @Override
     public Iterator<Integer> iterator() {
-        return new BlockIterator();
+        return symbols.iterator();
     }
 }

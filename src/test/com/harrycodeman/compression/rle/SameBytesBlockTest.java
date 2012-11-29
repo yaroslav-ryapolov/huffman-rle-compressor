@@ -1,7 +1,7 @@
-package test.com.harrycodeman.rle;
+package test.com.harrycodeman.compression.rle;
 
-import com.harrycodeman.rle.DifferentBytesBlock;
-import com.harrycodeman.rle.SameBytesBlock;
+import com.harrycodeman.compression.rle.DifferentBytesBlock;
+import com.harrycodeman.compression.rle.SameBytesBlock;
 import org.junit.Test;
 
 import static junit.framework.Assert.assertEquals;

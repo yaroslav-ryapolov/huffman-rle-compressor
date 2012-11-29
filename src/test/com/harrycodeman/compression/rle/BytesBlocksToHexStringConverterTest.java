@@ -1,9 +1,9 @@
-package test.com.harrycodeman.rle;
+package test.com.harrycodeman.compression.rle;
 
-import com.harrycodeman.rle.BytesBlock;
-import com.harrycodeman.rle.BytesBlocksToHexStringConverter;
-import com.harrycodeman.rle.DifferentBytesBlock;
-import com.harrycodeman.rle.SameBytesBlock;
+import com.harrycodeman.compression.rle.BytesBlock;
+import com.harrycodeman.compression.rle.BytesBlocksToHexStringConverter;
+import com.harrycodeman.compression.rle.DifferentBytesBlock;
+import com.harrycodeman.compression.rle.SameBytesBlock;
 import org.junit.Test;
 
 import java.util.ArrayList;

@@ -1,13 +1,17 @@
-package com.harrycodeman.huffman;
+package com.harrycodeman.compression.huffman;
 
-import com.harrycodeman.ICompressByteStream;
+import com.harrycodeman.compression.ICompressInput;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.SortedSet;
-import java.util.TreeSet;
+import java.util.*;
 
 public class PrefixCodesTableForCompress {
+    public static PrefixCodesTableForCompress buildPrefixTableForUncompressedStream(ICompressInput stream) {
+        PrefixCodesTableForCompress table = new PrefixCodesTableForCompress();
+        table.countBytes(stream);
+        table.buildHuffmanTree();
+        return table;
+    }
+
     protected static PrefixCodesTableForCompress getPrefixTableForMap(Map<Integer, HuffmanedByte> mapOfBytes) {
         PrefixCodesTableForCompress table = new PrefixCodesTableForCompress();
         table.mapOfBytes = mapOfBytes;
@@ -15,14 +19,7 @@ public class PrefixCodesTableForCompress {
         return table;
     }
 
-    public static PrefixCodesTableForCompress buildPrefixTable(ICompressByteStream stream) {
-        PrefixCodesTableForCompress table = new PrefixCodesTableForCompress();
-        table.countBytes(stream);
-        table.buildHuffmanTree();
-        return table;
-    }
-
-    private void countBytes(ICompressByteStream stream) {
+    private void countBytes(ICompressInput stream) {
         for (int b : stream) {
             getHuffmanedByteFor(b).incrementReps();
         }
@@ -83,4 +80,8 @@ public class PrefixCodesTableForCompress {
 //        // TODO: implement and use!!!
 //        return null;
 //    }
+
+    public List<HuffmanedByte> compress() {
+        return null;
+    }
 }

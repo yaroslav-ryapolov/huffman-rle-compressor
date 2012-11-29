@@ -1,6 +1,6 @@
-package com.harrycodeman.rle;
+package com.harrycodeman.compression.rle;
 
-import com.harrycodeman.ByteToHexStringConverter;
+import com.harrycodeman.compression.ByteToHexStringConverter;
 
 import java.util.Collection;
 

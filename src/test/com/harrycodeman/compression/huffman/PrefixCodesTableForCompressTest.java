@@ -1,21 +1,22 @@
-package test.com.harrycodeman.huffman;
+package test.com.harrycodeman.compression.huffman;
 
-import com.harrycodeman.MemoryCompressByteStream;
-import com.harrycodeman.huffman.HuffmanTreeNode;
-import com.harrycodeman.huffman.HuffmanedByte;
-import com.harrycodeman.huffman.PrefixCodesTableForCompress;
+import com.harrycodeman.compression.MemoryCompressInput;
+import com.harrycodeman.compression.huffman.HuffmanTreeNode;
+import com.harrycodeman.compression.huffman.HuffmanedByte;
+import com.harrycodeman.compression.huffman.PrefixCodesTableForCompress;
 import org.junit.Test;
 
 import java.util.HashMap;
 import java.util.Map;
 
 import static junit.framework.Assert.assertEquals;
+import static junit.framework.Assert.fail;
 
 public class PrefixCodesTableForCompressTest extends PrefixCodesTableForCompress {
     @Test
     public void testCountOneByteRepetition() {
         assertCounterEquals(new HuffmanedByte[] { new HuffmanedByte('a', 3) },
-            PrefixCodesTableForCompress.buildPrefixTable(new MemoryCompressByteStream("aaa")));
+            PrefixCodesTableForCompress.buildPrefixTableForUncompressedStream(new MemoryCompressInput("aaa")));
     }
 
     @Test
@@ -24,13 +25,13 @@ public class PrefixCodesTableForCompressTest extends PrefixCodesTableForCompress
                 new HuffmanedByte('b', 3),
                 new HuffmanedByte('c', 2),
             },
-            PrefixCodesTableForCompress.buildPrefixTable(new MemoryCompressByteStream("bcbbc")));
+            PrefixCodesTableForCompress.buildPrefixTableForUncompressedStream(new MemoryCompressInput("bcbbc")));
     }
 
     @Test
     public void testCountOneSingleByte() {
         assertCounterEquals(new HuffmanedByte[] { new HuffmanedByte('d', 1) },
-            PrefixCodesTableForCompress.buildPrefixTable(new MemoryCompressByteStream("d")));
+            PrefixCodesTableForCompress.buildPrefixTableForUncompressedStream(new MemoryCompressInput("d")));
     }
 
     private void assertCounterEquals(HuffmanedByte[] expected, PrefixCodesTableForCompress actual) {
@@ -77,5 +78,10 @@ public class PrefixCodesTableForCompressTest extends PrefixCodesTableForCompress
             false
         );
         assertEquals(expected, table.getRoot());
+    }
+
+    @Test
+    public void testCompress() {
+        fail();
     }
 }

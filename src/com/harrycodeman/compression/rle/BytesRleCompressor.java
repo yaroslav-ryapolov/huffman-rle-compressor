@@ -1,6 +1,6 @@
-package com.harrycodeman.rle;
+package com.harrycodeman.compression.rle;
 
-import com.harrycodeman.ICompressByteStream;
+import com.harrycodeman.compression.ICompressInput;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,9 +10,9 @@ public class BytesRleCompressor {
     private List<BytesBlock> blocks = new ArrayList<BytesBlock>();
     private Stack<Integer> stack = new Stack<Integer>();
     private BytesBlock currentBlock;
-    private ICompressByteStream stream;
+    private ICompressInput stream;
 
-    public BytesRleCompressor(ICompressByteStream streamToCompress) {
+    public BytesRleCompressor(ICompressInput streamToCompress) {
         stream = streamToCompress;
     }
 

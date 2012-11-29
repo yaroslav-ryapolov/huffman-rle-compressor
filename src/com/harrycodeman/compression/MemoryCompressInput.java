@@ -1,12 +1,10 @@
-package com.harrycodeman;
-
-import com.harrycodeman.ICompressByteStream;
+package com.harrycodeman.compression;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.util.Iterator;
 
-public class MemoryCompressByteStream implements ICompressByteStream {
+public class MemoryCompressInput implements ICompressInput {
     private class StreamIterator implements Iterator<Integer> {
         private int index = 0;
 
@@ -27,11 +25,11 @@ public class MemoryCompressByteStream implements ICompressByteStream {
 
     private ByteArrayInputStream stream;
 
-    public MemoryCompressByteStream(byte[] bytes) {
+    public MemoryCompressInput(byte[] bytes) {
         stream = new ByteArrayInputStream(bytes);
     }
 
-    public MemoryCompressByteStream(String symbols) {
+    public MemoryCompressInput(String symbols) {
         byte[] bytes = ConvertToByteArray(symbols.toCharArray());
         stream = new ByteArrayInputStream(bytes);
     }

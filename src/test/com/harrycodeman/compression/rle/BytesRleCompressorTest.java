@@ -1,8 +1,8 @@
-package test.com.harrycodeman.rle;
+package test.com.harrycodeman.compression.rle;
 
-import com.harrycodeman.ICompressByteStream;
-import com.harrycodeman.MemoryCompressByteStream;
-import com.harrycodeman.rle.*;
+import com.harrycodeman.compression.ICompressInput;
+import com.harrycodeman.compression.MemoryCompressInput;
+import com.harrycodeman.compression.rle.*;
 import org.junit.Test;
 
 import static org.junit.Assert.assertArrayEquals;
@@ -82,7 +82,7 @@ public class BytesRleCompressorTest {
     }
 
     private BytesRleCompressor getCompressorForString(String s) {
-        ICompressByteStream stream = new MemoryCompressByteStream(s);
+        ICompressInput stream = new MemoryCompressInput(s);
         return new BytesRleCompressor(stream);
     }
 }

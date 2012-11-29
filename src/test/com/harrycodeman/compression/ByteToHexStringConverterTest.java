@@ -1,6 +1,6 @@
-package test.com.harrycodeman;
+package test.com.harrycodeman.compression;
 
-import com.harrycodeman.ByteToHexStringConverter;
+import com.harrycodeman.compression.ByteToHexStringConverter;
 import org.junit.Test;
 
 import static junit.framework.Assert.assertEquals;

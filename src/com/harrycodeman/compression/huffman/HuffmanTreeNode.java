@@ -1,6 +1,6 @@
-package com.harrycodeman.huffman;
+package com.harrycodeman.compression.huffman;
 
-import com.harrycodeman.ByteToHexStringConverter;
+import com.harrycodeman.compression.ByteToHexStringConverter;
 
 import java.util.ArrayList;
 import java.util.List;

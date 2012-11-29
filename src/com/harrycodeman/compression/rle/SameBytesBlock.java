@@ -1,4 +1,4 @@
-package com.harrycodeman.rle;
+package com.harrycodeman.compression.rle;
 
 import java.util.Iterator;
 
