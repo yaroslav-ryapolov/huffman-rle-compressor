@@ -50,6 +50,10 @@ public class BytesBlockCompressInput implements ICompressInput {
     }
 
     @Override
+    public void reset() {
+    }
+
+    @Override
     public Iterator<Integer> iterator() {
         return new CompressInputIterator();
     }

@@ -4,16 +4,16 @@ import com.harrycodeman.compression.ICompressInput;
 
 import java.util.*;
 
-public class PrefixCodesTableForCompress {
-    public static PrefixCodesTableForCompress buildPrefixTableForUncompressedStream(ICompressInput stream) {
-        PrefixCodesTableForCompress table = new PrefixCodesTableForCompress();
-        table.countBytes(stream);
+public class PrefixCodesTable {
+    public static PrefixCodesTable buildPrefixTableForUncompressedStream(ICompressInput input) {
+        PrefixCodesTable table = new PrefixCodesTable(input);
+        table.countBytes(input);
         table.buildHuffmanTree();
         return table;
     }
 
-    protected static PrefixCodesTableForCompress getPrefixTableForMap(Map<Integer, HuffmanedByte> mapOfBytes) {
-        PrefixCodesTableForCompress table = new PrefixCodesTableForCompress();
+    protected static PrefixCodesTable getPrefixTableForMap(Map<Integer, HuffmanedByte> mapOfBytes) {
+        PrefixCodesTable table = new PrefixCodesTable();
         table.mapOfBytes = mapOfBytes;
         table.buildHuffmanTree();
         return table;
@@ -22,7 +22,9 @@ public class PrefixCodesTableForCompress {
     private void countBytes(ICompressInput stream) {
         for (int b : stream) {
             getHuffmanedByteFor(b).incrementReps();
+            totalCountOfBytes++;
         }
+        stream.reset();
     }
 
     private HuffmanedByte getHuffmanedByteFor(int b) {
@@ -58,13 +60,23 @@ public class PrefixCodesTableForCompress {
         return (HuffmanTreeNode)value;
     }
 
+    private ICompressInput input;
+    private int totalCountOfBytes;
     private Map<Integer, HuffmanedByte> mapOfBytes = new HashMap<Integer, HuffmanedByte>();
     private HuffmanTreeNode root;
 
-    protected PrefixCodesTableForCompress() {
+    protected PrefixCodesTable(ICompressInput input) {
+        this.input = input;
     }
 
-    public int size() {
+    protected PrefixCodesTable() {
+    }
+
+    public int getTotalCountOfBytes() {
+        return totalCountOfBytes;
+    }
+
+    public int differentBytesCount() {
         return mapOfBytes.size();
     }
 
@@ -76,12 +88,11 @@ public class PrefixCodesTableForCompress {
         return root;
     }
 
-//    public BitSet compressByte(int b) {
-//        // TODO: implement and use!!!
-//        return null;
-//    }
-
     public List<HuffmanedByte> compress() {
-        return null;
+        List<HuffmanedByte> result = new ArrayList<HuffmanedByte>();
+        for (int b : input) {
+            result.add(mapOfBytes.get(b));
+        }
+        return result;
     }
 }

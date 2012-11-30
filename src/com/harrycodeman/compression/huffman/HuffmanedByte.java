@@ -3,7 +3,7 @@ package com.harrycodeman.compression.huffman;
 public class HuffmanedByte implements ICountedObject {
     private int value;
     private int reps;
-    private String code = "";
+    private BitCode code = new BitCode();
 
     public HuffmanedByte(int value) {
         this.value = value;
@@ -16,7 +16,7 @@ public class HuffmanedByte implements ICountedObject {
 
     public HuffmanedByte(int value, int reps, String code) {
         this(value, reps);
-        this.code = code;
+        this.code = new BitCode(code);
     }
 
     public int getValue() {
@@ -32,10 +32,10 @@ public class HuffmanedByte implements ICountedObject {
     }
 
     public void appendCode(String value) {
-        code = value + code;
+        code.appendToStart(value);
     }
 
-    public String getCode() {
+    public BitCode getCode() {
         return code;
     }
 
@@ -56,7 +56,7 @@ public class HuffmanedByte implements ICountedObject {
     public boolean equals(HuffmanedByte other) {
         return getValue() == other.getValue()
             && getReps() == other.getReps()
-            && getCode().equals(other.getCode());
+            && code.equals(other.code);
     }
 
     @Override

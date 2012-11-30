@@ -51,4 +51,9 @@ public class MemoryCompressInput implements ICompressInput {
     public void close() throws IOException {
         stream.close();
     }
+
+    @Override
+    public void reset(){
+        stream.reset();
+    }
 }
