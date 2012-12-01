@@ -1,18 +1,16 @@
 package test.com.harrycodeman.compression.huffman;
 
 import com.harrycodeman.compression.MemoryCompressInput;
-import com.harrycodeman.compression.huffman.HuffmanCompressOutput;
+import com.harrycodeman.compression.huffman.ByteArrayHuffmanCompressOutput;
 import com.harrycodeman.compression.huffman.PrefixCodesTable;
 import org.junit.Test;
-
-import java.util.List;
 
 import static org.junit.Assert.assertArrayEquals;
 
 public class HuffmanCompressOutputTest {
     @Test
     public void testOutput() throws Exception {
-        HuffmanCompressOutput huffmanOutput = new HuffmanCompressOutput(
+        ByteArrayHuffmanCompressOutput huffmanOutput = new ByteArrayHuffmanCompressOutput(
                 PrefixCodesTable.buildPrefixTableForUncompressedStream(
                         new MemoryCompressInput(
                                 new byte[] {
@@ -41,20 +39,11 @@ public class HuffmanCompressOutputTest {
         // 000 00001000 10010010 01001110 11011011 01101111 11111111 11111101 01010101 01010110 10101010 10101010 10 (6 bits need)
         // 64  8        146      78       219      111      255      253      85       86       170      170      128
         assertArrayEquals(
-                getStringForList(huffmanOutput.result),
                 new Object[]{
                         0, 0, 0, 36, 11, 37, 150, 205, 105, 90, 150, 123, 64,
                         8, 146, 78, 219, 111, 255, 253, 85, 86,
                         170, 170, 128
                 },
-                huffmanOutput.result.toArray());
-    }
-
-    private String getStringForList(List<Integer> list) {
-        String result = "";
-        for (int i : list) {
-            result += i + " ";
-        }
-        return result;
+                huffmanOutput.getResult().toArray());
     }
 }
