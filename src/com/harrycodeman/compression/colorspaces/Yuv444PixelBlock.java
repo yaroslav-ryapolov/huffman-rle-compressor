@@ -11,6 +11,18 @@ public class Yuv444PixelBlock implements IPixelBlock {
         this.v = v;
     }
 
+    public int getY() {
+        return y;
+    }
+
+    public int getU() {
+        return u;
+    }
+
+    public int getV() {
+        return v;
+    }
+
     public Rgb888PixelBlock convertToRgb() {
         int r = clamp(y + 1.13983*v);
         int g = clamp(y - 0.39465*u - 0.58060*v);
@@ -33,5 +45,10 @@ public class Yuv444PixelBlock implements IPixelBlock {
         return y == other.y
                 && u == other.u
                 && v == other.v;
+    }
+
+    @Override
+    public String toString() {
+        return "[YUV444: " + y + "; " + u + "; " + v + "]";
     }
 }
