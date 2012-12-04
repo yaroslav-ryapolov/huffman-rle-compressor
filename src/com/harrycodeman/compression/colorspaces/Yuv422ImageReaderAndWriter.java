@@ -30,16 +30,13 @@ public class Yuv422ImageReaderAndWriter {
         for (IPixelBlock b : image.pixelBlocks) {
             Yuv444PixelBlock yuv = (Yuv444PixelBlock)b;
             if (isOdd) {
-//                output.write(yuv.getU());
-//                v = yuv.getV();
-                output.write(0);
+                output.write(yuv.getU());
+                v = yuv.getV();
             }
             else {
-//                output.write(v);
-                output.write(0);
+                output.write(v);
             }
-//            output.write(yuv.getY());
-            output.write(0);
+            output.write(yuv.getY());
             isOdd = !isOdd;
         }
         output.close();

@@ -23,34 +23,23 @@ public class Yuv422ImageReaderAndWriterTest {
 
     private SimplifiedImage getTestImage() {
         SimplifiedImage result = new SimplifiedImage(2, 3);
-        result.pixelBlocks.add(new Rgb888PixelBlock(226, 137, 125).convertToYuv444());
-        result.pixelBlocks.add(new Rgb888PixelBlock(226, 137, 125).convertToYuv444());
-        result.pixelBlocks.add(new Rgb888PixelBlock(223, 137, 133).convertToYuv444());
-        result.pixelBlocks.add(new Rgb888PixelBlock(226, 137, 125).convertToYuv444());
-        result.pixelBlocks.add(new Rgb888PixelBlock(226, 137, 125).convertToYuv444());
-        result.pixelBlocks.add(new Rgb888PixelBlock(223, 137, 133).convertToYuv444());
+        result.pixelBlocks.add(new Yuv444PixelBlock(139, 212, 32));
+        result.pixelBlocks.add(new Yuv444PixelBlock(154, 203, 207));
+        result.pixelBlocks.add(new Yuv444PixelBlock(20, 20, 20));
+        result.pixelBlocks.add(new Yuv444PixelBlock(12, 24, 33));
+        result.pixelBlocks.add(new Yuv444PixelBlock(32, 33, 2));
+        result.pixelBlocks.add(new Yuv444PixelBlock(255, 255, 255));
         return result;
     }
 
     private SimplifiedImage getExpectedImage() {
         SimplifiedImage result = new SimplifiedImage(2, 3);
-        result.pixelBlocks.add(new Rgb888PixelBlock(226, 137, 125).convertToYuv444());
-        result.pixelBlocks.add(new Rgb888PixelBlock(226, 137, 125).convertToYuv444());
-        result.pixelBlocks.add(new Rgb888PixelBlock(223, 137, 125).convertToYuv444());
-        result.pixelBlocks.add(new Rgb888PixelBlock(226, 137, 125).convertToYuv444());
-        result.pixelBlocks.add(new Rgb888PixelBlock(226, 137, 133).convertToYuv444());
-        result.pixelBlocks.add(new Rgb888PixelBlock(223, 137, 133).convertToYuv444());
+        result.pixelBlocks.add(new Yuv444PixelBlock(139, 212, 32));
+        result.pixelBlocks.add(new Yuv444PixelBlock(154, 212, 32));
+        result.pixelBlocks.add(new Yuv444PixelBlock(20, 20, 20));
+        result.pixelBlocks.add(new Yuv444PixelBlock(12, 20, 20));
+        result.pixelBlocks.add(new Yuv444PixelBlock(32, 33, 2));
+        result.pixelBlocks.add(new Yuv444PixelBlock(255, 33, 2));
         return result;
-    }
-
-    @Test
-    public void testSaveAndLoadImage1() throws Exception {
-        SimplifiedImage image = PpmImageReaderAndWriter.loadImage("lenna.pnm");
-        SimplifiedImage result = new SimplifiedImage(image.getWidth(), image.getHeight());
-        for (IPixelBlock b : image.pixelBlocks) {
-            Rgb888PixelBlock typedB = (Rgb888PixelBlock)b;
-            result.pixelBlocks.add(((Rgb888PixelBlock) b).convertToYuv444());
-        }
-        Yuv422ImageReaderAndWriter.saveImage(result, "lenna.yuv");
     }
 }

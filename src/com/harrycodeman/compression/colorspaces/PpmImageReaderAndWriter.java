@@ -1,6 +1,9 @@
 package com.harrycodeman.compression.colorspaces;
 
-import java.io.*;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.io.OutputStream;
 
 public class PpmImageReaderAndWriter {
     public static SimplifiedImage loadImage(String filePath) throws Exception {

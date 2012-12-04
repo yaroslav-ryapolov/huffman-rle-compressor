@@ -1,6 +1,7 @@
 package com.harrycodeman.compression.colorspaces;
 
 public class Yuv444PixelBlock implements IPixelBlock {
+    // TODO: implement iterable
     private int y;
     private int u;
     private int v;
@@ -21,18 +22,6 @@ public class Yuv444PixelBlock implements IPixelBlock {
 
     public int getV() {
         return v;
-    }
-
-    public Rgb888PixelBlock convertToRgb() {
-        int r = clamp(y + 1.13983*v);
-        int g = clamp(y - 0.39465*u - 0.58060*v);
-        int b = clamp(y + 2.03211*u);
-        return new Rgb888PixelBlock(r, g, b);
-    }
-
-    private static int clamp(double value) {
-        int intValue = (int)value;
-        return intValue > 255 ? 255 : intValue < 0 ? 0 : intValue;
     }
 
     @Override
