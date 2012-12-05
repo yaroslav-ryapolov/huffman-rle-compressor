@@ -7,7 +7,7 @@ import org.junit.Test;
 
 import static junit.framework.Assert.assertEquals;
 
-public class Yuv444PixelBlockTest {
+public class Yuv444ToRgb888PixelBlockConverterTest {
     @Test
     public void testBlackConvert() throws Exception {
         assertEquals(new Rgb888PixelBlock(0, 0, 0),

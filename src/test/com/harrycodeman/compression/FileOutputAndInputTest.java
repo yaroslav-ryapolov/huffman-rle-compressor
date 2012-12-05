@@ -9,7 +9,7 @@ import java.util.List;
 import static org.junit.Assert.assertArrayEquals;
 
 public class FileOutputAndInputTest {
-    private final String TEMP_FILE_NAME = "temp";
+    private static final String TEMP_FILE_NAME = "temp";
 
     @Test
     public void testFileOutputAndInput() throws Exception {

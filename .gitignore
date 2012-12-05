@@ -7,3 +7,6 @@
 
 #Output dir
 out/*
+
+#Labs result dir
+data/multimedia/*
