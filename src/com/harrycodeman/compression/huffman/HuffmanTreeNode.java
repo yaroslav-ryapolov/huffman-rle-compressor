@@ -1,11 +1,10 @@
 package com.harrycodeman.compression.huffman;
 
-import com.harrycodeman.compression.ByteToHexStringConverter;
-
 import java.util.ArrayList;
 import java.util.List;
 
 import static java.lang.Math.max;
+import static java.lang.String.format;
 
 public class HuffmanTreeNode implements ICountedObject {
     private final static String TOP_CODE = "0";
@@ -122,7 +121,7 @@ public class HuffmanTreeNode implements ICountedObject {
 
     private String getLeafNodeString(int stringLength) {
         String borderSpaces = generateSpaceString(stringLength/2 - 1);
-        return borderSpaces + ByteToHexStringConverter.toHexString(value.getValue()) + borderSpaces;
+        return format(borderSpaces + "%1$02X" + borderSpaces, value.getValue());
     }
 
     private static List<String> addBlankLines(int level, int stringLength, List<String> result) {

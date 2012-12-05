@@ -1,7 +1,5 @@
 package com.harrycodeman.compression.rle;
 
-import com.harrycodeman.compression.ByteToHexStringConverter;
-
 import java.util.Collection;
 
 import static java.lang.String.format;
@@ -39,15 +37,15 @@ public class BytesBlocksToHexStringConverter {
     }
 
     private void convertSameBytesBlock(BytesBlock block) {
-        appendBlockSizePart(block.size(), block.size() - 1);
+        appendBlockSizePart(block.size(), (byte)(block.size() - 1));
         appendSpace();
         appendSymbolAsHexString(((SameBytesBlock)block).getSymbol());
         appendInlineDelimiter();
         appendUncompressedString(block);
     }
 
-    private void appendBlockSizePart(int actualSize, int convertedSize) {
-        result.append(format("(%1$s: %2$s)", actualSize, ByteToHexStringConverter.toHexString(convertedSize)));
+    private void appendBlockSizePart(int actualSize, byte convertedSize) {
+        result.append(format("(%1$s: %2$02X)", actualSize, convertedSize));
     }
 
     private void appendSpace() {
@@ -55,7 +53,7 @@ public class BytesBlocksToHexStringConverter {
     }
 
     private void appendSymbolAsHexString(int s) {
-        result.append(ByteToHexStringConverter.toHexString(s));
+        result.append(format("%1$02X", s));
     }
 
     private void appendInlineDelimiter() {
@@ -74,7 +72,7 @@ public class BytesBlocksToHexStringConverter {
     }
 
     private void convertDifferentBytesBlock(BytesBlock block) {
-        appendBlockSizePart(-block.size(), -block.size());
+        appendBlockSizePart(-block.size(), (byte)(-block.size()));
         appendSpace();
         appendUncompressedString(block);
         appendInlineDelimiter();
