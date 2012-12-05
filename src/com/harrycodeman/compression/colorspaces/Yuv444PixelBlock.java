@@ -1,7 +1,6 @@
 package com.harrycodeman.compression.colorspaces;
 
 public class Yuv444PixelBlock implements IPixelBlock {
-    // TODO: implement iterable
     private int y;
     private int u;
     private int v;

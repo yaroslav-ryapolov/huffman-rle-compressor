@@ -18,7 +18,7 @@ public class PpmImageReaderAndWriterTest {
 
     private String outputImagePixelBlocks(SimplifiedImage image) {
         String result = "";
-        for (IPixelBlock b : image.pixelBlocks) {
+        for (IPixelBlock b : image) {
             result += b;
         }
         return result;
@@ -26,12 +26,12 @@ public class PpmImageReaderAndWriterTest {
 
     private SimplifiedImage getTestImage() {
         SimplifiedImage result = new SimplifiedImage(2, 3);
-        result.pixelBlocks.add(new Rgb888PixelBlock(226, 137, 125));
-        result.pixelBlocks.add(new Rgb888PixelBlock(226, 137, 125));
-        result.pixelBlocks.add(new Rgb888PixelBlock(223, 137, 133));
-        result.pixelBlocks.add(new Rgb888PixelBlock(226, 137, 125));
-        result.pixelBlocks.add(new Rgb888PixelBlock(226, 137, 125));
-        result.pixelBlocks.add(new Rgb888PixelBlock(223, 137, 133));
+        result.add(new Rgb888PixelBlock(226, 137, 125));
+        result.add(new Rgb888PixelBlock(226, 137, 125));
+        result.add(new Rgb888PixelBlock(223, 137, 133));
+        result.add(new Rgb888PixelBlock(226, 137, 125));
+        result.add(new Rgb888PixelBlock(226, 137, 125));
+        result.add(new Rgb888PixelBlock(223, 137, 133));
         return result;
     }
 }

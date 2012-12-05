@@ -1,7 +1,6 @@
 package com.harrycodeman.compression.colorspaces;
 
 public class Rgb888PixelBlock implements IPixelBlock {
-    // TODO: implement iterable
     private int r;
     private int g;
     private int b;
