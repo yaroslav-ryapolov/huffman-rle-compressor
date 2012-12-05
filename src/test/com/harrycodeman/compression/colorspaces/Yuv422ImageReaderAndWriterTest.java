@@ -3,14 +3,24 @@ package test.com.harrycodeman.compression.colorspaces;
 import com.harrycodeman.compression.colorspaces.*;
 import org.junit.Test;
 
+import java.io.File;
+
 import static junit.framework.Assert.assertEquals;
 
 public class Yuv422ImageReaderAndWriterTest {
     @Test
     public void testSaveAndLoadImage() throws Exception {
-        Yuv422ImageReaderAndWriter.saveImage(getTestImage(), "test.yuv");
-        SimplifiedImage image = Yuv422ImageReaderAndWriter.loadImage(2, 3, "test.yuv");
-        assertEquals(outputImagePixelBlocks(image), getExpectedImage(), image);
+        try {
+            Yuv422ImageWriter writer = new Yuv422ImageWriter("test.yuv");
+            writer.saveImage(getTestImage());
+            Yuv422ImageReader reader = new Yuv422ImageReader(2, 3, "test.yuv");
+            SimplifiedImage image = reader.loadImage();
+            assertEquals(outputImagePixelBlocks(image), getExpectedImage(), image);
+        }
+        finally {
+            File f = new File("test.yuv");
+            f.delete();
+        }
     }
 
     private String outputImagePixelBlocks(SimplifiedImage image) {

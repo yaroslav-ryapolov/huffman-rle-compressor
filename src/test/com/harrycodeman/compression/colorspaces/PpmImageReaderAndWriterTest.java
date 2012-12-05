@@ -1,19 +1,26 @@
 package test.com.harrycodeman.compression.colorspaces;
 
-import com.harrycodeman.compression.colorspaces.IPixelBlock;
-import com.harrycodeman.compression.colorspaces.PpmImageReaderAndWriter;
-import com.harrycodeman.compression.colorspaces.Rgb888PixelBlock;
-import com.harrycodeman.compression.colorspaces.SimplifiedImage;
+import com.harrycodeman.compression.colorspaces.*;
 import org.junit.Test;
+
+import java.io.File;
 
 import static junit.framework.Assert.assertEquals;
 
 public class PpmImageReaderAndWriterTest {
     @Test
     public void testSaveAndLoadImage() throws Exception {
-        PpmImageReaderAndWriter.saveImage(getTestImage(), "test.pnm");
-        SimplifiedImage image = PpmImageReaderAndWriter.loadImage("test.pnm");
-        assertEquals(outputImagePixelBlocks(image), getTestImage(), image);
+        try {
+            PpmImageWriter writer = new PpmImageWriter("test.pnm");
+            writer.saveImage(getTestImage());
+            PpmImageReader reader = new PpmImageReader("test.pnm");
+            SimplifiedImage image = reader.loadImage();
+            assertEquals(outputImagePixelBlocks(image), getTestImage(), image);
+        }
+        finally {
+            File f = new File("test.pnm");
+            f.delete();
+        }
     }
 
     private String outputImagePixelBlocks(SimplifiedImage image) {
