@@ -2,19 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c601d356-f788-4d61-b6a9-f64e45081852" name="Default" comment="File workspace.xml changed? I don't know why!`">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/lenna.pnm.rgb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/Rgb888ToYuv444IntegerPixelBlockConverter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/YuvUToConstPixelBlockConverter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/YuvVToConstPixelBlockConverter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/YuvYToConstPixelBlockConverter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/com/harrycodeman/compression/colorspaces/MultimediaLab1_2_RgbToYuvAndBackTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/IPixelBlockConverter.java" afterPath="$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/IPixelBlockConverter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/com/harrycodeman/compression/FileOutputAndInputTest.java" afterPath="$PROJECT_DIR$/src/test/com/harrycodeman/compression/FileOutputAndInputTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/com/harrycodeman/compression/colorspaces/Rgb888ToYuv444PixelBlockConverterTest.java" afterPath="$PROJECT_DIR$/src/test/com/harrycodeman/compression/colorspaces/Rgb888ToYuv444PixelBlockConverterTest.java" />
-      <change type="MOVED" beforePath="D:\GitHub\huffman-rle-compressor\lenna.pnm" afterPath="$PROJECT_DIR$/data/lenna.pnm" />
-      <change type="MOVED" beforePath="D:\GitHub\huffman-rle-compressor\src\test\com\harrycodeman\compression\colorspaces\Yuv444PixelBlockTest.java" afterPath="$PROJECT_DIR$/src/test/com/harrycodeman/compression/colorspaces/Yuv444ToRgb888PixelBlockConverterTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/Yuv422ImageReader.java" afterPath="$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/Yuv422ImageReader.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/Yuv422ImageWriter.java" afterPath="$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/Yuv422ImageWriter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/com/harrycodeman/compression/colorspaces/MultimediaLab1_2_RgbToYuvAndBackTest.java" afterPath="$PROJECT_DIR$/src/test/com/harrycodeman/compression/colorspaces/MultimediaLab1_2_RgbToYuvAndBackTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/com/harrycodeman/compression/colorspaces/Yuv422ImageReaderAndWriterTest.java" afterPath="$PROJECT_DIR$/src/test/com/harrycodeman/compression/colorspaces/Yuv422ImageReaderAndWriterTest.java" />
     </list>
     <ignored path="huffman-rle-compressor.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -85,7 +77,17 @@
     <favorites_list name="huffman-rle-compressor" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="MultimediaLab1_2_RgbToYuvAndBackTest.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/com/harrycodeman/compression/colorspaces/MultimediaLab1_2_RgbToYuvAndBackTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="103" column="24" selection-start="5806" selection-end="5806" vertical-scroll-proportion="0.71875">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -105,7 +107,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/YuvUToZeroPixelBlockConverter.java" />
         <option value="$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/YuvUToConstPixelBlockConverter.java" />
         <option value="$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/YuvVToZeroPixelBlockConverter.java" />
@@ -117,9 +118,10 @@
         <option value="$PROJECT_DIR$/src/test/com/harrycodeman/compression/colorspaces/Yuv444ToRgb888PixelBlockConverterTest.java" />
         <option value="$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/Rgb888ToYuv444IntegerPixelBlockConverter.java" />
         <option value="$PROJECT_DIR$/src/test/com/harrycodeman/compression/colorspaces/Rgb888ToYuv444PixelBlockConverterTest.java" />
-        <option value="$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/Yuv422ImageReader.java" />
-        <option value="$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/Yuv422ImageWriter.java" />
         <option value="$PROJECT_DIR$/src/test/com/harrycodeman/compression/colorspaces/MultimediaLab1_RgbToYuvAndBackTest.java" />
+        <option value="$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/Yuv422ImageWriter.java" />
+        <option value="$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/Yuv422ImageReader.java" />
+        <option value="$PROJECT_DIR$/src/test/com/harrycodeman/compression/colorspaces/Yuv422ImageReaderAndWriterTest.java" />
         <option value="$PROJECT_DIR$/src/test/com/harrycodeman/compression/colorspaces/MultimediaLab1_2_RgbToYuvAndBackTest.java" />
       </list>
     </option>
@@ -128,10 +130,10 @@
     <option name="jreName" value="1.6" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1696" />
-    <option name="height" value="1026" />
+    <option name="x" value="-1" />
+    <option name="y" value="25" />
+    <option name="width" value="1026" />
+    <option name="height" value="576" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -260,6 +262,20 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="huffman-rle-compressor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="huffman-rle-compressor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -335,32 +351,6 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="compression" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="huffman-rle-compressor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="huffman-rle-compressor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="compression" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="colorspaces" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -374,20 +364,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="data" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="PackagesPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="huffman-rle-compressor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="huffman-rle-compressor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -441,34 +417,6 @@
     </key>
   </component>
   <component name="RunManager" selected="JUnit.Full prject test">
-    <configuration default="false" name="Rgb888ToYuv444PixelBlockConverterTest.testSomeColorIntegerConvert" type="JUnit" factoryName="JUnit" temporary="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="test.com.harrycodeman.compression.colorspaces.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="huffman-rle-compressor" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="test.com.harrycodeman.compression.colorspaces" />
-      <option name="MAIN_CLASS_NAME" value="test.com.harrycodeman.compression.colorspaces.Rgb888ToYuv444PixelBlockConverterTest" />
-      <option name="METHOD_NAME" value="testSomeColorIntegerConvert" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
     <configuration default="false" name="MultimediaLab1_2_RgbToYuvAndBackTest.convertToYuvThroughIntegerBackAndSave" type="JUnit" factoryName="JUnit" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -567,6 +515,29 @@
       <option name="MAIN_CLASS_NAME" value="test.com.harrycodeman.compression.colorspaces.MultimediaLab1_2_RgbToYuvAndBackTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Yuv422ImageReaderAndWriterTest.testSaveAndLoadImage" type="JUnit" factoryName="JUnit" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="huffman-rle-compressor" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="test.com.harrycodeman.compression.colorspaces" />
+      <option name="MAIN_CLASS_NAME" value="test.com.harrycodeman.compression.colorspaces.Yuv422ImageReaderAndWriterTest" />
+      <option name="METHOD_NAME" value="testSaveAndLoadImage" />
+      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -734,11 +705,11 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="JUnit.Full prject test" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.Rgb888ToYuv444PixelBlockConverterTest.testSomeColorIntegerConvert" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.MultimediaLab1_2_RgbToYuvAndBackTest.convertToYuvThroughIntegerBackAndSave" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.MultimediaLab1_2_RgbToYuvAndBackTest.convertToYuvSaveBackAndSave" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.MultimediaLab1_2_RgbToYuvAndBackTest.convertToYuvUToZeroVToZeroBackAndSave" />
-      <item index="5" class="java.lang.String" itemvalue="JUnit.MultimediaLab1_2_RgbToYuvAndBackTest" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.MultimediaLab1_2_RgbToYuvAndBackTest.convertToYuvThroughIntegerBackAndSave" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.MultimediaLab1_2_RgbToYuvAndBackTest.convertToYuvSaveBackAndSave" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.MultimediaLab1_2_RgbToYuvAndBackTest.convertToYuvUToZeroVToZeroBackAndSave" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.MultimediaLab1_2_RgbToYuvAndBackTest" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.Yuv422ImageReaderAndWriterTest.testSaveAndLoadImage" />
     </list>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
@@ -827,35 +798,35 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
+    <frame x="-1" y="25" width="1026" height="576" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32946634" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32991803" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37687862" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20846106" sideWeight="0.35606936" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Kotlin" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32947975" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2982659" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32601157" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20846106" sideWeight="0.35028902" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39975476" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22365196" sideWeight="0.6439306" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35606936" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40266395" sideWeight="0.2900232" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5684455" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" x="99" y="125" width="826" height="376" />
       <window_info id="DSM" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" x="92" y="92" width="1496" height="826" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24954017" sideWeight="0.6716763" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31213874" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Kotlin" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2982659" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5942196" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Duplicates" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -927,11 +898,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/Rgb888ToYuv444PixelBlockConverter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="5" selection-start="795" selection-end="795" vertical-scroll-proportion="0.42004773" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/com/harrycodeman/compression/colorspaces/Yuv444ToRgb888PixelBlockConverterTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="19" column="38" selection-start="774" selection-end="774" vertical-scroll-proportion="0.36754176" />
@@ -954,30 +920,43 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/ImageWriter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="19" selection-start="947" selection-end="947" vertical-scroll-proportion="0.86634845" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/Yuv422ImageReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="51" selection-start="1158" selection-end="1158" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/Yuv422ImageWriter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="31" selection-start="614" selection-end="614" vertical-scroll-proportion="0.52505964" />
+        <state line="35" column="19" selection-start="947" selection-end="947" vertical-scroll-proportion="0.53125">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/com/harrycodeman/compression/colorspaces/Yuv422ImageReaderAndWriterTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="16" selection-start="277" selection-end="277" vertical-scroll-proportion="0.1575179" />
+        <state line="11" column="21" selection-start="282" selection-end="282" vertical-scroll-proportion="0.08356546">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/Rgb888ToYuv444PixelBlockConverter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="5" selection-start="795" selection-end="795" vertical-scroll-proportion="0.6315789">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/Yuv422ImageWriter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="9" selection-start="774" selection-end="774" vertical-scroll-proportion="0.75">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/Yuv422ImageReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="44" selection-start="1075" selection-end="1075" vertical-scroll-proportion="0.8131579">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/com/harrycodeman/compression/colorspaces/MultimediaLab1_2_RgbToYuvAndBackTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="26" selection-start="182" selection-end="182" vertical-scroll-proportion="0.16">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="103" column="24" selection-start="5806" selection-end="5806" vertical-scroll-proportion="0.71875">
+          <folding />
         </state>
       </provider>
     </entry>

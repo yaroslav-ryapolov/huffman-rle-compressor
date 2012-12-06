@@ -29,9 +29,9 @@ public class Yuv422ImageReader extends ImageReader {
     }
 
     private void readTwoPixelBlocks(Collection<IPixelBlock> pixelBlocks) throws Exception {
-        int u = lastByte;
+        int u = lastByte -128;
         int y1 = readByteIntoLastByte();
-        int v = readByteIntoLastByte();
+        int v = readByteIntoLastByte() - 128;
         int y2 = readByteIntoLastByte();
         pixelBlocks.add(new Yuv444PixelBlock(y1, u, v));
         pixelBlocks.add(new Yuv444PixelBlock(y2, u, v));

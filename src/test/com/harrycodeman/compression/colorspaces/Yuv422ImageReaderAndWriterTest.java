@@ -33,19 +33,19 @@ public class Yuv422ImageReaderAndWriterTest {
 
     private SimplifiedImage getTestImage() {
         SimplifiedImage result = new SimplifiedImage(2, 3);
-        result.add(new Yuv444PixelBlock(139, 212, 32));
-        result.add(new Yuv444PixelBlock(154, 203, 207));
+        result.add(new Yuv444PixelBlock(139, 84, 32));
+        result.add(new Yuv444PixelBlock(154, 75, 79));
         result.add(new Yuv444PixelBlock(20, 20, 20));
         result.add(new Yuv444PixelBlock(12, 24, 33));
         result.add(new Yuv444PixelBlock(32, 33, 2));
-        result.add(new Yuv444PixelBlock(255, 255, 255));
+        result.add(new Yuv444PixelBlock(255, 128, 128));
         return result;
     }
 
     private SimplifiedImage getExpectedImage() {
         SimplifiedImage result = new SimplifiedImage(2, 3);
-        result.add(new Yuv444PixelBlock(139, 212, 32));
-        result.add(new Yuv444PixelBlock(154, 212, 32));
+        result.add(new Yuv444PixelBlock(139, 84, 32));
+        result.add(new Yuv444PixelBlock(154, 84, 32));
         result.add(new Yuv444PixelBlock(20, 20, 20));
         result.add(new Yuv444PixelBlock(12, 20, 20));
         result.add(new Yuv444PixelBlock(32, 33, 2));

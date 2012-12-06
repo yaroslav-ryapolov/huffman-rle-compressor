@@ -17,8 +17,8 @@ public class Yuv422ImageWriter extends ImageWriter {
             Yuv444PixelBlock yuv = (Yuv444PixelBlock)b;
             if (isOdd) {
                 y1 = yuv.getY();
-                u = yuv.getU();
-                v = yuv.getV();
+                u = yuv.getU() + 128;
+                v = yuv.getV() + 128;
             }
             else {
                 y2 = yuv.getY();
