@@ -3,9 +3,9 @@ package com.harrycodeman.compression.huffman;
 import com.harrycodeman.compression.CompressOutput;
 
 public abstract class HuffmanCompressOutput extends CompressOutput {
-    private PrefixCodesTable table;
+    private CompressPrefixCodesTable table;
 
-    public HuffmanCompressOutput(PrefixCodesTable table) {
+    public HuffmanCompressOutput(CompressPrefixCodesTable table) {
         this.table = table;
     }
 
@@ -17,7 +17,7 @@ public abstract class HuffmanCompressOutput extends CompressOutput {
     }
 
     private void outputTotalCount() {
-        final int mask = 127;
+        final int mask = 255;
         for (int numberFromRight = 3; numberFromRight >= 0; numberFromRight--) {
             int shift = numberFromRight*8;
             int value = (table.getTotalCountOfBytes() >> shift) & mask;
@@ -35,7 +35,6 @@ public abstract class HuffmanCompressOutput extends CompressOutput {
             output(node.getTop());
             output(node.getBottom());
         }
-
     }
 
     private void outputCompressedBytes() {

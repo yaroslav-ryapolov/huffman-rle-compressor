@@ -6,7 +6,7 @@ import java.util.List;
 public class ByteArrayHuffmanCompressOutput extends HuffmanCompressOutput {
     private List<Integer> result = new ArrayList<Integer>();
 
-    public ByteArrayHuffmanCompressOutput(PrefixCodesTable table) {
+    public ByteArrayHuffmanCompressOutput(CompressPrefixCodesTable table) {
         super(table);
     }
 

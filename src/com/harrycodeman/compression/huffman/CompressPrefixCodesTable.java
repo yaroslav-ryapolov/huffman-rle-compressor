@@ -4,16 +4,16 @@ import com.harrycodeman.compression.ICompressInput;
 
 import java.util.*;
 
-public class PrefixCodesTable {
-    public static PrefixCodesTable buildPrefixTableForUncompressedStream(ICompressInput input) {
-        PrefixCodesTable table = new PrefixCodesTable(input);
+public class CompressPrefixCodesTable {
+    public static CompressPrefixCodesTable buildPrefixTableForUncompressedStream(ICompressInput input) {
+        CompressPrefixCodesTable table = new CompressPrefixCodesTable(input);
         table.countBytes(input);
         table.buildHuffmanTree();
         return table;
     }
 
-    protected static PrefixCodesTable getPrefixTableForMap(Map<Integer, HuffmanedByte> mapOfBytes) {
-        PrefixCodesTable table = new PrefixCodesTable();
+    protected static CompressPrefixCodesTable getPrefixTableForMap(Map<Integer, HuffmanedByte> mapOfBytes) {
+        CompressPrefixCodesTable table = new CompressPrefixCodesTable();
         table.mapOfBytes = mapOfBytes;
         table.buildHuffmanTree();
         return table;
@@ -65,11 +65,11 @@ public class PrefixCodesTable {
     private Map<Integer, HuffmanedByte> mapOfBytes = new HashMap<Integer, HuffmanedByte>();
     private HuffmanTreeNode root;
 
-    protected PrefixCodesTable(ICompressInput input) {
+    protected CompressPrefixCodesTable(ICompressInput input) {
         this.input = input;
     }
 
-    protected PrefixCodesTable() {
+    protected CompressPrefixCodesTable() {
     }
 
     public int getTotalCountOfBytes() {

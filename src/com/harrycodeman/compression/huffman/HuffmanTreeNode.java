@@ -77,7 +77,7 @@ public class HuffmanTreeNode implements ICountedObject {
     @Override
     public boolean equals(Object other) {
         return other.getClass() == HuffmanTreeNode.class
-                && equals((HuffmanTreeNode) other);
+                && equals((HuffmanTreeNode)other);
     }
 
     public boolean equals(HuffmanTreeNode other) {

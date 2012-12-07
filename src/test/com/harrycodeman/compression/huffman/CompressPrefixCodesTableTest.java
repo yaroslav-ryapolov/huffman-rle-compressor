@@ -1,9 +1,9 @@
 package test.com.harrycodeman.compression.huffman;
 
 import com.harrycodeman.compression.MemoryCompressInput;
+import com.harrycodeman.compression.huffman.CompressPrefixCodesTable;
 import com.harrycodeman.compression.huffman.HuffmanTreeNode;
 import com.harrycodeman.compression.huffman.HuffmanedByte;
-import com.harrycodeman.compression.huffman.PrefixCodesTable;
 import org.junit.Test;
 
 import java.util.HashMap;
@@ -12,11 +12,11 @@ import java.util.Map;
 import static junit.framework.Assert.assertEquals;
 import static org.junit.Assert.assertArrayEquals;
 
-public class PrefixCodesTableTest extends PrefixCodesTable {
+public class CompressPrefixCodesTableTest extends CompressPrefixCodesTable {
     @Test
     public void testCountOneByteRepetition() {
         assertCounterEquals(new HuffmanedByte[] { new HuffmanedByte('a', 3) },
-            PrefixCodesTable.buildPrefixTableForUncompressedStream(new MemoryCompressInput("aaa"))
+            CompressPrefixCodesTable.buildPrefixTableForUncompressedStream(new MemoryCompressInput("aaa"))
         );
     }
 
@@ -26,18 +26,18 @@ public class PrefixCodesTableTest extends PrefixCodesTable {
                 new HuffmanedByte('b', 3),
                 new HuffmanedByte('c', 2),
             },
-            PrefixCodesTable.buildPrefixTableForUncompressedStream(new MemoryCompressInput("bcbbc"))
+            CompressPrefixCodesTable.buildPrefixTableForUncompressedStream(new MemoryCompressInput("bcbbc"))
         );
     }
 
     @Test
     public void testCountOneSingleByte() {
         assertCounterEquals(new HuffmanedByte[] { new HuffmanedByte('d', 1) },
-            PrefixCodesTable.buildPrefixTableForUncompressedStream(new MemoryCompressInput("d"))
+            CompressPrefixCodesTable.buildPrefixTableForUncompressedStream(new MemoryCompressInput("d"))
         );
     }
 
-    private void assertCounterEquals(HuffmanedByte[] expected, PrefixCodesTable actual) {
+    private void assertCounterEquals(HuffmanedByte[] expected, CompressPrefixCodesTable actual) {
         assertEquals(expected.length, actual.differentBytesCount());
         for (HuffmanedByte b : expected) {
             assertEquals(b.getReps(), actual.getRepsForByte(b.getValue()));
@@ -54,7 +54,7 @@ public class PrefixCodesTableTest extends PrefixCodesTable {
         mapOfBytes.put(104, new HuffmanedByte(104, 6));
         mapOfBytes.put(105, new HuffmanedByte(105, 8));
         mapOfBytes.put(106, new HuffmanedByte(106, 10));
-        PrefixCodesTable table = PrefixCodesTable.getPrefixTableForMap(mapOfBytes);
+        CompressPrefixCodesTable table = CompressPrefixCodesTable.getPrefixTableForMap(mapOfBytes);
         assertEquals(
                 new HuffmanTreeNode(
                         new HuffmanTreeNode(
@@ -86,9 +86,9 @@ public class PrefixCodesTableTest extends PrefixCodesTable {
 
     @Test
     public void testCompress() {
-        PrefixCodesTable table = PrefixCodesTable.buildPrefixTableForUncompressedStream(
+        CompressPrefixCodesTable table = CompressPrefixCodesTable.buildPrefixTableForUncompressedStream(
                 new MemoryCompressInput(
-                        new byte[] {
+                        new byte[]{
                                 100, 101, 101, 102, 102, 102, 102, 103, 103, 103, 103, 103, 104, 104, 104, 104, 104,
                                 104, 105, 105, 105, 105, 105, 105, 105, 105, 106, 106, 106, 106, 106, 106, 106, 106,
                                 106, 106

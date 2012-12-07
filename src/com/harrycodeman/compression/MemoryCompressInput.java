@@ -6,8 +6,6 @@ import java.util.Iterator;
 
 public class MemoryCompressInput implements ICompressInput {
     private class StreamIterator implements Iterator<Integer> {
-        private int index = 0;
-
         @Override
         public boolean hasNext() {
             return stream.available() > 0;
