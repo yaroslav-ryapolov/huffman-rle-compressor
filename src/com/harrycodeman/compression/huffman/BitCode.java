@@ -14,10 +14,7 @@ public class BitCode implements Iterable<Boolean> {
 
         @Override
         public Boolean next() {
-            if (valueArray[index++] == '0') {
-                return false;
-            }
-            return true;
+            return valueArray[index++] != '0';
         }
 
         @Override

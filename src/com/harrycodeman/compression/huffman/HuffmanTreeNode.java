@@ -40,7 +40,7 @@ public class HuffmanTreeNode implements ICountedObject {
         return value;
     }
 
-    public void appendCode(String codePart) {
+    private void appendCode(String codePart) {
         if (hasValue()) {
             value.appendCode(codePart);
         }

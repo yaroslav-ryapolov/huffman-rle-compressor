@@ -1,4 +1,4 @@
-package test.com.harrycodeman.compression.colorspaces;
+package test.labs;
 
 import com.harrycodeman.compression.colorspaces.*;
 import org.junit.Before;
