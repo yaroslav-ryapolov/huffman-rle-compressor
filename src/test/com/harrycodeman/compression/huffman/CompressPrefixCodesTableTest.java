@@ -1,11 +1,12 @@
 package test.com.harrycodeman.compression.huffman;
 
-import com.harrycodeman.compression.MemoryCompressInput;
+import com.harrycodeman.compression.CompressInputImpl;
 import com.harrycodeman.compression.huffman.CompressPrefixCodesTable;
 import com.harrycodeman.compression.huffman.HuffmanTreeNode;
 import com.harrycodeman.compression.huffman.HuffmanedByte;
 import org.junit.Test;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -14,26 +15,26 @@ import static org.junit.Assert.assertArrayEquals;
 
 public class CompressPrefixCodesTableTest extends CompressPrefixCodesTable {
     @Test
-    public void testCountOneByteRepetition() {
+    public void testCountOneByteRepetition() throws IOException {
         assertCounterEquals(new HuffmanedByte[] { new HuffmanedByte('a', 3) },
-            CompressPrefixCodesTable.buildPrefixTableForUncompressedStream(new MemoryCompressInput("aaa"))
+            CompressPrefixCodesTable.buildPrefixTableForUncompressedStream(new CompressInputImpl("aaa"))
         );
     }
 
     @Test
-    public void testCountTwoDifferentByteSequence() {
+    public void testCountTwoDifferentByteSequence() throws IOException {
         assertCounterEquals(new HuffmanedByte[] {
                 new HuffmanedByte('b', 3),
                 new HuffmanedByte('c', 2),
             },
-            CompressPrefixCodesTable.buildPrefixTableForUncompressedStream(new MemoryCompressInput("bcbbc"))
+            CompressPrefixCodesTable.buildPrefixTableForUncompressedStream(new CompressInputImpl("bcbbc"))
         );
     }
 
     @Test
-    public void testCountOneSingleByte() {
+    public void testCountOneSingleByte() throws IOException {
         assertCounterEquals(new HuffmanedByte[] { new HuffmanedByte('d', 1) },
-            CompressPrefixCodesTable.buildPrefixTableForUncompressedStream(new MemoryCompressInput("d"))
+            CompressPrefixCodesTable.buildPrefixTableForUncompressedStream(new CompressInputImpl("d"))
         );
     }
 
@@ -85,9 +86,9 @@ public class CompressPrefixCodesTableTest extends CompressPrefixCodesTable {
     }
 
     @Test
-    public void testCompress() {
+    public void testCompress() throws IOException {
         CompressPrefixCodesTable table = CompressPrefixCodesTable.buildPrefixTableForUncompressedStream(
-                new MemoryCompressInput(
+                new CompressInputImpl(
                         new byte[]{
                                 100, 101, 101, 102, 102, 102, 102, 103, 103, 103, 103, 103, 104, 104, 104, 104, 104,
                                 104, 105, 105, 105, 105, 105, 105, 105, 105, 106, 106, 106, 106, 106, 106, 106, 106,

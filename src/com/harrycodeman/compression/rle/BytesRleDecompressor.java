@@ -17,9 +17,9 @@ public class BytesRleDecompressor {
         List<Integer> result = new ArrayList<Integer>();
         Iterator<Integer> iterator = input.iterator();
         while (iterator.hasNext()) {
-            int blockSize = iterator.next().byteValue();
-            if (blockSize < 0) {
-                for (int i = 0; i < -blockSize; i++) {
+            int blockSize = iterator.next();
+            if (blockSize > 127) {
+                for (int i = 0; i < blockSize - 127; i++) {
                     result.add(iterator.next());
                 }
             }

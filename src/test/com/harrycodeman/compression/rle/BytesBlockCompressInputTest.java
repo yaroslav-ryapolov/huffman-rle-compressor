@@ -24,6 +24,6 @@ public class BytesBlockCompressInputTest {
         for (int b : compressInput) {
             result.add(b);
         }
-        assertArrayEquals(new Object[] { 2, 1, -3, 97, 98, 99 }, result.toArray());
+        assertArrayEquals(new Object[] { 2, 1, 130, 97, 98, 99 }, result.toArray());
     }
 }

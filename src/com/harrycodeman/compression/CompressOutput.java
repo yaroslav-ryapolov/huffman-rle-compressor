@@ -4,17 +4,17 @@ public abstract class CompressOutput {
     private int currentByte;
     private int currentByteIndex;
 
-    protected void writeSetBit() {
+    protected void writeSetBit() throws Exception {
         int mask = 128 >> currentByteIndex;
         currentByte |= mask;
         incrementIndexAndFlushByteIfNeed();
     }
 
-    protected void writeClearBit() {
+    protected void writeClearBit() throws Exception {
         incrementIndexAndFlushByteIfNeed();
     }
 
-    private void incrementIndexAndFlushByteIfNeed() {
+    private void incrementIndexAndFlushByteIfNeed() throws Exception {
         currentByteIndex++;
         if (currentByteIndex >= 8) {
             pushByte(currentByte);
@@ -23,7 +23,7 @@ public abstract class CompressOutput {
         }
     }
 
-    protected void writeByte(int value) {
+    protected void writeByte(int value) throws Exception{
         int mask1 = (value >> currentByteIndex) & 255;
         currentByte |= mask1;
 
@@ -38,11 +38,11 @@ public abstract class CompressOutput {
         }
     }
 
-    protected void flushCurrentByteIfNeed() {
+    protected void flushCurrentByteIfNeed() throws Exception {
         if (currentByteIndex > 0) {
             pushByte(currentByte);
         }
     }
 
-    protected abstract void pushByte(int value);
+    protected abstract void pushByte(int value) throws Exception;
 }

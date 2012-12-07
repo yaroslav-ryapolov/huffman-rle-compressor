@@ -9,14 +9,14 @@ public abstract class HuffmanCompressOutput extends CompressOutput {
         this.table = table;
     }
 
-    public void output() {
+    public void output() throws Exception {
         outputTotalCount();
         output(table.getRoot());
         outputCompressedBytes();
         flushCurrentByteIfNeed();
     }
 
-    private void outputTotalCount() {
+    private void outputTotalCount() throws Exception {
         final int mask = 255;
         for (int numberFromRight = 3; numberFromRight >= 0; numberFromRight--) {
             int shift = numberFromRight*8;
@@ -25,7 +25,7 @@ public abstract class HuffmanCompressOutput extends CompressOutput {
         }
     }
 
-    private void output(HuffmanTreeNode node) {
+    private void output(HuffmanTreeNode node) throws Exception {
         if (node.hasValue()) {
             writeSetBit();
             writeByte(node.getValue().getValue());
@@ -37,7 +37,7 @@ public abstract class HuffmanCompressOutput extends CompressOutput {
         }
     }
 
-    private void outputCompressedBytes() {
+    private void outputCompressedBytes() throws Exception {
         for (HuffmanedByte huffmanedByte : table.compress()) {
             for (boolean bit : huffmanedByte.getCode()) {
                 if (bit) {

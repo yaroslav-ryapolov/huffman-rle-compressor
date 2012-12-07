@@ -55,7 +55,12 @@ public class BytesRleCompressor {
             currentBlock.addSymbol(s);
         } else {
             currentBlock.displaceUnsuitableSymbols(stack);
-            resetCounter(s);
+            if (stack.empty()) {
+                resetCounter(s);
+            }
+            else {
+                resetCounter(stack.pop(), s);
+            }
         }
     }
 
@@ -63,6 +68,17 @@ public class BytesRleCompressor {
         blocks.add(currentBlock);
         currentBlock = null;
         stack.push(newSymbol);
+    }
+
+    private void resetCounter(int s1, int s2) throws Exception {
+        blocks.add(currentBlock);
+        currentBlock = null;
+        if (s1 == s2) {
+            currentBlock = new SameBytesBlock(s1, 2);
+        }
+        else {
+            currentBlock = new DifferentBytesBlock(s1, s2);
+        }
     }
 
     private void flushStack() throws Exception {

@@ -1,6 +1,6 @@
 package test.com.harrycodeman.compression.huffman;
 
-import com.harrycodeman.compression.MemoryCompressInput;
+import com.harrycodeman.compression.CompressInputImpl;
 import com.harrycodeman.compression.huffman.ByteArrayHuffmanCompressOutput;
 import com.harrycodeman.compression.huffman.CompressPrefixCodesTable;
 import org.junit.Test;
@@ -12,7 +12,7 @@ public class HuffmanCompressOutputTest {
     public void testOutput() throws Exception {
         ByteArrayHuffmanCompressOutput huffmanOutput = new ByteArrayHuffmanCompressOutput(
                 CompressPrefixCodesTable.buildPrefixTableForUncompressedStream(
-                        new MemoryCompressInput(
+                        new CompressInputImpl(
                                 new byte[]{
                                         100, 101, 101, 102, 102, 102, 102, 103, 103, 103, 103, 103, 104, 104, 104, 104,
                                         104, 104, 105, 105, 105, 105, 105, 105, 105, 105, 106, 106, 106, 106, 106, 106,

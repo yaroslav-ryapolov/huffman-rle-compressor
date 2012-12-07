@@ -2,10 +2,14 @@ package com.harrycodeman.compression.huffman;
 
 import com.harrycodeman.compression.ICompressInput;
 
+import java.io.IOException;
 import java.util.*;
 
+import static java.util.Collections.sort;
+
 public class CompressPrefixCodesTable {
-    public static CompressPrefixCodesTable buildPrefixTableForUncompressedStream(ICompressInput input) {
+    public static CompressPrefixCodesTable buildPrefixTableForUncompressedStream(ICompressInput input)
+            throws IOException {
         CompressPrefixCodesTable table = new CompressPrefixCodesTable(input);
         table.countBytes(input);
         table.buildHuffmanTree();
@@ -19,7 +23,7 @@ public class CompressPrefixCodesTable {
         return table;
     }
 
-    private void countBytes(ICompressInput stream) {
+    private void countBytes(ICompressInput stream) throws IOException {
         for (int b : stream) {
             getHuffmanedByteFor(b).incrementReps();
             totalCountOfBytes++;
@@ -39,16 +43,17 @@ public class CompressPrefixCodesTable {
     }
 
     private void buildHuffmanTree() {
-        TreeSet<ICountedObject> huffmanedBytes = new TreeSet<ICountedObject>(mapOfBytes.values());
+        List<ICountedObject> huffmanedBytes = new ArrayList<ICountedObject>(mapOfBytes.values());
         while (huffmanedBytes.size() > 1) {
+            sort(huffmanedBytes);
             huffmanedBytes.add(new HuffmanTreeNode(popFirstAsHuffmanTreeNode(huffmanedBytes),
                     popFirstAsHuffmanTreeNode(huffmanedBytes)));
         }
-        root = convertToHuffmanTreeNode(huffmanedBytes.first());
+        root = convertToHuffmanTreeNode(huffmanedBytes.get(0));
     }
 
-    private static HuffmanTreeNode popFirstAsHuffmanTreeNode(SortedSet<ICountedObject> huffmanedBytes) {
-        ICountedObject result = huffmanedBytes.first();
+    private static HuffmanTreeNode popFirstAsHuffmanTreeNode(List<ICountedObject> huffmanedBytes) {
+        ICountedObject result = huffmanedBytes.get(0);
         huffmanedBytes.remove(result);
         return convertToHuffmanTreeNode(result);
     }
