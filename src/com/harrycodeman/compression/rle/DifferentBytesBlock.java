@@ -36,6 +36,14 @@ public class DifferentBytesBlock extends BytesBlock {
         symbols.remove(symbols.size() - 1);
     }
 
+    @Override
+    public Iterator<Integer> compressedIterator() {
+        List<Integer> result = new ArrayList<Integer>(symbols);
+        byte sizeAsByte = (byte)(-size());
+        result.add(0, (int)sizeAsByte);
+        return result.iterator();
+    }
+
     private int getLastSymbol() {
         return symbols.get(symbols.size() - 1);
     }

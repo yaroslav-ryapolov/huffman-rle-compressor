@@ -1,5 +1,6 @@
 package com.harrycodeman.compression.rle;
 
+import java.util.Iterator;
 import java.util.Stack;
 
 public abstract class BytesBlock implements Iterable<Integer> {
@@ -29,4 +30,6 @@ public abstract class BytesBlock implements Iterable<Integer> {
     protected boolean isBlockOverflowed() {
         return size() > MAX_LENGTH;
     }
+
+    public abstract Iterator<Integer> compressedIterator();
 }

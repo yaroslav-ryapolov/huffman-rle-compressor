@@ -3,6 +3,29 @@ package com.harrycodeman.compression.rle;
 import java.util.Iterator;
 
 public class SameBytesBlock extends BytesBlock implements Iterable<Integer> {
+    private class CompressedBlockIterator implements Iterator<Integer> {
+        private int index = 0;
+
+        @Override
+        public boolean hasNext() {
+            return index < 2;
+        }
+
+        @Override
+        public Integer next() {
+            if (index == 0) {
+                index++;
+                return size() - 1;
+            }
+            index++;
+            return symbol;
+        }
+
+        @Override
+        public void remove() {
+        }
+    }
+
     private class BlockIterator implements Iterator<Integer> {
         private int index = 0;
 
@@ -45,6 +68,11 @@ public class SameBytesBlock extends BytesBlock implements Iterable<Integer> {
     @Override
     protected void addSymbolOverridden(int s) {
         count++;
+    }
+
+    @Override
+    public Iterator<Integer> compressedIterator() {
+        return new CompressedBlockIterator();
     }
 
     @Override

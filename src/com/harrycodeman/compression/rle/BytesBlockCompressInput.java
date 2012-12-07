@@ -24,7 +24,7 @@ public class BytesBlockCompressInput implements ICompressInput {
         public Integer next() {
             if (byteIterator == null
                     || !byteIterator.hasNext()) {
-                byteIterator = blockIterator.next().iterator();
+                byteIterator = blockIterator.next().compressedIterator();
             }
             return byteIterator.next();
         }
