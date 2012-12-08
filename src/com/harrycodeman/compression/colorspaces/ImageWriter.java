@@ -4,19 +4,24 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 
-public abstract class ImageWriter {
+public abstract class ImageWriter implements IImageProcessingStage {
     private OutputStream output;
 
     public ImageWriter(String fileName) throws Exception {
         output = new FileOutputStream(fileName);
     }
 
-    public void saveImage(SimplifiedImage image) throws Exception {
+    @Override
+    public void executeFor(Image image) throws Exception {
+        saveImage(image);
+    }
+
+    public void saveImage(Image image) throws Exception {
         saveImageImpl(image);
         output.close();
     }
 
-    protected abstract void saveImageImpl(SimplifiedImage image) throws Exception;
+    protected abstract void saveImageImpl(Image image) throws Exception;
 
     protected void writeIntInAscii(int value) throws Exception {
         writeString("" + value + " ");
@@ -37,5 +42,9 @@ public abstract class ImageWriter {
         for (int b : value) {
             output.write(b);
         }
+    }
+
+    protected void writeBytes(byte[] bytes) throws Exception {
+        output.write(bytes);
     }
 }

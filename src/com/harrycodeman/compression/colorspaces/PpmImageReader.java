@@ -4,23 +4,23 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 public class PpmImageReader extends ImageReader {
-    public PpmImageReader(String filePath) throws Exception {
-        super(filePath);
+    public PpmImageReader(String fileName) throws Exception {
+        super(fileName);
     }
 
     @Override
-    protected SimplifiedImage loadImageToImpl() throws Exception {
+    protected Image loadImageToImpl() throws Exception {
         readFormatHeader();
         int width = readNextWordAsInt();
         int height = readNextWordAsInt();
         readColorLimitAndSpaces();
-        return new SimplifiedImage(width, height, readPixelBlocks(width*height));
+        return new Image(width, height, readPixelBlocks(width*height));
     }
 
     private void readFormatHeader() throws Exception {
         String formatHeader = readNextWord();
         if (formatHeader == null
-            || !formatHeader.equals("P6")) {
+                || !formatHeader.equals("P6")) {
             throw new Exception("Unsupported file format!!!");
         }
     }
@@ -34,10 +34,14 @@ public class PpmImageReader extends ImageReader {
         }
     }
 
-    private Collection<IPixelBlock> readPixelBlocks(int size) throws Exception {
-        Collection<IPixelBlock> result = new ArrayList<IPixelBlock>(size);
+    private Collection<ThreeComponentPixelBlock> readPixelBlocks(int size) throws Exception {
+        Collection<ThreeComponentPixelBlock> result = new ArrayList<ThreeComponentPixelBlock>(size);
         for (int i = 0; i < size; i++) {
-            result.add(new Rgb888PixelBlock(readByteIntoLastByte(), readByteIntoLastByte(), readByteIntoLastByte()));
+            result.add(
+                    new ThreeComponentPixelBlock(
+                            readByteIntoLastByte(),
+                            readByteIntoLastByte(),
+                            readByteIntoLastByte()));
         }
         return result;
     }

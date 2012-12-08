@@ -11,13 +11,13 @@ public abstract class ImageReader {
         input = new FileInputStream(fileName);
     }
 
-    public SimplifiedImage loadImage() throws Exception {
-        SimplifiedImage result = loadImageToImpl();
+    public Image loadImage() throws Exception {
+        Image result = loadImageToImpl();
         input.close();
         return result;
     }
 
-    protected abstract SimplifiedImage loadImageToImpl() throws Exception;
+    protected abstract Image loadImageToImpl() throws Exception;
 
     protected int readNextWordAsInt() throws Exception {
         return Integer.parseInt(readNextWord());
