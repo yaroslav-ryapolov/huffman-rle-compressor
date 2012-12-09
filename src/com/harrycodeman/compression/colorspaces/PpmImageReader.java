@@ -30,18 +30,14 @@ public class PpmImageReader extends ImageReader {
             throw new Exception("Unsupported file format!!!");
         }
         while (lastByte != '\n') {
-            readByteIntoLastByte();
+            readByteAsInt();
         }
     }
 
     private Collection<ThreeComponentPixelBlock> readPixelBlocks(int size) throws Exception {
         Collection<ThreeComponentPixelBlock> result = new ArrayList<ThreeComponentPixelBlock>(size);
         for (int i = 0; i < size; i++) {
-            result.add(
-                    new ThreeComponentPixelBlock(
-                            readByteIntoLastByte(),
-                            readByteIntoLastByte(),
-                            readByteIntoLastByte()));
+            result.add(new ThreeComponentPixelBlock(readByteAsInt(), readByteAsInt(), readByteAsInt()));
         }
         return result;
     }

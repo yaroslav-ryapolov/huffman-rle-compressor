@@ -27,23 +27,23 @@ public class YuvImageReaderAndWriterTest {
 
     private Image getTestImage() {
         return new Image(2, 3,
-                new ThreeComponentPixelBlock(139, 84, 32),
+                new ThreeComponentPixelBlock(139, 84, 255),
                 new ThreeComponentPixelBlock(154, 75, 79),
-                new ThreeComponentPixelBlock(20, 20, -20),
+                new ThreeComponentPixelBlock(20, 255, 234),
                 new ThreeComponentPixelBlock(12, 24, 33),
-                new ThreeComponentPixelBlock(32, -33, 2),
+                new ThreeComponentPixelBlock(32, 212, 2),
                 new ThreeComponentPixelBlock(255, 128, 128)
         );
     }
 
     private Image getExpectedImage() {
         return new Image(2, 3,
-                new ThreeComponentPixelBlock(139, 84, 32),
-                new ThreeComponentPixelBlock(154, 84, 32),
-                new ThreeComponentPixelBlock(20, 20, -20),
-                new ThreeComponentPixelBlock(12, 20, -20),
-                new ThreeComponentPixelBlock(32, -33, 2),
-                new ThreeComponentPixelBlock(255, -33, 2)
+                new ThreeComponentPixelBlock(139, 84, 255),
+                new ThreeComponentPixelBlock(154, 84, 255),
+                new ThreeComponentPixelBlock(20, 255, 234),
+                new ThreeComponentPixelBlock(12, 255, 234),
+                new ThreeComponentPixelBlock(32, 212, 2),
+                new ThreeComponentPixelBlock(255, 212, 2)
         );
     }
 }

@@ -30,10 +30,10 @@ public class PpmImageReaderAndWriterTest {
 
     private Image getTestImage() {
         return new Image(2, 3,
-                new ThreeComponentPixelBlock(226, 13, 125),
+                new ThreeComponentPixelBlock(226, 13, 133),
                 new ThreeComponentPixelBlock(226, 17, 12),
-                new ThreeComponentPixelBlock(223, 127, 133),
-                new ThreeComponentPixelBlock(226, 137, 25),
+                new ThreeComponentPixelBlock(223, 127, 13),
+                new ThreeComponentPixelBlock(226, 117, 25),
                 new ThreeComponentPixelBlock(226, 12, 125),
                 new ThreeComponentPixelBlock(223, 112, 33)
         );

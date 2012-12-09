@@ -3,53 +3,67 @@ package com.harrycodeman.compression.colorspaces;
 import static java.lang.String.format;
 
 public class ThreeComponentPixelBlock {
-    private int first;
-    private int second;
-    private int third;
+    private byte first;
+    private byte second;
+    private byte third;
 
-    public ThreeComponentPixelBlock(int first, int second, int third) {
+    public ThreeComponentPixelBlock(byte first, byte second, byte third) {
         this.first = first;
         this.second = second;
         this.third = third;
     }
 
-    public int getFirst() {
+    public ThreeComponentPixelBlock(Integer first, Integer second, Integer third) {
+        this.first = first.byteValue();
+        this.second = second.byteValue();
+        this.third = third.byteValue();
+    }
+
+    public byte getFirst() {
         return first;
     }
 
-    public void setFirst(int value) {
-        first = value;
+    public int getFirstAsPositiveInt() {
+        return convertToPositiveInt(first);
     }
 
-    public int getSecond() {
+    private static int convertToPositiveInt(Byte value) {
+        final int byteMask = 255;
+        return value.intValue() & byteMask;
+    }
+
+    public void setFirst(Integer value) {
+        first = value.byteValue();
+    }
+
+    public byte getSecond() {
         return second;
     }
 
-    public void setSecond(int value) {
-        second = value;
+    public int getSecondAsPositiveInt() {
+        return convertToPositiveInt(second);
     }
 
-    public int getThird() {
+    public void setSecond(Integer value) {
+        second = value.byteValue();
+    }
+
+    public int getThirdAsPositiveInt() {
+        return convertToPositiveInt(third);
+    }
+
+    public byte getThird() {
         return third;
     }
 
-    public void setThird(int value) {
-        third = value;
+    public void setThird(Integer value) {
+        third = value.byteValue();
     }
 
     public void setValues(int first, int second, int third) {
-        this.first = first;
-        this.second = second;
-        this.third = third;
-    }
-
-    // TODO: use IT!!!
-    public byte[] getAsBytes() {
-        return new byte[] {
-                new Integer(first).byteValue(),
-                new Integer(second).byteValue(),
-                new Integer(third).byteValue()
-        };
+        this.first = new Integer(first).byteValue();
+        this.second = new Integer(second).byteValue();
+        this.third = new Integer(third).byteValue();
     }
 
     @Override

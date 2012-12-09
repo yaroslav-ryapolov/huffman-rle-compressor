@@ -1,10 +1,54 @@
 package com.harrycodeman.compression.colorspaces;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Iterator;
 
 public class PpmImageWriter extends ImageWriter {
-    private List<Byte> buffer = new ArrayList<Byte>();
+    private class ImageAsRgbBytes implements Iterable<Byte> {
+        private class BytesIterator implements Iterator<Byte> {
+            private static final int BLOCK_SIZE = 3;
+
+            private Iterator<ThreeComponentPixelBlock> iterator = image.iterator();
+            private ThreeComponentPixelBlock block;
+            private int byteIndex = BLOCK_SIZE;
+
+            @Override
+            public boolean hasNext() {
+                return iterator.hasNext()
+                        || byteIndex < BLOCK_SIZE;
+            }
+
+            @Override
+            public Byte next() {
+                switch (byteIndex++) {
+                    case 0:
+                        return block.getFirst();
+                    case 1:
+                        return block.getSecond();
+                    case 2:
+                        return block.getThird();
+                    default:
+                        block = iterator.next();
+                        byteIndex = 0;
+                        return next();
+                }
+            }
+
+            @Override
+            public void remove() {
+            }
+        }
+
+        private Image image;
+
+        public ImageAsRgbBytes(Image image) {
+            this.image = image;
+        }
+
+        @Override
+        public Iterator<Byte> iterator() {
+            return new BytesIterator();
+        }
+    }
 
     public PpmImageWriter(String fileName) throws Exception {
         super(fileName);
@@ -16,21 +60,6 @@ public class PpmImageWriter extends ImageWriter {
         writeIntInAscii(image.getWidth());
         writeIntInAscii(image.getHeight());
         writeString("255\n");
-        writePixelBlocks(image);
-    }
-
-    private void writePixelBlocks(Image image) throws Exception {
-        for (ThreeComponentPixelBlock b : image) {
-            buffer.add(new Integer(b.getFirst()).byteValue());
-            buffer.add(new Integer(b.getSecond()).byteValue());
-            buffer.add(new Integer(b.getThird()).byteValue());
-        }
-
-        byte[] bytes = new byte[buffer.size()];
-        for (int i = 0; i < buffer.size(); i++) {
-            bytes[i] = buffer.get(i);
-        }
-        writeBytes(bytes);
-        buffer.clear();
+        writeBytes(new ImageAsRgbBytes(image), image.size()*3);
     }
 }

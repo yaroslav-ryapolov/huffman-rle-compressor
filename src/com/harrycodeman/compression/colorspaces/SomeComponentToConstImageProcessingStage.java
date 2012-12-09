@@ -10,10 +10,11 @@ public class SomeComponentToConstImageProcessingStage implements IImageProcessin
     }
 
     @Override
-    public void executeFor(Image image) throws Exception {
+    public Image executeFor(Image image) throws Exception {
         for (ThreeComponentPixelBlock b : image) {
             replaceComponent(b);
         }
+        return image;
     }
 
     private void replaceComponent(ThreeComponentPixelBlock b) {

@@ -25,18 +25,13 @@ public class MultimediaLab1_2_RgbToYuvAndBackTest {
 
     @Test
     public void convertToYuvSaveBackAndSave() throws Exception {
-        ImageProcessingPipeline pipelineToYuv = new ImageProcessingPipeline(
+        new ImageProcessingPipeline(
                 new FloatRgbToYuvImageProcessingStage(),
-                new YuvImageWriter(SAVE_FILE_NAME + ".yuv")
-        );
-        pipelineToYuv.executeFor(rgbImage);
-        Image loadedImage = new YuvImageReader(WIDTH, HEIGHT, SAVE_FILE_NAME + ".yuv").loadImage();
-
-        ImageProcessingPipeline pipelineToRgb = new ImageProcessingPipeline(
+                new YuvImageWriter(SAVE_FILE_NAME + ".yuv"),
+                new YuvImageReader(WIDTH, HEIGHT, SAVE_FILE_NAME + ".yuv"),
                 new FloatYuvToRgbImageProcessingStage(),
                 new PpmImageWriter(SAVE_FILE_NAME + ".fromYuv422.pnm")
-        );
-        pipelineToRgb.executeFor(loadedImage);
+        ).executeFor(rgbImage);
     }
 
     @Test
@@ -44,17 +39,16 @@ public class MultimediaLab1_2_RgbToYuvAndBackTest {
         new ImageProcessingPipeline(
                 new FloatRgbToYuvImageProcessingStage(),
                 new FloatYuvToRgbImageProcessingStage(),
-                new PpmImageWriter(SAVE_FILE_NAME + ".throughFloat.pnm")
+                new PpmImageWriter(SAVE_FILE_NAME + ".float.pnm")
         ).executeFor(rgbImage);
     }
 
     @Test
     public void convertToYuvThroughIntegerBackAndSave() throws Exception {
-        // TODO: implement IntegerYuvToRgb
         new ImageProcessingPipeline(
                 new IntegerRgbToYuvImageProcessingStage(),
-                new FloatYuvToRgbImageProcessingStage(),
-                new PpmImageWriter(SAVE_FILE_NAME + ".throughInteger.pnm")
+                new IntegerYuvToRgbImageProcessingStage(),
+                new PpmImageWriter(SAVE_FILE_NAME + ".integer.pnm")
         ).executeFor(rgbImage);
     }
 

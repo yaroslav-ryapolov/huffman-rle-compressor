@@ -1,6 +1,6 @@
 package com.harrycodeman.compression.colorspaces;
 
-public class FloatYuvToRgbImageProcessingStage implements IImageProcessingStage {
+public class IntegerYuvToRgbImageProcessingStage implements IImageProcessingStage {
     @Override
     public Image executeFor(Image image) {
         for (ThreeComponentPixelBlock block : image) {
@@ -8,16 +8,15 @@ public class FloatYuvToRgbImageProcessingStage implements IImageProcessingStage 
             int u = block.getSecond();
             int v = block.getThird();
             block.setValues(
-                    clamp(y +             1.13983*v),
-                    clamp(y - 0.39465*u - 0.58060*v),
-                    clamp(y + 2.03211*u)
+                    clamp((298*y +         409*v + 128) >> 8),
+                    clamp((298*y - 100*u - 208*v + 128) >> 8),
+                    clamp((298*y + 516*u         + 128) >> 8)
             );
         }
         return image;
     }
 
-    private static int clamp(double value) {
-        int intValue = (int)value;
-        return intValue > 255 ? 255 : intValue < 0 ? 0 : intValue;
+    private static int clamp(int value) {
+        return value > 255 ? 255 : value < 0 ? 0 : value;
     }
 }

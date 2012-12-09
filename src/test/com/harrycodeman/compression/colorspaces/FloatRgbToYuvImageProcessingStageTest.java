@@ -21,7 +21,7 @@ public class FloatRgbToYuvImageProcessingStageTest {
                 new Image(1, 3,
                         new ThreeComponentPixelBlock(255, 0, 0),
                         new ThreeComponentPixelBlock(0, 0, 0),
-                        // Accurate values in YUV: y = 109,667; u = 15,91298; v = 114,34395;
+                        // Accurate values: y = 109,667; u = 15,91298; v = 114,34395;
                         new ThreeComponentPixelBlock(109, 15, 114)
                 ),
                 image

@@ -1,7 +1,6 @@
 package com.harrycodeman.compression.colorspaces;
 
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.io.OutputStream;
 
 public abstract class ImageWriter implements IImageProcessingStage {
@@ -12,8 +11,9 @@ public abstract class ImageWriter implements IImageProcessingStage {
     }
 
     @Override
-    public void executeFor(Image image) throws Exception {
+    public Image executeFor(Image image) throws Exception {
         saveImage(image);
+        return image;
     }
 
     public void saveImage(Image image) throws Exception {
@@ -38,13 +38,12 @@ public abstract class ImageWriter implements IImageProcessingStage {
         output.write(value);
     }
 
-    protected void writeBytes(int... value) throws IOException {
-        for (int b : value) {
-            output.write(b);
+    protected void writeBytes(Iterable<Byte> bytes, int size) throws Exception {
+        byte[] buffer = new byte[size];
+        int i = 0;
+        for (byte b : bytes) {
+            buffer[i++] = b;
         }
-    }
-
-    protected void writeBytes(byte[] bytes) throws Exception {
-        output.write(bytes);
+        output.write(buffer);
     }
 }

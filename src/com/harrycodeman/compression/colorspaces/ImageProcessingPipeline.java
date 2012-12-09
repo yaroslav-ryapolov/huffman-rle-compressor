@@ -12,9 +12,10 @@ public class ImageProcessingPipeline implements IImageProcessingStage {
     }
 
     @Override
-    public void executeFor(Image image) throws Exception {
+    public Image executeFor(Image image) throws Exception {
         for (IImageProcessingStage s : stages) {
-            s.executeFor(image);
+            image = s.executeFor(image);
         }
+        return image;
     }
 }

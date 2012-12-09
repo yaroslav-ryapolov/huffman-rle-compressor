@@ -20,19 +20,19 @@ public class YuvImageReader extends ImageReader {
 
     private Collection<ThreeComponentPixelBlock> loadPixelBlocks() throws Exception {
         Collection<ThreeComponentPixelBlock> result = new ArrayList<ThreeComponentPixelBlock>();
-        readByteIntoLastByte();
+        readByteAsInt();
         while (isNotEof()) {
             readTwoPixelBlocks(result);
-            readByteIntoLastByte();
+            readByteAsInt();
         }
         return result;
     }
 
     private void readTwoPixelBlocks(Collection<ThreeComponentPixelBlock> pixelBlocks) throws Exception {
-        int u = lastByte -128;
-        int y1 = readByteIntoLastByte();
-        int v = readByteIntoLastByte() - 128;
-        int y2 = readByteIntoLastByte();
+        int u = lastByte;
+        int y1 = readByteAsInt();
+        int v = readByteAsInt();
+        int y2 = readByteAsInt();
         pixelBlocks.add(new ThreeComponentPixelBlock(y1, u, v));
         pixelBlocks.add(new ThreeComponentPixelBlock(y2, u, v));
     }
