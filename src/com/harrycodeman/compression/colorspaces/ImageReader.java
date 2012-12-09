@@ -4,7 +4,7 @@ import java.io.FileInputStream;
 import java.io.InputStream;
 
 public abstract class ImageReader implements IImageProcessingStage {
-    private static final int BUFFER_LENGTH = 1024;
+    private static final int BUFFER_LENGTH = 1000000;
 
     private byte[] buffer = new byte[BUFFER_LENGTH];
     private int indexInBuffer = 0;

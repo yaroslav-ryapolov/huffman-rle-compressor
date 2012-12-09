@@ -5,15 +5,15 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class MultimediaLab1_2_RgbToYuvAndBackTest {
-//    private static final int WIDTH = 1600;
-//    private static final int HEIGHT = 1195;
-//    private static final String SOURCE_FILE_NAME = "./data/house.ppm";
-//    private static final String SAVE_FILE_NAME = "./data/multimedia/house";
+    private static final int WIDTH = 1600;
+    private static final int HEIGHT = 1195;
+    private static final String SOURCE_FILE_NAME = "./data/house.ppm";
+    private static final String SAVE_FILE_NAME = "./data/multimedia/house";
 
-    private static final int WIDTH = 512;
-    private static final int HEIGHT = 512;
-    private static final String SOURCE_FILE_NAME = "./data/lenna.pnm";
-    private static final String SAVE_FILE_NAME = "./data/multimedia/lenna";
+//    private static final int WIDTH = 512;
+//    private static final int HEIGHT = 512;
+//    private static final String SOURCE_FILE_NAME = "./data/lenna.pnm";
+//    private static final String SAVE_FILE_NAME = "./data/multimedia/lenna";
 
     private Image rgbImage;
 
