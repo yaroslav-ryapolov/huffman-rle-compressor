@@ -10,13 +10,7 @@ import static junit.framework.Assert.assertEquals;
 public class FloatYuvToRgbImageProcessingStageTest {
     @Test
     public void testExecuteFor() throws Exception {
-        Image image = new Image(1, 3,
-                new ThreeComponentPixelBlock(0, 0, 0),
-                new ThreeComponentPixelBlock(255, 0, 0),
-                new ThreeComponentPixelBlock(33, 71, -29)
-        );
         FloatYuvToRgbImageProcessingStage yuvToRgb = new FloatYuvToRgbImageProcessingStage();
-        yuvToRgb.executeFor(image);
         assertEquals(
                 new Image(1, 3,
                         new ThreeComponentPixelBlock(0, 0, 0),
@@ -24,7 +18,13 @@ public class FloatYuvToRgbImageProcessingStageTest {
                         // Accurate values: r = -0,05507 (0 for [0, 255]); g = 21,81725; b = 177,27981;
                         new ThreeComponentPixelBlock(0, 21, 177)
                 ),
-                image
+                yuvToRgb.executeFor(
+                        new Image(1, 3,
+                                new ThreeComponentPixelBlock(0, 0, 0),
+                                new ThreeComponentPixelBlock(255, 0, 0),
+                                new ThreeComponentPixelBlock(33, 71, -29)
+                        )
+                )
         );
     }
 }

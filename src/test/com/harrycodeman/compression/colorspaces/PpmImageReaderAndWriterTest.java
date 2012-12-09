@@ -1,9 +1,6 @@
 package test.com.harrycodeman.compression.colorspaces;
 
-import com.harrycodeman.compression.colorspaces.Image;
-import com.harrycodeman.compression.colorspaces.PpmImageReader;
-import com.harrycodeman.compression.colorspaces.PpmImageWriter;
-import com.harrycodeman.compression.colorspaces.ThreeComponentPixelBlock;
+import com.harrycodeman.compression.colorspaces.*;
 import org.junit.Test;
 
 import java.io.File;
@@ -16,11 +13,13 @@ public class PpmImageReaderAndWriterTest {
     @Test
     public void testSaveAndLoadImage() throws Exception {
         try {
-            PpmImageWriter writer = new PpmImageWriter(FILE_PATH);
-            writer.saveImage(getTestImage());
-            PpmImageReader reader = new PpmImageReader(FILE_PATH);
-            Image image = reader.loadImage();
-            assertEquals(getTestImage(), image);
+            assertEquals(
+                    getImage(),
+                    new ImageProcessingPipeline(
+                            new PpmImageWriter(FILE_PATH),
+                            new PpmImageReader(FILE_PATH)
+                    ).executeFor(getImage())
+            );
         }
         finally {
             File f = new File(FILE_PATH);
@@ -28,7 +27,7 @@ public class PpmImageReaderAndWriterTest {
         }
     }
 
-    private Image getTestImage() {
+    private Image getImage() {
         return new Image(2, 3,
                 new ThreeComponentPixelBlock(226, 13, 133),
                 new ThreeComponentPixelBlock(226, 17, 12),

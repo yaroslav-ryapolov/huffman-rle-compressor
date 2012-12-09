@@ -33,6 +33,10 @@ public class Image implements Collection<ThreeComponentPixelBlock> {
         return height;
     }
 
+    public Collection<ThreeComponentPixelBlock> getRowBlocks(int rowIndex) {
+        return pixelBlocks.subList(rowIndex*width, rowIndex*width + width);
+    }
+
     @Override
     public boolean equals(Object other) {
         return other.getClass() == Image.class
