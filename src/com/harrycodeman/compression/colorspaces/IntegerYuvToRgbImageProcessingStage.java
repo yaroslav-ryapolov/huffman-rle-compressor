@@ -8,9 +8,9 @@ public class IntegerYuvToRgbImageProcessingStage implements IImageProcessingStag
             int u = block.getSecond();
             int v = block.getThird();
             block.setValues(
-                    clamp((298*y +         409*v + 128) >> 8),
-                    clamp((298*y - 100*u - 208*v + 128) >> 8),
-                    clamp((298*y + 516*u         + 128) >> 8)
+                    clamp((298*y +         409*v) >> 8),
+                    clamp((298*y - 100*u - 208*v) >> 8),
+                    clamp((298*y + 516*u        ) >> 8)
             );
         }
         return image;

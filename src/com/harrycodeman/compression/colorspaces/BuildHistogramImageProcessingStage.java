@@ -23,13 +23,43 @@ public class BuildHistogramImageProcessingStage implements IImageProcessingStage
 
     @Override
     public Image executeFor(Image image) throws Exception {
-        return new Image(image.getWidth() + WIDTH, image.getHeight(), getResultImagePixelBlocks(image));
+        return new Image(WIDTH, image.getHeight(), getResultImagePixelBlocks(image));
     }
 
     public Collection<ThreeComponentPixelBlock> getResultImagePixelBlocks(Image image) {
-        List<ThreeComponentPixelBlock> histogram = buildHistogram(image);
-        return join(image, histogram);
+        countValues(image);
+        return buildHistogram(valueCounter, image.getHeight());
+//        List<ThreeComponentPixelBlock> histogram = buildHistogram(image);
+//        return join(image, histogram);
     }
+
+    private void countValues(Image image) {
+        for (ThreeComponentPixelBlock b : image) {
+            int count = valueCounter.get(b.getFirstAsPositiveInt());
+            valueCounter.set(b.getFirstAsPositiveInt(), count + 1);
+        }
+    }
+
+    private List<ThreeComponentPixelBlock> buildHistogram(List<Integer> valueCounts, int height) {
+        List<ThreeComponentPixelBlock> result = createHistogramBackground(height);
+        int maxValue = Collections.max(valueCounts);
+        int i = 0;
+        for (int c : valueCounts) {
+            buildHistogramColumn(result, i++, c, maxValue, height);
+        }
+        return result;
+    }
+
+    private List<ThreeComponentPixelBlock> buildHistogramColumn(
+            List<ThreeComponentPixelBlock> pixelBlocks, int columnNumber, int value, int maxValue,
+            int histogramHeight) {
+        int realHeight = value/maxValue * histogramHeight;
+        for (int i = histogramHeight - 1; i >= histogramHeight - realHeight; i--) {
+            pixelBlocks.set(i*WIDTH + columnNumber, FORE_COLOR);
+        }
+        return pixelBlocks;
+    }
+
 
     private List<ThreeComponentPixelBlock> buildHistogram(Image image) {
         List<ThreeComponentPixelBlock> histogramBlocks = createHistogramBackground(image.getHeight());
