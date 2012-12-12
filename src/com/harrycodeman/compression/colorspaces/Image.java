@@ -2,9 +2,12 @@ package com.harrycodeman.compression.colorspaces;
 
 import java.util.*;
 
+import static java.lang.Math.min;
 import static java.lang.String.format;
+import static sun.swing.MenuItemLayoutHelper.max;
 
 public class Image implements Collection<ThreeComponentPixelBlock> {
+    // TODO: introduce rows
     private int height;
     private int width;
     private List<ThreeComponentPixelBlock> pixelBlocks;
@@ -33,8 +36,36 @@ public class Image implements Collection<ThreeComponentPixelBlock> {
         return height;
     }
 
-    public Collection<ThreeComponentPixelBlock> getRowBlocks(int rowIndex) {
-        return pixelBlocks.subList(rowIndex*width, rowIndex*width + width);
+    public Image horizontalJoinWith(Image other) {
+        // TODO: refactoring needs
+        int minHeight = min(height, other.getHeight());
+        for (int i = 0; i < minHeight; i++) {
+            pixelBlocks.addAll(
+                    i*(width + other.getWidth()) + width,
+                    other.pixelBlocks.subList(i*other.getWidth(), (i + 1)*other.getWidth())
+            );
+        }
+        if (height < other.getHeight()) {
+            for (int i = height; i < other.getHeight(); i++) {
+                for (int j = 0; j < width; j++) {
+                    pixelBlocks.add(new ThreeComponentPixelBlock(255, 0, 0));
+                }
+                pixelBlocks.addAll(other.pixelBlocks.subList(i*other.getWidth(), (i + 1)*other.getWidth()));
+            }
+        }
+        else if (height > other.getHeight()) {
+            for (int i = other.getHeight(); i < height; i++) {
+                for (int j = 0; j < other.getWidth(); j++) {
+                    pixelBlocks.add(
+                            i*(width + other.getWidth()) + width,
+                            new ThreeComponentPixelBlock(255, 0, 0)
+                    );
+                }
+            }
+        }
+        width += other.getWidth();
+        height = max(height, other.getHeight());
+        return this;
     }
 
     @Override
@@ -90,12 +121,12 @@ public class Image implements Collection<ThreeComponentPixelBlock> {
 
     @Override
     public boolean add(ThreeComponentPixelBlock pixelBlock) {
-        return pixelBlocks.add(pixelBlock);
+        return false;
     }
 
     @Override
     public boolean remove(Object other) {
-        return pixelBlocks.remove(other);
+        return false;
     }
 
     @Override

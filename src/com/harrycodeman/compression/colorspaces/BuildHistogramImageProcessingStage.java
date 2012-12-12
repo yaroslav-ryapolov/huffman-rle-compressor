@@ -1,103 +1,71 @@
 package com.harrycodeman.compression.colorspaces;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
+
+import static java.util.Collections.max;
+import static java.util.Collections.nCopies;
 
 public class BuildHistogramImageProcessingStage implements IImageProcessingStage {
     private static final int WIDTH = 256;
-    public static final ThreeComponentPixelBlock BACK_COLOR = new ThreeComponentPixelBlock(255, 0, 0);
-    public static final ThreeComponentPixelBlock FORE_COLOR = new ThreeComponentPixelBlock(0, 0, 0);
+    private static final int HEIGHT = 100;
+    private static final int SIZE = WIDTH*HEIGHT;
 
-    private List<Integer> valueCounter = new ArrayList<Integer>(WIDTH);
-
-    public BuildHistogramImageProcessingStage() {
-        initializeValueCounter();
+    private static ThreeComponentPixelBlock getBackColor() {
+        // TODO: implement in processing stage correct processing of the same objects!!!
+        return new ThreeComponentPixelBlock(255, 0, 0);
+    }
+    private static ThreeComponentPixelBlock getForeColor(){
+        // TODO: implement in processing stage correct processing of the same objects!!!
+        return new ThreeComponentPixelBlock(0, 0, 0);
     }
 
-    private void initializeValueCounter() {
-        Collections.addAll(valueCounter, new Integer[WIDTH]);
-        Collections.fill(valueCounter, 0);
+    // TODO: do this class enable to use many times for different images
+    private List<Integer> valuesCounter;
+    private List<ThreeComponentPixelBlock> pixelBlocks;
+
+    public BuildHistogramImageProcessingStage() {
+        valuesCounter = new ArrayList<Integer>(
+                nCopies(WIDTH, 0)
+        );
+        initializeHistogramBackground();
+    }
+
+    private void initializeHistogramBackground() {
+        pixelBlocks = new ArrayList<ThreeComponentPixelBlock>();
+        for (int i = 0; i < SIZE; i++) {
+            pixelBlocks.add(getBackColor());
+        }
     }
 
     @Override
     public Image executeFor(Image image) throws Exception {
-        return new Image(WIDTH, image.getHeight(), getResultImagePixelBlocks(image));
+        countValues(image);
+        buildHistogram();
+        // TODO: use horizontalJoinWith
+        // return image.horizontalJoinWith(new Image(WIDTH, HEIGHT, pixelBlocks));
+        return new Image(WIDTH, HEIGHT, pixelBlocks);
     }
 
-    public Collection<ThreeComponentPixelBlock> getResultImagePixelBlocks(Image image) {
-        countValues(image);
-        return buildHistogram(valueCounter, image.getHeight());
-//        List<ThreeComponentPixelBlock> histogram = buildHistogram(image);
-//        return join(image, histogram);
+    private void buildHistogram() {
+        int maxCount = max(valuesCounter);
+        double step = 100.0/maxCount;
+        int i = 0;
+        for (int c : valuesCounter) {
+            int height = (int)(step*c);
+            for (int j = 0; j < height; j++) {
+                pixelBlocks.set((HEIGHT - j - 1)*WIDTH + i, getForeColor());
+            }
+            i++;
+        }
     }
 
     private void countValues(Image image) {
         for (ThreeComponentPixelBlock b : image) {
-            int count = valueCounter.get(b.getFirstAsPositiveInt());
-            valueCounter.set(b.getFirstAsPositiveInt(), count + 1);
+            valuesCounter.set(
+                    b.getFirstAsPositiveInt(),
+                    valuesCounter.get(b.getFirstAsPositiveInt()) + 1
+            );
         }
-    }
-
-    private List<ThreeComponentPixelBlock> buildHistogram(List<Integer> valueCounts, int height) {
-        List<ThreeComponentPixelBlock> result = createHistogramBackground(height);
-        int maxValue = Collections.max(valueCounts);
-        int i = 0;
-        for (int c : valueCounts) {
-            buildHistogramColumn(result, i++, c, maxValue, height);
-        }
-        return result;
-    }
-
-    private List<ThreeComponentPixelBlock> buildHistogramColumn(
-            List<ThreeComponentPixelBlock> pixelBlocks, int columnNumber, int value, int maxValue,
-            int histogramHeight) {
-        int realHeight = value/maxValue * histogramHeight;
-        for (int i = histogramHeight - 1; i >= histogramHeight - realHeight; i--) {
-            pixelBlocks.set(i*WIDTH + columnNumber, FORE_COLOR);
-        }
-        return pixelBlocks;
-    }
-
-
-    private List<ThreeComponentPixelBlock> buildHistogram(Image image) {
-        List<ThreeComponentPixelBlock> histogramBlocks = createHistogramBackground(image.getHeight());
-        for (ThreeComponentPixelBlock b : image) {
-            int value = b.getFirstAsPositiveInt();
-            int rowNumber = incrementValueAndGetRowNumber(value, image);
-            if (rowNumber >= 0) {
-                histogramBlocks.set(WIDTH *rowNumber + value, FORE_COLOR);
-            }
-        }
-        return histogramBlocks;
-    }
-
-    private static List<ThreeComponentPixelBlock> createHistogramBackground(int height) {
-        List<ThreeComponentPixelBlock> pixelBlocks = new ArrayList<ThreeComponentPixelBlock>();
-        for (int i = 0; i < WIDTH*height; i++) {
-            pixelBlocks.add(BACK_COLOR);
-        }
-        return pixelBlocks;
-    }
-
-    private int incrementValueAndGetRowNumber(int value, Image image) {
-        int count = valueCounter.get(value);
-        valueCounter.set(value, count + 1);
-        if (count%image.getWidth() > (count + 1)%image.getWidth()) {
-            return image.getHeight() - count/image.getWidth() - 1;
-        }
-        return -1;
-    }
-
-    private Collection<ThreeComponentPixelBlock> join(Image image, List<ThreeComponentPixelBlock> histogram) {
-        List<ThreeComponentPixelBlock> result = new ArrayList<ThreeComponentPixelBlock>(
-                image.getWidth()*image.getHeight() + histogram.size()
-        );
-        for (int i = 0; i < image.getHeight(); i++) {
-            result.addAll(image.getRowBlocks(i));
-            result.addAll(histogram.subList(i*WIDTH, i*WIDTH + WIDTH));
-        }
-        return result;
     }
 }

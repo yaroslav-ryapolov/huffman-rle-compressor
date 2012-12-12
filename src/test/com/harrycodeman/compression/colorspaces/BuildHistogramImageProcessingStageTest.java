@@ -9,14 +9,15 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+import static java.util.Collections.nCopies;
 import static junit.framework.Assert.assertEquals;
 
-public class BuildHistogramImageProcessingStageTest {
-
+public class BuildHistogramImageProcessingStageTest extends BuildHistogramImageProcessingStage {
+    // TODO: refactoring needs
     @Test
     public void testExecuteFor() throws Exception {
         assertEquals(
-                new Image(256, 3, getExpectedImagePixelBlocks()),
+                new Image(256, 100, getExpectedImagePixelBlocks()),
                 new BuildHistogramImageProcessingStage().executeFor(
                         new Image(2, 3,
                                 new ThreeComponentPixelBlock(0, 0, 0),
@@ -31,25 +32,46 @@ public class BuildHistogramImageProcessingStageTest {
     }
 
     private Collection<ThreeComponentPixelBlock> getExpectedImagePixelBlocks() {
-        List<ThreeComponentPixelBlock> pixelBlocks = new ArrayList<ThreeComponentPixelBlock>();
-        for (int i = 0; i < 768; i++) {
-            pixelBlocks.add(BuildHistogramImageProcessingStage.BACK_COLOR);
+        List<ThreeComponentPixelBlock> result = new ArrayList<ThreeComponentPixelBlock>(
+                nCopies(25600, new ThreeComponentPixelBlock(255, 0, 0))
+        );
+        for (int i = 0; i < 100; i++) {
+            result.set(i*256, new ThreeComponentPixelBlock(0, 0, 0));
+            result.set(i*256 + 254, new ThreeComponentPixelBlock(0, 0, 0));
         }
-        // set image points
-//        pixelBlocks.set(0, new ThreeComponentPixelBlock(0, 0, 0));
-//        pixelBlocks.set(1, new ThreeComponentPixelBlock(254, 0, 0));
-//        pixelBlocks.set(258, new ThreeComponentPixelBlock(0, 0, 0));
-//        pixelBlocks.set(259, new ThreeComponentPixelBlock(0, 0, 0));
-//        pixelBlocks.set(516, new ThreeComponentPixelBlock(254, 0, 0));
-//        pixelBlocks.set(517, new ThreeComponentPixelBlock(254, 0, 0));
-        // one points for first = 0
-        pixelBlocks.set(0, BuildHistogramImageProcessingStage.FORE_COLOR);
-        pixelBlocks.set(256, BuildHistogramImageProcessingStage.FORE_COLOR);
-        pixelBlocks.set(512, BuildHistogramImageProcessingStage.FORE_COLOR);
-        // one point for first = 2
-        pixelBlocks.set(254, BuildHistogramImageProcessingStage.FORE_COLOR);
-        pixelBlocks.set(510, BuildHistogramImageProcessingStage.FORE_COLOR);
-        pixelBlocks.set(766, BuildHistogramImageProcessingStage.FORE_COLOR);
-        return pixelBlocks;
+        return result;
+    }
+
+    @Test
+    public void testForPixelsInterdependency() throws Exception {
+        Image histogram = new BuildHistogramImageProcessingStage().executeFor(
+                new Image(3, 1,
+                        new ThreeComponentPixelBlock(0, 0, 0),
+                        new ThreeComponentPixelBlock(0, 0, 0),
+                        new ThreeComponentPixelBlock(0, 0, 0)
+                )
+        );
+        int i = 0;
+        for (ThreeComponentPixelBlock b : histogram) {
+            b.setValues(i, i, i);
+            i = i > 0 ? 0 : 255;
+        }
+        assertEquals(
+                new Image(256, 100, getBlocksForPixelsInterdependency()),
+                histogram
+        );
+    }
+
+    private List<ThreeComponentPixelBlock> getBlocksForPixelsInterdependency() {
+        List<ThreeComponentPixelBlock> result = new ArrayList<ThreeComponentPixelBlock>(25600);
+        for (int i = 0; i < 25600; i++) {
+            if (i%2 == 0) {
+                result.add(new ThreeComponentPixelBlock(0, 0, 0));
+            }
+            else {
+                result.add(new ThreeComponentPixelBlock(255, 255, 255));
+            }
+        }
+        return result;
     }
 }

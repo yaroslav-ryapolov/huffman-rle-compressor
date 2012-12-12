@@ -5,6 +5,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class MultimediaLab1_2_RgbToYuvAndBackTest {
+    // TODO: write adequate method to demonstrate lab on all images
 //    private static final int WIDTH = 1600;
 //    private static final int HEIGHT = 1195;
 //    private static final String SOURCE_FILE_NAME = "./data/house.ppm";
