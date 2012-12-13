@@ -2,27 +2,27 @@ package test.labs;
 
 import com.harrycodeman.compression.colorspaces.*;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class MultimediaLab3_Histogram {
-    private static final String SOURCE_FILE_NAME = "./data/lenna.pnm";
-    private static final String SAVE_FILE_NAME = "./data/multimedia/lenna";
-
-    private Image rgbImage;
-
-    @Before
-    public void initializeClass() throws Exception {
-        ImageReader rgbReader = new PpmImageReader(SOURCE_FILE_NAME);
-        rgbImage = rgbReader.loadImage();
+    @Test
+    public void buildHistograms() throws Exception {
+        buildHistogram("./data/lenna.pnm", "./data/multimedia/lenna");
+        buildHistogram("./data/black-white.ppm", "./data/multimedia/black-white");
+        buildHistogram("./data/house.ppm", "./data/multimedia/house");
+        buildHistogram("./data/mountains.ppm", "./data/multimedia/mountains");
     }
 
-    @Test
-    public void buildHistogram() throws Exception {
-        new ImageProcessingPipeline(
-                new FloatRgbToYuvImageProcessingStage(),
-                new BuildHistogramImageProcessingStage(),
-                new FloatYuvToRgbImageProcessingStage(),
-                new PpmImageWriter(SAVE_FILE_NAME + ".histogram.pnm")
-        ).executeFor(rgbImage);
+    public void buildHistogram(String filePath, String savePath) throws Exception {
+        for (int s = -256; s <= 256; s += 64) {
+            new ImageProcessingPipeline(
+                    new PpmImageReader(filePath),
+                    new FloatRgbToYuvImageProcessingStage(),
+                    new BuildHistogramImageProcessingStage(s),
+                    new FloatYuvToRgbImageProcessingStage(),
+                    new PpmImageWriter(savePath + ".histogram" + s + ".pnm")
+            ).executeFor(null);
+        }
     }
 }

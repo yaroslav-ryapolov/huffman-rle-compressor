@@ -12,13 +12,13 @@ import java.util.List;
 import static java.util.Collections.nCopies;
 import static junit.framework.Assert.assertEquals;
 
-public class BuildHistogramImageProcessingStageTest extends BuildHistogramImageProcessingStage {
+public class BuildHistogramImageProcessingStageTest {
     // TODO: refactoring needs
     @Test
     public void testExecuteFor() throws Exception {
         assertEquals(
-                new Image(256, 100, getExpectedImagePixelBlocks()),
-                new BuildHistogramImageProcessingStage().executeFor(
+                new Image(256, 100, getBlocksForExecuteFor()),
+                new BuildHistogramImageProcessingStage(0).executeFor(
                         new Image(2, 3,
                                 new ThreeComponentPixelBlock(0, 0, 0),
                                 new ThreeComponentPixelBlock(254, 0, 0),
@@ -31,7 +31,7 @@ public class BuildHistogramImageProcessingStageTest extends BuildHistogramImageP
         );
     }
 
-    private Collection<ThreeComponentPixelBlock> getExpectedImagePixelBlocks() {
+    private Collection<ThreeComponentPixelBlock> getBlocksForExecuteFor() {
         List<ThreeComponentPixelBlock> result = new ArrayList<ThreeComponentPixelBlock>(
                 nCopies(25600, new ThreeComponentPixelBlock(255, 0, 0))
         );
@@ -44,7 +44,7 @@ public class BuildHistogramImageProcessingStageTest extends BuildHistogramImageP
 
     @Test
     public void testForPixelsInterdependency() throws Exception {
-        Image histogram = new BuildHistogramImageProcessingStage().executeFor(
+        Image histogram = new BuildHistogramImageProcessingStage(0).executeFor(
                 new Image(3, 1,
                         new ThreeComponentPixelBlock(0, 0, 0),
                         new ThreeComponentPixelBlock(0, 0, 0),
@@ -73,5 +73,34 @@ public class BuildHistogramImageProcessingStageTest extends BuildHistogramImageP
             }
         }
         return result;
+    }
+
+    @Test
+    public void testShift() throws Exception {
+        assertEquals(
+                new Image(256, 100, getBlocksForShift()),
+                new BuildHistogramImageProcessingStage(4).executeFor(
+                        new Image(2, 3,
+                                new ThreeComponentPixelBlock(0, 0, 0),
+                                new ThreeComponentPixelBlock(254, 0, 0),
+                                new ThreeComponentPixelBlock(0, 0, 0),
+                                new ThreeComponentPixelBlock(0, 0, 0),
+                                new ThreeComponentPixelBlock(254, 0, 0),
+                                new ThreeComponentPixelBlock(254, 0, 0)
+                        )
+                )
+        );
+    }
+
+    private Collection<ThreeComponentPixelBlock> getBlocksForShift() {
+        List<ThreeComponentPixelBlock> result = new ArrayList<ThreeComponentPixelBlock>(
+                nCopies(25600, new ThreeComponentPixelBlock(255, 0, 0))
+        );
+        for (int i = 0; i < 100; i++) {
+            result.set(i*256 + 4, new ThreeComponentPixelBlock(0, 0, 0));
+            result.set(i*256 + 255, new ThreeComponentPixelBlock(0, 0, 0));
+        }
+        return result;
+
     }
 }
