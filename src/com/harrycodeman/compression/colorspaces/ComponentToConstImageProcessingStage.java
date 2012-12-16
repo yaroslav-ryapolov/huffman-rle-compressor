@@ -1,10 +1,10 @@
 package com.harrycodeman.compression.colorspaces;
 
-public class SomeComponentToConstImageProcessingStage extends EachPixelBlockImageProcessingStage {
+public class ComponentToConstImageProcessingStage extends EachPixelBlockImageProcessingStage {
     private int index;
     private int replacement;
 
-    public SomeComponentToConstImageProcessingStage(int componentIndex, int replacement) {
+    public ComponentToConstImageProcessingStage(int componentIndex, int replacement) {
         index = componentIndex;
         this.replacement = replacement;
     }

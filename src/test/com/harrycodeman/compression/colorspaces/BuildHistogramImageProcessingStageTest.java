@@ -17,8 +17,8 @@ public class BuildHistogramImageProcessingStageTest {
     @Test
     public void testExecuteFor() throws Exception {
         assertEquals(
-                new Image(256, 100, getBlocksForExecuteFor()),
-                new BuildHistogramImageProcessingStage(0).executeFor(
+                new Image(258, 100, getBlocksForExecuteFor()),
+                new BuildHistogramImageProcessingStage().executeFor(
                         new Image(2, 3,
                                 new ThreeComponentPixelBlock(0, 0, 0),
                                 new ThreeComponentPixelBlock(254, 0, 0),
@@ -33,18 +33,24 @@ public class BuildHistogramImageProcessingStageTest {
 
     private Collection<ThreeComponentPixelBlock> getBlocksForExecuteFor() {
         List<ThreeComponentPixelBlock> result = new ArrayList<ThreeComponentPixelBlock>(
-                nCopies(25600, BuildHistogramImageProcessingStage.BACK_COLOR)
+                nCopies(25800, BuildHistogramImageProcessingStage.BACK_COLOR)
         );
+        result.set(0, new ThreeComponentPixelBlock(0, 0, 0));
+        result.set(1, new ThreeComponentPixelBlock(254, 0, 0));
+        result.set(258, new ThreeComponentPixelBlock(0, 0, 0));
+        result.set(258 + 1, new ThreeComponentPixelBlock(0, 0, 0));
+        result.set(258*2, new ThreeComponentPixelBlock(254, 0, 0));
+        result.set(258*2 + 1, new ThreeComponentPixelBlock(254, 0, 0));
         for (int i = 0; i < 100; i++) {
-            result.set(i*256, BuildHistogramImageProcessingStage.FORE_COLOR);
-            result.set(i*256 + 254, BuildHistogramImageProcessingStage.FORE_COLOR);
+            result.set(i*258 + 2, BuildHistogramImageProcessingStage.FORE_COLOR);
+            result.set(i*258 + 256, BuildHistogramImageProcessingStage.FORE_COLOR);
         }
         return result;
     }
 
     @Test
     public void testForPixelsInterdependency() throws Exception {
-        Image histogram = new BuildHistogramImageProcessingStage(0).executeFor(
+        Image histogram = new BuildHistogramImageProcessingStage().executeFor(
                 new Image(3, 1,
                         new ThreeComponentPixelBlock(0, 0, 0),
                         new ThreeComponentPixelBlock(0, 0, 0),
@@ -60,14 +66,14 @@ public class BuildHistogramImageProcessingStageTest {
             }
         }
         assertEquals(
-                new Image(256, 100, getBlocksForPixelsInterdependency()),
+                new Image(259, 100, getBlocksForPixelsInterdependency()),
                 histogram
         );
     }
 
     private List<ThreeComponentPixelBlock> getBlocksForPixelsInterdependency() {
-        List<ThreeComponentPixelBlock> result = new ArrayList<ThreeComponentPixelBlock>(25600);
-        for (int i = 0; i < 25600; i++) {
+        List<ThreeComponentPixelBlock> result = new ArrayList<ThreeComponentPixelBlock>(25900);
+        for (int i = 0; i < 25900; i++) {
             if (i%2 == 0) {
                 result.add(new ThreeComponentPixelBlock(0, 0, 0));
             }
@@ -76,34 +82,5 @@ public class BuildHistogramImageProcessingStageTest {
             }
         }
         return result;
-    }
-
-    @Test
-    public void testShift() throws Exception {
-        assertEquals(
-                new Image(256, 100, getBlocksForShift()),
-                new BuildHistogramImageProcessingStage(4).executeFor(
-                        new Image(2, 3,
-                                new ThreeComponentPixelBlock(0, 0, 0),
-                                new ThreeComponentPixelBlock(254, 0, 0),
-                                new ThreeComponentPixelBlock(0, 0, 0),
-                                new ThreeComponentPixelBlock(0, 0, 0),
-                                new ThreeComponentPixelBlock(254, 0, 0),
-                                new ThreeComponentPixelBlock(254, 0, 0)
-                        )
-                )
-        );
-    }
-
-    private Collection<ThreeComponentPixelBlock> getBlocksForShift() {
-        List<ThreeComponentPixelBlock> result = new ArrayList<ThreeComponentPixelBlock>(
-                nCopies(25600, BuildHistogramImageProcessingStage.BACK_COLOR)
-        );
-        for (int i = 0; i < 100; i++) {
-            result.set(i*256 + 4, BuildHistogramImageProcessingStage.FORE_COLOR);
-            result.set(i*256 + 255, BuildHistogramImageProcessingStage.FORE_COLOR);
-        }
-        return result;
-
     }
 }

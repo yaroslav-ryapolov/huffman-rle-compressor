@@ -1,8 +1,6 @@
 package test.labs;
 
 import com.harrycodeman.compression.colorspaces.*;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class MultimediaLab3_Histogram {
@@ -15,11 +13,12 @@ public class MultimediaLab3_Histogram {
     }
 
     public void buildHistogram(String filePath, String savePath) throws Exception {
-        for (int s = -256; s <= 256; s += 64) {
+        for (int s = -128; s <= 128; s += 128) {
             new ImageProcessingPipeline(
                     new PpmImageReader(filePath),
                     new FloatRgbToYuvImageProcessingStage(),
-                    new BuildHistogramImageProcessingStage(s),
+                    new ShiftFirstComponentImageProcessingStage(s),
+                    new BuildHistogramImageProcessingStage(),
                     new FloatYuvToRgbImageProcessingStage(),
                     new PpmImageWriter(savePath + ".histogram" + s + ".pnm")
             ).executeFor(null);

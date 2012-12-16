@@ -15,13 +15,11 @@ public class BuildHistogramImageProcessingStage implements IImageProcessingStage
     public static final ThreeComponentPixelBlock FORE_COLOR = new ThreeComponentPixelBlock(0, 0, 0);
 
     // TODO: do this class enable to use many times for different images
-    private final int shift;
     private List<Integer> valuesCounter;
     private List<ThreeComponentPixelBlock> pixelBlocks;
     private double step;
 
-    public BuildHistogramImageProcessingStage(int shift) {
-        this.shift = shift;
+    public BuildHistogramImageProcessingStage() {
         initializeValuesCounter();
         initializeHistogramBackground();
     }
@@ -43,30 +41,16 @@ public class BuildHistogramImageProcessingStage implements IImageProcessingStage
     public Image executeFor(Image image) throws Exception {
         countValues(image);
         buildHistogram();
-        // TODO: use horizontalJoinWith
-        // return image.horizontalJoinWith(new Image(WIDTH, HEIGHT, pixelBlocks));
-        return new Image(WIDTH, HEIGHT, pixelBlocks);
+        return image.horizontalJoinWith(new Image(WIDTH, HEIGHT, pixelBlocks));
     }
 
     private void countValues(Image image) {
         for (ThreeComponentPixelBlock b : image) {
-            int shiftedValue = getShiftedComponent(b.getFirstAsPositiveInt());
             valuesCounter.set(
-                    shiftedValue,
-                    valuesCounter.get(shiftedValue) + 1
+                    b.getFirstAsPositiveInt(),
+                    valuesCounter.get(b.getFirstAsPositiveInt()) + 1
             );
         }
-    }
-
-    private int getShiftedComponent(int value) {
-        int shiftedValue = value + shift;
-        if (shiftedValue > 255) {
-            return 255;
-        }
-        if (shiftedValue < 0) {
-            return 0;
-        }
-        return shiftedValue;
     }
 
     private void buildHistogram() {
@@ -80,6 +64,7 @@ public class BuildHistogramImageProcessingStage implements IImageProcessingStage
 
     private void buildColumn(int columnNumber, int value) {
         int height = (int)(step*value);
+        height = height > 100 ? 100 : height;
         for (int j = 0; j < height; j++) {
             pixelBlocks.set((HEIGHT - j - 1)*WIDTH + columnNumber, FORE_COLOR);
         }

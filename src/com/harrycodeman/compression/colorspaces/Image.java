@@ -9,6 +9,8 @@ import static sun.swing.MenuItemLayoutHelper.max;
 
 public class Image implements Collection<ThreeComponentPixelBlock> {
     // TODO: introduce rows
+    public static final ThreeComponentPixelBlock BACK_COLOR = new ThreeComponentPixelBlock(255, 0, 0);
+
     private int height;
     private int width;
     private List<ThreeComponentPixelBlock> pixelBlocks;
@@ -51,20 +53,17 @@ public class Image implements Collection<ThreeComponentPixelBlock> {
             );
         }
         if (height < other.getHeight()) {
-            List<ThreeComponentPixelBlock> whiteRow = nCopies(width, new ThreeComponentPixelBlock(255, 0, 0));
+            List<ThreeComponentPixelBlock> whiteRow = nCopies(width, BACK_COLOR);
             for (int i = height; i < other.getHeight(); i++) {
                 pixelBlocks.addAll(whiteRow);
                 pixelBlocks.addAll(other.pixelBlocks.subList(i*other.getWidth(), (i + 1)*other.getWidth()));
             }
         }
         else if (height > other.getHeight()) {
-            List<ThreeComponentPixelBlock> whiteRow = nCopies(
-                    other.getWidth(),
-                    new ThreeComponentPixelBlock(255, 0, 0)
-            );
+            List<ThreeComponentPixelBlock> whiteRow = nCopies(other.getWidth(), BACK_COLOR);
             for (int i = other.getHeight(); i < height; i++) {
                     pixelBlocks.addAll(
-                            i*(width + other.getWidth()) + width,
+                            i * (width + other.getWidth()) + width,
                             whiteRow
                     );
             }

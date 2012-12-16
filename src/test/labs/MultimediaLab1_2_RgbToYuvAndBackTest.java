@@ -57,7 +57,7 @@ public class MultimediaLab1_2_RgbToYuvAndBackTest {
     public void convertToYuvUToNegative128BackAndSave() throws Exception {
         new ImageProcessingPipeline(
                 new FloatRgbToYuvImageProcessingStage(),
-                new SomeComponentToConstImageProcessingStage(1, -128),
+                new ComponentToConstImageProcessingStage(1, -128),
                 new FloatYuvToRgbImageProcessingStage(),
                 new PpmImageWriter(SAVE_FILE_NAME + ".withU(Cb)To-128.pnm")
         ).executeFor(rgbImage);
@@ -67,7 +67,7 @@ public class MultimediaLab1_2_RgbToYuvAndBackTest {
     public void convertToYuvVToNegative128BackAndSave() throws Exception {
         new ImageProcessingPipeline(
                 new FloatRgbToYuvImageProcessingStage(),
-                new SomeComponentToConstImageProcessingStage(2, -128),
+                new ComponentToConstImageProcessingStage(2, -128),
                 new FloatYuvToRgbImageProcessingStage(),
                 new PpmImageWriter(SAVE_FILE_NAME + ".withV(Cr)To-128.pnm")
         ).executeFor(rgbImage);
@@ -77,7 +77,7 @@ public class MultimediaLab1_2_RgbToYuvAndBackTest {
     public void convertToYuvYToZeroBackAndSave() throws Exception {
         new ImageProcessingPipeline(
                 new FloatRgbToYuvImageProcessingStage(),
-                new SomeComponentToConstImageProcessingStage(0, 0),
+                new ComponentToConstImageProcessingStage(0, 0),
                 new FloatYuvToRgbImageProcessingStage(),
                 new PpmImageWriter(SAVE_FILE_NAME + ".withYTo0.pnm")
         ).executeFor(rgbImage);
@@ -87,7 +87,7 @@ public class MultimediaLab1_2_RgbToYuvAndBackTest {
     public void convertToYuvUToZeroBackAndSave() throws Exception {
         new ImageProcessingPipeline(
                 new FloatRgbToYuvImageProcessingStage(),
-                new SomeComponentToConstImageProcessingStage(1, 0),
+                new ComponentToConstImageProcessingStage(1, 0),
                 new FloatYuvToRgbImageProcessingStage(),
                 new PpmImageWriter(SAVE_FILE_NAME + ".withU(Cb)To0.pnm")
         ).executeFor(rgbImage);
@@ -97,7 +97,7 @@ public class MultimediaLab1_2_RgbToYuvAndBackTest {
     public void convertToYuvVToZeroBackAndSave() throws Exception {
         new ImageProcessingPipeline(
                 new FloatRgbToYuvImageProcessingStage(),
-                new SomeComponentToConstImageProcessingStage(2, 0),
+                new ComponentToConstImageProcessingStage(2, 0),
                 new FloatYuvToRgbImageProcessingStage(),
                 new PpmImageWriter(SAVE_FILE_NAME + ".withV(Cr)To0.pnm")
         ).executeFor(rgbImage);
@@ -107,8 +107,8 @@ public class MultimediaLab1_2_RgbToYuvAndBackTest {
     public void convertToYuvUAndVToZeroBackAndSave() throws Exception {
         new ImageProcessingPipeline(
                 new FloatRgbToYuvImageProcessingStage(),
-                new SomeComponentToConstImageProcessingStage(1, 0),
-                new SomeComponentToConstImageProcessingStage(2, 0),
+                new ComponentToConstImageProcessingStage(1, 0),
+                new ComponentToConstImageProcessingStage(2, 0),
                 new FloatYuvToRgbImageProcessingStage(),
                 new PpmImageWriter(SAVE_FILE_NAME + ".withU(Cb)AndV(Cr)To0.pnm")
         ).executeFor(rgbImage);
@@ -118,8 +118,8 @@ public class MultimediaLab1_2_RgbToYuvAndBackTest {
     public void convertToYuvYAndVToZeroBackAndSave() throws Exception {
         new ImageProcessingPipeline(
                 new FloatRgbToYuvImageProcessingStage(),
-                new SomeComponentToConstImageProcessingStage(0, 0),
-                new SomeComponentToConstImageProcessingStage(2, 0),
+                new ComponentToConstImageProcessingStage(0, 0),
+                new ComponentToConstImageProcessingStage(2, 0),
                 new FloatYuvToRgbImageProcessingStage(),
                 new PpmImageWriter(SAVE_FILE_NAME + ".withYAndV(Cr)To0.pnm")
         ).executeFor(rgbImage);
@@ -129,8 +129,8 @@ public class MultimediaLab1_2_RgbToYuvAndBackTest {
     public void convertToYuvYAndUToZeroBackAndSave() throws Exception {
         new ImageProcessingPipeline(
                 new FloatRgbToYuvImageProcessingStage(),
-                new SomeComponentToConstImageProcessingStage(0, 0),
-                new SomeComponentToConstImageProcessingStage(1, 0),
+                new ComponentToConstImageProcessingStage(0, 0),
+                new ComponentToConstImageProcessingStage(1, 0),
                 new FloatYuvToRgbImageProcessingStage(),
                 new PpmImageWriter(SAVE_FILE_NAME + ".withYAndU(Cb)To0.pnm")
         ).executeFor(rgbImage);
@@ -140,7 +140,7 @@ public class MultimediaLab1_2_RgbToYuvAndBackTest {
     public void convertToYuvYTo255BackAndSave() throws Exception {
         new ImageProcessingPipeline(
                 new FloatRgbToYuvImageProcessingStage(),
-                new SomeComponentToConstImageProcessingStage(0, 100),
+                new ComponentToConstImageProcessingStage(0, 100),
                 new FloatYuvToRgbImageProcessingStage(),
                 new PpmImageWriter(SAVE_FILE_NAME + ".withYTo255.pnm")
         ).executeFor(rgbImage);
@@ -150,7 +150,7 @@ public class MultimediaLab1_2_RgbToYuvAndBackTest {
     public void convertToYuvUTo127BackAndSave() throws Exception {
         new ImageProcessingPipeline(
                 new FloatRgbToYuvImageProcessingStage(),
-                new SomeComponentToConstImageProcessingStage(1, 127),
+                new ComponentToConstImageProcessingStage(1, 127),
                 new FloatYuvToRgbImageProcessingStage(),
                 new PpmImageWriter(SAVE_FILE_NAME + ".withU(Cb)To127.pnm")
         ).executeFor(rgbImage);
@@ -160,7 +160,7 @@ public class MultimediaLab1_2_RgbToYuvAndBackTest {
     public void convertToYuvVTo127BackAndSave() throws Exception {
         new ImageProcessingPipeline(
                 new FloatRgbToYuvImageProcessingStage(),
-                new SomeComponentToConstImageProcessingStage(2, 127),
+                new ComponentToConstImageProcessingStage(2, 127),
                 new FloatYuvToRgbImageProcessingStage(),
                 new PpmImageWriter(SAVE_FILE_NAME + ".withV(Cr)To127.pnm")
         ).executeFor(rgbImage);
