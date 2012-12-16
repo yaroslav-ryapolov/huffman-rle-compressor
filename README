@@ -1,1 +1,5 @@
-Implementation of Run Lenght Encoding and Huffman algorithms.
+Implementation of some compression, encryption and image processing algorithms.
+Algorithm list:
+* Run lenght encoding plus huffman.
+* RGB<->YUV convertations.
+* Histogram building for some component of image.
