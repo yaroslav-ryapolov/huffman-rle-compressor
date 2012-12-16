@@ -30,13 +30,13 @@ public class ImageTest {
     public void testHorizontalJoinLeftLowerThanRight() throws Exception {
         assertEquals(
                 new Image(2, 3,
-                        new ThreeComponentPixelBlock(1, 1, 0), new ThreeComponentPixelBlock(2, 1, 0),
+                        new ThreeComponentPixelBlock(255, 0, 0), new ThreeComponentPixelBlock(2, 1, 0),
                         new ThreeComponentPixelBlock(1, 2, 0), new ThreeComponentPixelBlock(2, 2, 0),
-                        new ThreeComponentPixelBlock(255, 0, 0), new ThreeComponentPixelBlock(2, 3, 0)
+                        new ThreeComponentPixelBlock(1, 3, 0), new ThreeComponentPixelBlock(2, 3, 0)
                 ),
                 new Image(1, 2,
-                        new ThreeComponentPixelBlock(1, 1, 0),
-                        new ThreeComponentPixelBlock(1, 2, 0)
+                        new ThreeComponentPixelBlock(1, 2, 0),
+                        new ThreeComponentPixelBlock(1, 3, 0)
                 ).horizontalJoinWith(
                         new Image(1, 3,
                                 new ThreeComponentPixelBlock(2, 1, 0),
@@ -51,9 +51,9 @@ public class ImageTest {
     public void testHorizontalJoinLeftHigherThanRight() throws Exception {
         assertEquals(
                 new Image(2, 3,
-                        new ThreeComponentPixelBlock(1, 1, 0), new ThreeComponentPixelBlock(2, 1, 0),
+                        new ThreeComponentPixelBlock(1, 1, 0), new ThreeComponentPixelBlock(255, 0, 0),
                         new ThreeComponentPixelBlock(1, 2, 0), new ThreeComponentPixelBlock(2, 2, 0),
-                        new ThreeComponentPixelBlock(1, 3, 0), new ThreeComponentPixelBlock(255, 0, 0)
+                        new ThreeComponentPixelBlock(1, 3, 0), new ThreeComponentPixelBlock(2, 3, 0)
                 ),
                 new Image(1, 3,
                         new ThreeComponentPixelBlock(1, 1, 0),
@@ -61,8 +61,8 @@ public class ImageTest {
                         new ThreeComponentPixelBlock(1, 3, 0)
                 ).horizontalJoinWith(
                         new Image(1, 2,
-                                new ThreeComponentPixelBlock(2, 1, 0),
-                                new ThreeComponentPixelBlock(2, 2, 0)
+                                new ThreeComponentPixelBlock(2, 2, 0),
+                                new ThreeComponentPixelBlock(2, 3, 0)
                         )
                 )
         );

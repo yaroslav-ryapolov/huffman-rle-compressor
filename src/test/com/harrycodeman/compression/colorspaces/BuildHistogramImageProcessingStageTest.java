@@ -35,12 +35,12 @@ public class BuildHistogramImageProcessingStageTest {
         List<ThreeComponentPixelBlock> result = new ArrayList<ThreeComponentPixelBlock>(
                 nCopies(25800, BuildHistogramImageProcessingStage.BACK_COLOR)
         );
-        result.set(0, new ThreeComponentPixelBlock(0, 0, 0));
-        result.set(1, new ThreeComponentPixelBlock(254, 0, 0));
-        result.set(258, new ThreeComponentPixelBlock(0, 0, 0));
-        result.set(258 + 1, new ThreeComponentPixelBlock(0, 0, 0));
-        result.set(258*2, new ThreeComponentPixelBlock(254, 0, 0));
-        result.set(258*2 + 1, new ThreeComponentPixelBlock(254, 0, 0));
+        result.set(258*97, new ThreeComponentPixelBlock(0, 0, 0));
+        result.set(258*97 + 1, new ThreeComponentPixelBlock(254, 0, 0));
+        result.set(258*98, new ThreeComponentPixelBlock(0, 0, 0));
+        result.set(258*98 + 1, new ThreeComponentPixelBlock(0, 0, 0));
+        result.set(258*99, new ThreeComponentPixelBlock(254, 0, 0));
+        result.set(258*99 + 1, new ThreeComponentPixelBlock(254, 0, 0));
         for (int i = 0; i < 100; i++) {
             result.set(i*258 + 2, BuildHistogramImageProcessingStage.FORE_COLOR);
             result.set(i*258 + 256, BuildHistogramImageProcessingStage.FORE_COLOR);

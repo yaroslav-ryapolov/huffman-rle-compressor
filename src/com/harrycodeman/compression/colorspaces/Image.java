@@ -2,7 +2,7 @@ package com.harrycodeman.compression.colorspaces;
 
 import java.util.*;
 
-import static java.lang.Math.min;
+import static java.lang.Math.abs;
 import static java.lang.String.format;
 import static java.util.Collections.nCopies;
 import static sun.swing.MenuItemLayoutHelper.max;
@@ -44,41 +44,59 @@ public class Image implements Collection<ThreeComponentPixelBlock> {
     }
 
     public Image horizontalJoinWith(Image other) {
-        // TODO: refactoring needs
+        joinRowsOfHigherImageWithBlankLines(other);
         joinFullRows(other);
-        if (height < other.getHeight()) {
-            joinRowsFromOtherWithBlankLines(other);
-        }
-        else if (height > other.getHeight()) {
-            joinRowsFromThisWithBlankLines(other);
-        }
         width += other.getWidth();
         height = max(height, other.getHeight());
         return this;
     }
 
-    private void joinFullRows(Image other) {
-        int minHeight = min(height, other.getHeight());
-        for (int i = 0; i < minHeight; i++) {
+    private void joinRowsOfHigherImageWithBlankLines(Image other) {
+        if (height < other.getHeight()) {
+            joinRowsOfOtherWithBlankLines(other);
+        }
+        else if (height > other.getHeight()) {
+            joinRowsOfThisWithBlankLines(other);
+        }
+    }
+
+    private void joinRowsOfOtherWithBlankLines(Image other) {
+        List<ThreeComponentPixelBlock> blankRow = nCopies(width, BACK_COLOR);
+        int heightDifference = other.getHeight() - height;
+        for (int i = 0; i < heightDifference; i++) {
+            pixelBlocks.addAll(i*(width + other.getWidth()), blankRow);
             pixelBlocks.addAll(
                     i*(width + other.getWidth()) + width,
-                    other.pixelBlocks.subList(i*other.getWidth(), (i + 1)*other.getWidth())
-            );
+                    other.pixelBlocks.subList(i*other.getWidth(), (i + 1)*other.getWidth()));
         }
     }
 
-    private void joinRowsFromOtherWithBlankLines(Image other) {
-        List<ThreeComponentPixelBlock> blankRow = nCopies(width, BACK_COLOR);
-        for (int i = height; i < other.getHeight(); i++) {
-            pixelBlocks.addAll(blankRow);
-            pixelBlocks.addAll(other.pixelBlocks.subList(i*other.getWidth(), (i + 1)*other.getWidth()));
-        }
-    }
-
-    private void joinRowsFromThisWithBlankLines(Image other) {
+    private void joinRowsOfThisWithBlankLines(Image other) {
         List<ThreeComponentPixelBlock> blankRow = nCopies(other.getWidth(), BACK_COLOR);
-        for (int i = other.getHeight(); i < height; i++) {
-                pixelBlocks.addAll(i * (width + other.getWidth()) + width, blankRow);
+        int heightDifference = height - other.getHeight();
+        for (int i = 0; i < heightDifference; i++) {
+                pixelBlocks.addAll(i*(width + other.getWidth()) + width, blankRow);
+        }
+    }
+
+    private void joinFullRows(Image other) {
+        int heightDifference = abs(height - other.getHeight());
+        int maxHeight = max(height, other.getHeight());
+        for (int i = heightDifference; i < maxHeight; i++) {
+            if (height < other.getHeight()) {
+                pixelBlocks.addAll(
+                        i*(width + other.getWidth()) + width,
+                        other.pixelBlocks.subList(i*other.getWidth(), (i + 1)*other.getWidth())
+                );
+            }
+            else {
+                pixelBlocks.addAll(
+                        i*(width + other.getWidth()) + width,
+                        other.pixelBlocks.subList(
+                                (i - heightDifference)*other.getWidth(), (i - heightDifference + 1)*other.getWidth()
+                        )
+                );
+            }
         }
     }
 
