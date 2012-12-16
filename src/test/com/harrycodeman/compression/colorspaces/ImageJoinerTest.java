@@ -1,12 +1,13 @@
 package test.com.harrycodeman.compression.colorspaces;
 
 import com.harrycodeman.compression.colorspaces.Image;
+import com.harrycodeman.compression.colorspaces.ImageJoiner;
 import com.harrycodeman.compression.colorspaces.ThreeComponentPixelBlock;
 import org.junit.Test;
 
 import static junit.framework.Assert.assertEquals;
 
-public class ImageTest {
+public class ImageJoinerTest {
     @Test
     public void testHorizontalJoinEqualHeight() throws Exception {
         assertEquals(
@@ -14,10 +15,11 @@ public class ImageTest {
                         new ThreeComponentPixelBlock(1, 1, 0), new ThreeComponentPixelBlock(2, 1, 0),
                         new ThreeComponentPixelBlock(1, 2, 0), new ThreeComponentPixelBlock(2, 2, 0)
                 ),
-                new Image(1, 2,
-                        new ThreeComponentPixelBlock(1, 1, 0),
-                        new ThreeComponentPixelBlock(1, 2, 0)
-                ).horizontalJoinWith(
+                new ImageJoiner().horizontalJoin(
+                        new Image(1, 2,
+                                new ThreeComponentPixelBlock(1, 1, 0),
+                                new ThreeComponentPixelBlock(1, 2, 0)
+                        ),
                         new Image(1, 2,
                                 new ThreeComponentPixelBlock(2, 1, 0),
                                 new ThreeComponentPixelBlock(2, 2, 0)
@@ -34,10 +36,11 @@ public class ImageTest {
                         new ThreeComponentPixelBlock(1, 2, 0), new ThreeComponentPixelBlock(2, 2, 0),
                         new ThreeComponentPixelBlock(1, 3, 0), new ThreeComponentPixelBlock(2, 3, 0)
                 ),
-                new Image(1, 2,
-                        new ThreeComponentPixelBlock(1, 2, 0),
-                        new ThreeComponentPixelBlock(1, 3, 0)
-                ).horizontalJoinWith(
+                new ImageJoiner().horizontalJoin(
+                        new Image(1, 2,
+                                new ThreeComponentPixelBlock(1, 2, 0),
+                                new ThreeComponentPixelBlock(1, 3, 0)
+                        ),
                         new Image(1, 3,
                                 new ThreeComponentPixelBlock(2, 1, 0),
                                 new ThreeComponentPixelBlock(2, 2, 0),
@@ -55,11 +58,12 @@ public class ImageTest {
                         new ThreeComponentPixelBlock(1, 2, 0), new ThreeComponentPixelBlock(2, 2, 0),
                         new ThreeComponentPixelBlock(1, 3, 0), new ThreeComponentPixelBlock(2, 3, 0)
                 ),
-                new Image(1, 3,
-                        new ThreeComponentPixelBlock(1, 1, 0),
-                        new ThreeComponentPixelBlock(1, 2, 0),
-                        new ThreeComponentPixelBlock(1, 3, 0)
-                ).horizontalJoinWith(
+                new ImageJoiner().horizontalJoin(
+                        new Image(1, 3,
+                                new ThreeComponentPixelBlock(1, 1, 0),
+                                new ThreeComponentPixelBlock(1, 2, 0),
+                                new ThreeComponentPixelBlock(1, 3, 0)
+                        ),
                         new Image(1, 2,
                                 new ThreeComponentPixelBlock(2, 2, 0),
                                 new ThreeComponentPixelBlock(2, 3, 0)

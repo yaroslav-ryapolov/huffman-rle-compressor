@@ -41,7 +41,7 @@ public class BuildHistogramImageProcessingStage implements IImageProcessingStage
     public Image executeFor(Image image) throws Exception {
         countValues(image);
         buildHistogram();
-        return image.horizontalJoinWith(new Image(WIDTH, HEIGHT, pixelBlocks));
+        return new ImageJoiner().horizontalJoin(image, new Image(WIDTH, HEIGHT, pixelBlocks));
     }
 
     private void countValues(Image image) {

@@ -1,61 +1,66 @@
 package com.harrycodeman.compression.colorspaces;
 
+import java.util.List;
+
+import static java.lang.Math.abs;
+import static java.lang.Math.max;
+import static java.util.Collections.nCopies;
+
 public class ImageJoiner {
-//    public static final ThreeComponentPixelBlock BACK_COLOR = new ThreeComponentPixelBlock(255, 0, 0);
-//
-//    public Image horizontalJoinWith(Image left, Image right) {
-//        Image result = new Image(left.getWidth() + right.getWidth(), Math.max(left.getHeight(), right.getHeight()));
-//        joinRowsOfHigherImageWithBlankLines(left, right);
-//        joinFullRows(left, right);
-//        return result;
-//    }
-//
-//    private void joinRowsOfHigherImageWithBlankLines(Image left, Image right) {
-//        if (left.getHeight() < right.getHeight()) {
-//            joinRowsOfOtherWithBlankLines(left, right);
-//        }
-//        else if (left.getHeight() > right.getHeight()) {
-//            joinRowsOfThisWithBlankLines(right);
-//        }
-//    }
-//
-//    private void joinRowsOfOtherWithBlankLines(Image left, Image right) {
-//        List<ThreeComponentPixelBlock> blankRow = nCopies(left.getWidth(), BACK_COLOR);
-//        int heightDifference = right.getHeight() - left.getHeight();
-//        for (int i = 0; i < heightDifference; i++) {
-//            pixelBlocks.addAll(i*(left.getWidth() + right.getWidth()), blankRow);
-//            pixelBlocks.addAll(
-//                    i*(width + right.getWidth()) + width,
-//                    right.pixelBlocks.subList(i*right.getWidth(), (i + 1)*right.getWidth()));
-//        }
-//    }
-//
-//    private void joinRowsOfThisWithBlankLines(Image other) {
-//        List<ThreeComponentPixelBlock> blankRow = nCopies(other.getWidth(), BACK_COLOR);
-//        int heightDifference = height - other.getHeight();
-//        for (int i = 0; i < heightDifference; i++) {
-//            pixelBlocks.addAll(i*(width + other.getWidth()) + width, blankRow);
-//        }
-//    }
-//
-//    private void joinFullRows(Image other) {
-//        int heightDifference = abs(height - other.getHeight());
-//        int maxHeight = max(height, other.getHeight());
-//        for (int i = heightDifference; i < maxHeight; i++) {
-//            if (height < other.getHeight()) {
-//                pixelBlocks.addAll(
-//                        i*(width + other.getWidth()) + width,
-//                        other.pixelBlocks.subList(i*other.getWidth(), (i + 1)*other.getWidth())
-//                );
-//            }
-//            else {
-//                pixelBlocks.addAll(
-//                        i*(width + other.getWidth()) + width,
-//                        other.pixelBlocks.subList(
-//                                (i - heightDifference)*other.getWidth(), (i - heightDifference + 1)*other.getWidth()
-//                        )
-//                );
-//            }
-//        }
-//    }
+    public static final ThreeComponentPixelBlock BACK_COLOR = new ThreeComponentPixelBlock(255, 0, 0);
+
+    public Image horizontalJoin(Image left, Image right) {
+        joinRowsOfHigherImageWithBlankLines(left, right);
+        joinFullRows(left, right);
+        left.setWidthAndHeight(left.getWidth() + right.getWidth(), max(left.getHeight(), right.getHeight()));
+        return left;
+    }
+
+    private void joinRowsOfHigherImageWithBlankLines(Image left, Image right) {
+        if (left.getHeight() < right.getHeight()) {
+            joinRowsOfOtherWithBlankLines(left, right);
+        }
+        else if (left.getHeight() > right.getHeight()) {
+            joinRowsOfThisWithBlankLines(left, right);
+        }
+    }
+
+    private void joinRowsOfOtherWithBlankLines(Image left, Image right) {
+        List<ThreeComponentPixelBlock> blankRow = nCopies(left.getWidth(), BACK_COLOR);
+        int heightDifference = right.getHeight() - left.getHeight();
+        for (int i = 0; i < heightDifference; i++) {
+            left.addAll(i*(left.getWidth() + right.getWidth()), blankRow);
+            left.addAll(
+                    i*(left.getWidth() + right.getWidth()) + left.getWidth(),
+                    right.getRow(i)
+            );
+        }
+    }
+
+    private void joinRowsOfThisWithBlankLines(Image left, Image right) {
+        List<ThreeComponentPixelBlock> blankRow = nCopies(right.getWidth(), BACK_COLOR);
+        int heightDifference = left.getHeight() - right.getHeight();
+        for (int i = 0; i < heightDifference; i++) {
+            left.addAll(i*(left.getWidth() + right.getWidth()) + left.getWidth(), blankRow);
+        }
+    }
+
+    private void joinFullRows(Image left, Image right) {
+        int heightDifference = abs(left.getHeight() - right.getHeight());
+        int maxHeight = max(left.getHeight(), right.getHeight());
+        for (int i = heightDifference; i < maxHeight; i++) {
+            if (left.getHeight() < right.getHeight()) {
+                left.addAll(
+                        i*(left.getWidth() + right.getWidth()) + left.getWidth(),
+                        right.getRow(i)
+                );
+            }
+            else {
+                left.addAll(
+                        i * (left.getWidth() + right.getWidth()) + left.getWidth(),
+                        right.getRow(i - heightDifference)
+                );
+            }
+        }
+    }
 }
