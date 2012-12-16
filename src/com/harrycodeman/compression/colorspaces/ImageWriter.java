@@ -1,5 +1,8 @@
 package com.harrycodeman.compression.colorspaces;
 
+import com.harrycodeman.compression.colorspaces.IImageProcessingStage;
+import com.harrycodeman.compression.colorspaces.Image;
+
 import java.io.FileOutputStream;
 import java.io.OutputStream;
 
