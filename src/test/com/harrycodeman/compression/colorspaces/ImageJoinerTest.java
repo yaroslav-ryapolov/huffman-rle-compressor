@@ -15,7 +15,7 @@ public class ImageJoinerTest {
                         new ThreeComponentPixelBlock(1, 1, 0), new ThreeComponentPixelBlock(2, 1, 0),
                         new ThreeComponentPixelBlock(1, 2, 0), new ThreeComponentPixelBlock(2, 2, 0)
                 ),
-                new ImageJoiner().horizontalJoin(
+                new ImageJoiner().horizontalJoinWithLeftImageModifying(
                         new Image(1, 2,
                                 new ThreeComponentPixelBlock(1, 1, 0),
                                 new ThreeComponentPixelBlock(1, 2, 0)
@@ -36,7 +36,7 @@ public class ImageJoinerTest {
                         new ThreeComponentPixelBlock(1, 2, 0), new ThreeComponentPixelBlock(2, 2, 0),
                         new ThreeComponentPixelBlock(1, 3, 0), new ThreeComponentPixelBlock(2, 3, 0)
                 ),
-                new ImageJoiner().horizontalJoin(
+                new ImageJoiner().horizontalJoinWithLeftImageModifying(
                         new Image(1, 2,
                                 new ThreeComponentPixelBlock(1, 2, 0),
                                 new ThreeComponentPixelBlock(1, 3, 0)
@@ -58,7 +58,7 @@ public class ImageJoinerTest {
                         new ThreeComponentPixelBlock(1, 2, 0), new ThreeComponentPixelBlock(2, 2, 0),
                         new ThreeComponentPixelBlock(1, 3, 0), new ThreeComponentPixelBlock(2, 3, 0)
                 ),
-                new ImageJoiner().horizontalJoin(
+                new ImageJoiner().horizontalJoinWithLeftImageModifying(
                         new Image(1, 3,
                                 new ThreeComponentPixelBlock(1, 1, 0),
                                 new ThreeComponentPixelBlock(1, 2, 0),
