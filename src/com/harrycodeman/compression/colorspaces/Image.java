@@ -45,6 +45,19 @@ public class Image implements Collection<ThreeComponentPixelBlock> {
 
     public Image horizontalJoinWith(Image other) {
         // TODO: refactoring needs
+        joinFullRows(other);
+        if (height < other.getHeight()) {
+            joinRowsFromOtherWithBlankLines(other);
+        }
+        else if (height > other.getHeight()) {
+            joinRowsFromThisWithBlankLines(other);
+        }
+        width += other.getWidth();
+        height = max(height, other.getHeight());
+        return this;
+    }
+
+    private void joinFullRows(Image other) {
         int minHeight = min(height, other.getHeight());
         for (int i = 0; i < minHeight; i++) {
             pixelBlocks.addAll(
@@ -52,25 +65,21 @@ public class Image implements Collection<ThreeComponentPixelBlock> {
                     other.pixelBlocks.subList(i*other.getWidth(), (i + 1)*other.getWidth())
             );
         }
-        if (height < other.getHeight()) {
-            List<ThreeComponentPixelBlock> whiteRow = nCopies(width, BACK_COLOR);
-            for (int i = height; i < other.getHeight(); i++) {
-                pixelBlocks.addAll(whiteRow);
-                pixelBlocks.addAll(other.pixelBlocks.subList(i*other.getWidth(), (i + 1)*other.getWidth()));
-            }
+    }
+
+    private void joinRowsFromOtherWithBlankLines(Image other) {
+        List<ThreeComponentPixelBlock> blankRow = nCopies(width, BACK_COLOR);
+        for (int i = height; i < other.getHeight(); i++) {
+            pixelBlocks.addAll(blankRow);
+            pixelBlocks.addAll(other.pixelBlocks.subList(i*other.getWidth(), (i + 1)*other.getWidth()));
         }
-        else if (height > other.getHeight()) {
-            List<ThreeComponentPixelBlock> whiteRow = nCopies(other.getWidth(), BACK_COLOR);
-            for (int i = other.getHeight(); i < height; i++) {
-                    pixelBlocks.addAll(
-                            i * (width + other.getWidth()) + width,
-                            whiteRow
-                    );
-            }
+    }
+
+    private void joinRowsFromThisWithBlankLines(Image other) {
+        List<ThreeComponentPixelBlock> blankRow = nCopies(other.getWidth(), BACK_COLOR);
+        for (int i = other.getHeight(); i < height; i++) {
+                pixelBlocks.addAll(i * (width + other.getWidth()) + width, blankRow);
         }
-        width += other.getWidth();
-        height = max(height, other.getHeight());
-        return this;
     }
 
     @Override
