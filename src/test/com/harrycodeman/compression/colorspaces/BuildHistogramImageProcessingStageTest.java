@@ -17,7 +17,7 @@ public class BuildHistogramImageProcessingStageTest {
     @Test
     public void testExecuteFor() throws Exception {
         assertEquals(
-                new Image(258, 100, getBlocksForExecuteFor()),
+                new Image(259, 100, getBlocksForExecuteFor()),
                 new BuildHistogramImageProcessingStage().executeFor(
                         new Image(2, 3,
                                 new ThreeComponentPixelBlock(0, 0, 0),
@@ -33,17 +33,17 @@ public class BuildHistogramImageProcessingStageTest {
 
     private Collection<ThreeComponentPixelBlock> getBlocksForExecuteFor() {
         List<ThreeComponentPixelBlock> result = new ArrayList<ThreeComponentPixelBlock>(
-                nCopies(25800, BuildHistogramImageProcessingStage.BACK_COLOR)
+                nCopies(25900, BuildHistogramImageProcessingStage.BACK_COLOR)
         );
-        result.set(258*97, new ThreeComponentPixelBlock(0, 0, 0));
-        result.set(258*97 + 1, new ThreeComponentPixelBlock(254, 0, 0));
-        result.set(258*98, new ThreeComponentPixelBlock(0, 0, 0));
-        result.set(258*98 + 1, new ThreeComponentPixelBlock(0, 0, 0));
-        result.set(258*99, new ThreeComponentPixelBlock(254, 0, 0));
-        result.set(258*99 + 1, new ThreeComponentPixelBlock(254, 0, 0));
+        result.set(259*97, new ThreeComponentPixelBlock(0, 0, 0));
+        result.set(259*97 + 1, new ThreeComponentPixelBlock(254, 0, 0));
+        result.set(259*98, new ThreeComponentPixelBlock(0, 0, 0));
+        result.set(259*98 + 1, new ThreeComponentPixelBlock(0, 0, 0));
+        result.set(259*99, new ThreeComponentPixelBlock(254, 0, 0));
+        result.set(259*99 + 1, new ThreeComponentPixelBlock(254, 0, 0));
         for (int i = 0; i < 100; i++) {
-            result.set(i*258 + 2, BuildHistogramImageProcessingStage.FORE_COLOR);
-            result.set(i*258 + 256, BuildHistogramImageProcessingStage.FORE_COLOR);
+            result.set(i*259 + 3, BuildHistogramImageProcessingStage.FORE_COLOR);
+            result.set(i*259 + 257, BuildHistogramImageProcessingStage.FORE_COLOR);
         }
         return result;
     }
@@ -66,14 +66,14 @@ public class BuildHistogramImageProcessingStageTest {
             }
         }
         assertEquals(
-                new Image(259, 100, getBlocksForPixelsInterdependency()),
+                new Image(260, 100, getBlocksForPixelsInterdependency()),
                 histogram
         );
     }
 
     private List<ThreeComponentPixelBlock> getBlocksForPixelsInterdependency() {
-        List<ThreeComponentPixelBlock> result = new ArrayList<ThreeComponentPixelBlock>(25900);
-        for (int i = 0; i < 25900; i++) {
+        List<ThreeComponentPixelBlock> result = new ArrayList<ThreeComponentPixelBlock>(26000);
+        for (int i = 0; i < 26000; i++) {
             if (i%2 == 0) {
                 result.add(new ThreeComponentPixelBlock(0, 0, 0));
             }

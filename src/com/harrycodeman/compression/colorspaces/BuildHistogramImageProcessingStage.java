@@ -3,11 +3,10 @@ package com.harrycodeman.compression.colorspaces;
 import java.util.ArrayList;
 import java.util.List;
 
-import static java.util.Collections.max;
 import static java.util.Collections.nCopies;
 
 public class BuildHistogramImageProcessingStage implements IImageProcessingStage {
-    private static final int WIDTH = 256;
+    private static final int WIDTH = 257; // with white left column
     private static final int HEIGHT = 100;
     private static final int SIZE = WIDTH*HEIGHT;
 
@@ -20,27 +19,14 @@ public class BuildHistogramImageProcessingStage implements IImageProcessingStage
     private double step;
 
     public BuildHistogramImageProcessingStage() {
-        initializeValuesCounter();
-        initializeHistogramBackground();
-    }
-
-    private void initializeValuesCounter() {
-        valuesCounter = new ArrayList<Integer>(
-                nCopies(WIDTH, 0)
-        );
-    }
-
-    private void initializeHistogramBackground() {
-        pixelBlocks = new ArrayList<ThreeComponentPixelBlock>();
-        for (int i = 0; i < SIZE; i++) {
-            pixelBlocks.add(BACK_COLOR);
-        }
+        valuesCounter = new ArrayList<Integer>(nCopies(WIDTH, 0));
+        pixelBlocks = new ArrayList<ThreeComponentPixelBlock>(nCopies(SIZE, BACK_COLOR));
     }
 
     @Override
     public Image executeFor(Image image) throws Exception {
         countValues(image);
-        buildHistogram();
+        buildHistogram(image);
         return new ImageJoiner().horizontalJoinWithLeftImageModifying(image, new Image(WIDTH, HEIGHT, pixelBlocks));
     }
 
@@ -53,11 +39,11 @@ public class BuildHistogramImageProcessingStage implements IImageProcessingStage
         }
     }
 
-    private void buildHistogram() {
-        step = 100.0/max(valuesCounter);
+    private void buildHistogram(Image image) {
+        step = 6400.0/image.size();
         int columnNumber = 0;
         for (int c : valuesCounter) {
-            buildColumn(columnNumber, c);
+            buildColumn(columnNumber + 1, c);
             columnNumber++;
         }
     }

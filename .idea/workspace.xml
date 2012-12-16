@@ -3,15 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="c601d356-f788-4d61-b6a9-f64e45081852" name="Default" comment="File workspace.xml changed? I don't know why!`">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/BuildHistogramImageProcessingStage.java" afterPath="$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/BuildHistogramImageProcessingStage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/ImageJoiner.java" afterPath="$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/ImageJoiner.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/com/harrycodeman/compression/colorspaces/ImageJoinerTest.java" afterPath="$PROJECT_DIR$/src/test/com/harrycodeman/compression/colorspaces/ImageJoinerTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/com/harrycodeman/compression/colorspaces/BuildHistogramImageProcessingStageTest.java" afterPath="$PROJECT_DIR$/src/test/com/harrycodeman/compression/colorspaces/BuildHistogramImageProcessingStageTest.java" />
     </list>
     <ignored path="huffman-rle-compressor.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="c601d356-f788-4d61-b6a9-f64e45081852" time="1355673820744" ignored="false" />
     <file path="/a.groovy" changelist="c601d356-f788-4d61-b6a9-f64e45081852" time="1355246819721" ignored="false" />
     <file path="/Image.java" changelist="c601d356-f788-4d61-b6a9-f64e45081852" time="1355677794725" ignored="false" />
-    <file path="/BuildHistogramImageProcessingStage.java" changelist="c601d356-f788-4d61-b6a9-f64e45081852" time="1355677966133" ignored="false" />
+    <file path="/BuildHistogramImageProcessingStage.java" changelist="c601d356-f788-4d61-b6a9-f64e45081852" time="1355679929266" ignored="false" />
     <file path="/BuildHistogramImageProcessingStageTest.java" changelist="c601d356-f788-4d61-b6a9-f64e45081852" time="1355655067842" ignored="false" />
     <file path="/MultimediaLab1_2_RgbToYuvAndBackTest.java" changelist="c601d356-f788-4d61-b6a9-f64e45081852" time="1355332545165" ignored="false" />
     <file path="/fragment.java" changelist="c601d356-f788-4d61-b6a9-f64e45081852" time="1355395355998" ignored="false" />
@@ -32,7 +31,7 @@
     <file path="/ShiftComponentImageProcessingPipeline.java" changelist="c601d356-f788-4d61-b6a9-f64e45081852" time="1355659925587" ignored="false" />
     <file path="/ShiftComponentImageProcessingStage.java" changelist="c601d356-f788-4d61-b6a9-f64e45081852" time="1355659765451" ignored="false" />
     <file path="/ImageJoiner.java" changelist="c601d356-f788-4d61-b6a9-f64e45081852" time="1355678926240" ignored="false" />
-    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="c601d356-f788-4d61-b6a9-f64e45081852" time="1355678941159" ignored="false" />
+    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="c601d356-f788-4d61-b6a9-f64e45081852" time="1355680197949" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,12 +159,12 @@
         <option value="$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/ShiftComponentImageProcessingStage.java" />
         <option value="$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/ShiftFirstComponentImageProcessingStage.java" />
         <option value="$PROJECT_DIR$/src/test/labs/MultimediaLab3_Histogram.java" />
-        <option value="$PROJECT_DIR$/src/test/com/harrycodeman/compression/colorspaces/BuildHistogramImageProcessingStageTest.java" />
         <option value="$PROJECT_DIR$/src/test/com/harrycodeman/compression/colorspaces/ImageTest.java" />
         <option value="$PROJECT_DIR$/src/test/com/harrycodeman/compression/colorspaces/ImageJoinerTest.java" />
-        <option value="$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/BuildHistogramImageProcessingStage.java" />
         <option value="$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/Image.java" />
         <option value="$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/ImageJoiner.java" />
+        <option value="$PROJECT_DIR$/src/test/com/harrycodeman/compression/colorspaces/BuildHistogramImageProcessingStageTest.java" />
+        <option value="$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/BuildHistogramImageProcessingStage.java" />
       </list>
     </option>
   </component>
@@ -531,6 +530,29 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
+    <configuration default="false" name="BuildHistogramImageProcessingStageTest" type="JUnit" factoryName="JUnit" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="huffman-rle-compressor" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="test.com.harrycodeman.compression.colorspaces" />
+      <option name="MAIN_CLASS_NAME" value="test.com.harrycodeman.compression.colorspaces.BuildHistogramImageProcessingStageTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
@@ -728,7 +750,7 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <list size="8">
+    <list size="9">
       <item index="0" class="java.lang.String" itemvalue="JUnit.Full prject test" />
       <item index="1" class="java.lang.String" itemvalue="JUnit.MultimediaLab1_2" />
       <item index="2" class="java.lang.String" itemvalue="JUnit.EncryptionLab1" />
@@ -737,13 +759,15 @@
       <item index="5" class="java.lang.String" itemvalue="JUnit.BuildHistogramImageProcessingStageTest.testForPixelsInterdependency" />
       <item index="6" class="java.lang.String" itemvalue="JUnit.BuildHistogramImageProcessingStageTest.testExecuteFor" />
       <item index="7" class="java.lang.String" itemvalue="JUnit.ImageJoinerTest" />
+      <item index="8" class="java.lang.String" itemvalue="JUnit.BuildHistogramImageProcessingStageTest" />
     </list>
     <recent_temporary>
-      <list size="4">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.BuildHistogramImageProcessingStageTest.testExecuteFor" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.ImageJoinerTest" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.BuildHistogramImageProcessingStageTest.testShift" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.BuildHistogramImageProcessingStageTest.testForPixelsInterdependency" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="JUnit.BuildHistogramImageProcessingStageTest" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.BuildHistogramImageProcessingStageTest.testExecuteFor" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.ImageJoinerTest" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.BuildHistogramImageProcessingStageTest.testShift" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.BuildHistogramImageProcessingStageTest.testForPixelsInterdependency" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -1011,20 +1035,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/com/harrycodeman/compression/colorspaces/BuildHistogramImageProcessingStageTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="0" selection-start="1304" selection-end="1304" vertical-scroll-proportion="0.6270784">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/BuildHistogramImageProcessingStage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="33" selection-start="1464" selection-end="1464" vertical-scroll-proportion="0.3321492">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/com/harrycodeman/compression/colorspaces/ImageJoinerTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="31" column="16" selection-start="1255" selection-end="1255" vertical-scroll-proportion="0.2280285">
@@ -1044,6 +1054,22 @@
     <entry file="file://$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/Image.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="27" column="21" selection-start="879" selection-end="879" vertical-scroll-proportion="0.28503564">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/com/harrycodeman/compression/colorspaces/BuildHistogramImageProcessingStageTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="31" selection-start="2050" selection-end="2050" vertical-scroll-proportion="0.96912116">
+          <folding>
+            <element signature="e#1442#1468#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/BuildHistogramImageProcessingStage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="46" selection-start="1586" selection-end="1586" vertical-scroll-proportion="1.1001207">
           <folding />
         </state>
       </provider>
