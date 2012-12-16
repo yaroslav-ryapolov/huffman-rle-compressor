@@ -33,11 +33,11 @@ public class BuildHistogramImageProcessingStageTest {
 
     private Collection<ThreeComponentPixelBlock> getBlocksForExecuteFor() {
         List<ThreeComponentPixelBlock> result = new ArrayList<ThreeComponentPixelBlock>(
-                nCopies(25600, new ThreeComponentPixelBlock(255, 0, 0))
+                nCopies(25600, BuildHistogramImageProcessingStage.BACK_COLOR)
         );
         for (int i = 0; i < 100; i++) {
-            result.set(i*256, new ThreeComponentPixelBlock(0, 0, 0));
-            result.set(i*256 + 254, new ThreeComponentPixelBlock(0, 0, 0));
+            result.set(i*256, BuildHistogramImageProcessingStage.FORE_COLOR);
+            result.set(i*256 + 254, BuildHistogramImageProcessingStage.FORE_COLOR);
         }
         return result;
     }
@@ -51,10 +51,13 @@ public class BuildHistogramImageProcessingStageTest {
                         new ThreeComponentPixelBlock(0, 0, 0)
                 )
         );
-        int i = 0;
-        for (ThreeComponentPixelBlock b : histogram) {
-            b.setValues(i, i, i);
-            i = i > 0 ? 0 : 255;
+        for (int i = 0; i < histogram.size(); i++) {
+            if (i%2 == 0) {
+                histogram.set(i, new ThreeComponentPixelBlock(0, 0, 0));
+            }
+            else {
+                histogram.set(i, new ThreeComponentPixelBlock(255, 255, 255));
+            }
         }
         assertEquals(
                 new Image(256, 100, getBlocksForPixelsInterdependency()),
@@ -94,11 +97,11 @@ public class BuildHistogramImageProcessingStageTest {
 
     private Collection<ThreeComponentPixelBlock> getBlocksForShift() {
         List<ThreeComponentPixelBlock> result = new ArrayList<ThreeComponentPixelBlock>(
-                nCopies(25600, new ThreeComponentPixelBlock(255, 0, 0))
+                nCopies(25600, BuildHistogramImageProcessingStage.BACK_COLOR)
         );
         for (int i = 0; i < 100; i++) {
-            result.set(i*256 + 4, new ThreeComponentPixelBlock(0, 0, 0));
-            result.set(i*256 + 255, new ThreeComponentPixelBlock(0, 0, 0));
+            result.set(i*256 + 4, BuildHistogramImageProcessingStage.FORE_COLOR);
+            result.set(i*256 + 255, BuildHistogramImageProcessingStage.FORE_COLOR);
         }
         return result;
 

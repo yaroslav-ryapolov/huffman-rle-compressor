@@ -3,7 +3,6 @@ package com.harrycodeman.compression.colorspaces;
 import static java.lang.String.format;
 
 public class ThreeComponentPixelBlock {
-    // TODO: do it as value-type
     private byte first;
     private byte second;
     private byte third;
@@ -33,11 +32,6 @@ public class ThreeComponentPixelBlock {
         return value.intValue() & byteMask;
     }
 
-    @Deprecated
-    public void setFirst(Integer value) {
-        first = value.byteValue();
-    }
-
     public byte getSecond() {
         return second;
     }
@@ -46,30 +40,12 @@ public class ThreeComponentPixelBlock {
         return convertToPositiveInt(second);
     }
 
-    @Deprecated
-    public void setSecond(Integer value) {
-        second = value.byteValue();
-    }
-
     public int getThirdAsPositiveInt() {
         return convertToPositiveInt(third);
     }
 
     public byte getThird() {
         return third;
-    }
-
-    @Deprecated
-    public void setThird(Integer value) {
-        third = value.byteValue();
-    }
-
-
-    @Deprecated
-    public void setValues(int first, int second, int third) {
-        this.first = new Integer(first).byteValue();
-        this.second = new Integer(second).byteValue();
-        this.third = new Integer(third).byteValue();
     }
 
     @Override

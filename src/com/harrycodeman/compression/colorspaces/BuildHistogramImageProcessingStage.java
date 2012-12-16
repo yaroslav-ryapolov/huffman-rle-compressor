@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static java.util.Collections.max;
-import static java.util.Collections.min;
 import static java.util.Collections.nCopies;
 
 public class BuildHistogramImageProcessingStage implements IImageProcessingStage {
@@ -12,14 +11,8 @@ public class BuildHistogramImageProcessingStage implements IImageProcessingStage
     private static final int HEIGHT = 100;
     private static final int SIZE = WIDTH*HEIGHT;
 
-    private static ThreeComponentPixelBlock getBackColor() {
-        // TODO: implement in processing stage correct processing of the same objects!!!
-        return new ThreeComponentPixelBlock(255, 0, 0);
-    }
-    private static ThreeComponentPixelBlock getForeColor(){
-        // TODO: implement in processing stage correct processing of the same objects!!!
-        return new ThreeComponentPixelBlock(0, 0, 0);
-    }
+    public static final ThreeComponentPixelBlock BACK_COLOR = new ThreeComponentPixelBlock(255, 0, 0);
+    public static final ThreeComponentPixelBlock FORE_COLOR = new ThreeComponentPixelBlock(0, 0, 0);
 
     // TODO: do this class enable to use many times for different images
     private final int shift;
@@ -42,7 +35,7 @@ public class BuildHistogramImageProcessingStage implements IImageProcessingStage
     private void initializeHistogramBackground() {
         pixelBlocks = new ArrayList<ThreeComponentPixelBlock>();
         for (int i = 0; i < SIZE; i++) {
-            pixelBlocks.add(getBackColor());
+            pixelBlocks.add(BACK_COLOR);
         }
     }
 
@@ -88,7 +81,7 @@ public class BuildHistogramImageProcessingStage implements IImageProcessingStage
     private void buildColumn(int columnNumber, int value) {
         int height = (int)(step*value);
         for (int j = 0; j < height; j++) {
-            pixelBlocks.set((HEIGHT - j - 1)*WIDTH + columnNumber, getForeColor());
+            pixelBlocks.set((HEIGHT - j - 1)*WIDTH + columnNumber, FORE_COLOR);
         }
     }
 }

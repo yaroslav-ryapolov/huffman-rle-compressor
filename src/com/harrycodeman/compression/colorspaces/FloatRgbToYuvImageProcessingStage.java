@@ -1,18 +1,15 @@
 package com.harrycodeman.compression.colorspaces;
 
-public class FloatRgbToYuvImageProcessingStage implements IImageProcessingStage {
+public class FloatRgbToYuvImageProcessingStage extends EachPixelBlockImageProcessingStage {
     @Override
-    public Image executeFor(Image image) {
-        for (ThreeComponentPixelBlock block : image) {
-            int r = block.getFirstAsPositiveInt();
-            int g = block.getSecondAsPositiveInt();
-            int b = block.getThirdAsPositiveInt();
-            block.setValues(
-                    (byte)(0.299*r + 0.587*g + 0.114*b),
-                    (byte)(-0.14713*r - 0.28886*g + 0.436*b),
-                    (byte)(0.615*r - 0.51499*g - 0.10001*b)
-            );
-        }
-        return image;
+    protected ThreeComponentPixelBlock processPixelBlock(ThreeComponentPixelBlock value) {
+        int r = value.getFirstAsPositiveInt();
+        int g = value.getSecondAsPositiveInt();
+        int b = value.getThirdAsPositiveInt();
+        return new ThreeComponentPixelBlock(
+                (byte)(0.299*r + 0.587*g + 0.114*b),
+                (byte)(-0.14713*r - 0.28886*g + 0.436*b),
+                (byte)(0.615*r - 0.51499*g - 0.10001*b)
+        );
     }
 }

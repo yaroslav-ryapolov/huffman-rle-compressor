@@ -9,7 +9,7 @@ import static junit.framework.Assert.assertEquals;
 
 public class IntegerRgbToYuvImageProcessingStageTest {
     @Test
-    public void testExecuteFor() {
+    public void testExecuteFor() throws Exception {
         IntegerRgbToYuvImageProcessingStage rgbToYuv = new IntegerRgbToYuvImageProcessingStage();
         assertEquals(
                 new Image(1, 3,

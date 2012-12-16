@@ -1,6 +1,6 @@
 package com.harrycodeman.compression.colorspaces;
 
-public class SomeComponentToConstImageProcessingStage implements IImageProcessingStage {
+public class SomeComponentToConstImageProcessingStage extends EachPixelBlockImageProcessingStage {
     private int index;
     private int replacement;
 
@@ -10,24 +10,28 @@ public class SomeComponentToConstImageProcessingStage implements IImageProcessin
     }
 
     @Override
-    public Image executeFor(Image image) throws Exception {
-        for (ThreeComponentPixelBlock b : image) {
-            replaceComponent(b);
-        }
-        return image;
-    }
-
-    private void replaceComponent(ThreeComponentPixelBlock b) {
+    protected ThreeComponentPixelBlock processPixelBlock(ThreeComponentPixelBlock value) throws Exception {
         switch (index) {
             case 0:
-                b.setFirst(replacement);
-                break;
+                return new ThreeComponentPixelBlock(
+                        replacement,
+                        value.getSecondAsPositiveInt(),
+                        value.getThirdAsPositiveInt()
+                );
             case 1:
-                b.setSecond(replacement);
-                break;
+                return new ThreeComponentPixelBlock(
+                        value.getFirstAsPositiveInt(),
+                        replacement,
+                        value.getThirdAsPositiveInt()
+                );
             case 2:
-                b.setThird(replacement);
-                break;
+                return new ThreeComponentPixelBlock(
+                        value.getFirstAsPositiveInt(),
+                        value.getSecondAsPositiveInt(),
+                        replacement
+                );
+            default:
+                return value;
         }
     }
 }

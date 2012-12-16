@@ -4,6 +4,7 @@ import java.util.*;
 
 import static java.lang.Math.min;
 import static java.lang.String.format;
+import static java.util.Collections.nCopies;
 import static sun.swing.MenuItemLayoutHelper.max;
 
 public class Image implements Collection<ThreeComponentPixelBlock> {
@@ -12,14 +13,10 @@ public class Image implements Collection<ThreeComponentPixelBlock> {
     private int width;
     private List<ThreeComponentPixelBlock> pixelBlocks;
 
-    public Image(int width, int height) {
+    public Image(int width, int height, ThreeComponentPixelBlock... pixelBlocks) {
         this.width = width;
         this.height = height;
-        pixelBlocks = new ArrayList<ThreeComponentPixelBlock>(width*height);
-    }
-
-    public Image(int width, int height, ThreeComponentPixelBlock... pixelBlocks) {
-        this(width, height);
+        this.pixelBlocks = new ArrayList<ThreeComponentPixelBlock>(width*height);
         Collections.addAll(this.pixelBlocks, pixelBlocks);
     }
 
@@ -36,6 +33,14 @@ public class Image implements Collection<ThreeComponentPixelBlock> {
         return height;
     }
 
+    public ThreeComponentPixelBlock get(int index) {
+        return pixelBlocks.get(index);
+    }
+
+    public void set(int index, ThreeComponentPixelBlock value) {
+        pixelBlocks.set(index, value);
+    }
+
     public Image horizontalJoinWith(Image other) {
         // TODO: refactoring needs
         int minHeight = min(height, other.getHeight());
@@ -46,21 +51,22 @@ public class Image implements Collection<ThreeComponentPixelBlock> {
             );
         }
         if (height < other.getHeight()) {
+            List<ThreeComponentPixelBlock> whiteRow = nCopies(width, new ThreeComponentPixelBlock(255, 0, 0));
             for (int i = height; i < other.getHeight(); i++) {
-                for (int j = 0; j < width; j++) {
-                    pixelBlocks.add(new ThreeComponentPixelBlock(255, 0, 0));
-                }
+                pixelBlocks.addAll(whiteRow);
                 pixelBlocks.addAll(other.pixelBlocks.subList(i*other.getWidth(), (i + 1)*other.getWidth()));
             }
         }
         else if (height > other.getHeight()) {
+            List<ThreeComponentPixelBlock> whiteRow = nCopies(
+                    other.getWidth(),
+                    new ThreeComponentPixelBlock(255, 0, 0)
+            );
             for (int i = other.getHeight(); i < height; i++) {
-                for (int j = 0; j < other.getWidth(); j++) {
-                    pixelBlocks.add(
+                    pixelBlocks.addAll(
                             i*(width + other.getWidth()) + width,
-                            new ThreeComponentPixelBlock(255, 0, 0)
+                            whiteRow
                     );
-                }
             }
         }
         width += other.getWidth();
@@ -121,7 +127,7 @@ public class Image implements Collection<ThreeComponentPixelBlock> {
 
     @Override
     public boolean add(ThreeComponentPixelBlock pixelBlock) {
-        return false;
+        return pixelBlocks.add(pixelBlock);
     }
 
     @Override
