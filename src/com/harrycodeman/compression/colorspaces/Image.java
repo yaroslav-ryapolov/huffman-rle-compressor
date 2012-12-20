@@ -57,6 +57,16 @@ public class Image implements Iterable<ThreeComponentPixelBlock> {
         return pixelBlocks.subList(index*width, (index + 1)*width);
     }
 
+    public Collection<ThreeComponentPixelBlock> getPart(int left, int top, int right, int bottom) {
+        List<ThreeComponentPixelBlock> result = new ArrayList<ThreeComponentPixelBlock>();
+        for (int i = top; i < bottom; i++) {
+            for (int j = left; j < right; j++) {
+                result.add(pixelBlocks.get(i*width + j));
+            }
+        }
+        return result;
+    }
+
     public int size() {
         return pixelBlocks.size();
     }
