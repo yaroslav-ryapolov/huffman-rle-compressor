@@ -53,6 +53,15 @@ public class ImagePart {
         return EMPTY;
     }
 
+    public void set(int x, int y, ThreeComponentPixelBlock value) {
+        int shiftedX = x + xIndex;
+        int shiftedY = y + yIndex;
+        if (shiftedX < imageWidth
+                && shiftedY < imageHeight) {
+            pixelBlocks.set((shiftedY * imageWidth) + shiftedX, value);
+        }
+    }
+
     @Override
     public boolean equals(Object other) {
         return other.getClass() == ImagePart.class
