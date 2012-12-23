@@ -5,10 +5,7 @@ import java.util.*;
 import static java.lang.String.format;
 
 public class Image implements Iterable<ThreeComponentPixelBlock> {
-    // TODO: introduce rows
-    // TODO: introduce columns
     // TODO: introduce matrix
-
     private int height;
     private int width;
     private List<ThreeComponentPixelBlock> pixelBlocks;
@@ -64,8 +61,38 @@ public class Image implements Iterable<ThreeComponentPixelBlock> {
         return pixelBlocks.size();
     }
 
+    public Iterable<ImagePart> get8x8Parts() {
+        final int imagePartWidth = (width % ImagePart.WIDTH) == 0 ? (width / ImagePart.WIDTH)
+                : (width / ImagePart.WIDTH) + 1;
+        final int imagePartHeight = (height % ImagePart.HEIGHT) == 0 ? (height / ImagePart.HEIGHT)
+                : (height / ImagePart.HEIGHT) + 1;
+        final int imagePartsCount = imagePartWidth * imagePartHeight;
+        return new Iterable<ImagePart>() {
+            @Override
+            public Iterator<ImagePart> iterator() {
+                return new Iterator<ImagePart>() {
+                    private int currentIndex = 0;
+
+                    @Override
+                    public boolean hasNext() {
+                        return currentIndex < imagePartsCount;
+                    }
+
+                    @Override
+                    public ImagePart next() {
+                        return get8x8Part(currentIndex++);
+                    }
+
+                    @Override
+                    public void remove() {
+                    }
+                };
+            }
+        };
+    }
+
     public ImagePart get8x8Part(int index) {
-        return new ImagePart(width, height, index, pixelBlocks);
+        return new ImagePart(width,  height, index, pixelBlocks);
     }
 
     @Override

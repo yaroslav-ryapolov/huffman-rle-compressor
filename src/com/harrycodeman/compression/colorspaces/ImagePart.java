@@ -5,8 +5,7 @@ import java.util.List;
 
 import static java.util.Collections.addAll;
 
-// TODO: introduce ImagePart
-public class ImagePart implements IImagePart {
+public class ImagePart {
     public static final int WIDTH = 8;
     public static final int HEIGHT = 8;
     public static final ThreeComponentPixelBlock EMPTY = new ThreeComponentPixelBlock(0, 0, 0);
@@ -34,13 +33,13 @@ public class ImagePart implements IImagePart {
         this.pixelBlocks = pixelBlocks;
     }
 
-    private int getHorizontalShift(int imageWidth, int index) {
-        int imagePartWidth = imageWidth%WIDTH == 0 ? imageWidth/WIDTH : imageWidth/WIDTH + 1;
+    private static int getHorizontalShift(int imageWidth, int index) {
+        int imagePartWidth = (imageWidth % WIDTH) == 0 ? (imageWidth / WIDTH) : (imageWidth / WIDTH) + 1;
         return (index % imagePartWidth) * WIDTH;
     }
 
-    private int getVerticalShift(int imageWidth, int index) {
-        int imagePartWidth = imageWidth%WIDTH == 0 ? imageWidth/WIDTH : imageWidth/WIDTH + 1;
+    private static int getVerticalShift(int imageWidth, int index) {
+        int imagePartWidth = (imageWidth % WIDTH) == 0 ? (imageWidth / WIDTH) : (imageWidth / WIDTH) + 1;
         return (index / imagePartWidth) * HEIGHT;
     }
 
@@ -49,7 +48,7 @@ public class ImagePart implements IImagePart {
         int shiftedY = y + yIndex;
         if (shiftedX < imageWidth
                 && shiftedY < imageHeight) {
-            return pixelBlocks.get(shiftedY*imageWidth + shiftedX);
+            return pixelBlocks.get((shiftedY * imageWidth) + shiftedX);
         }
         return EMPTY;
     }

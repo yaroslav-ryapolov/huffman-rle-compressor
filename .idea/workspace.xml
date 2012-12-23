@@ -2,17 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c601d356-f788-4d61-b6a9-f64e45081852" name="Default" comment="File workspace.xml changed? I don't know why!`">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/IImagePart.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/ImagePart.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/com/harrycodeman/compression/colorspaces/ImageTest.java" />
+      <change type="DELETED" beforePath="D:\GitHub\huffman-rle-compressor\src\com\harrycodeman\compression\colorspaces\IImagePart.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/Image.java" afterPath="$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/Image.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/ImagePart.java" afterPath="$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/ImagePart.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="huffman-rle-compressor.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="c601d356-f788-4d61-b6a9-f64e45081852" time="1356250183019" ignored="false" />
     <file path="/a.groovy" changelist="c601d356-f788-4d61-b6a9-f64e45081852" time="1355246819721" ignored="false" />
-    <file path="/Image.java" changelist="c601d356-f788-4d61-b6a9-f64e45081852" time="1356279053449" ignored="false" />
+    <file path="/Image.java" changelist="c601d356-f788-4d61-b6a9-f64e45081852" time="1356285053182" ignored="false" />
     <file path="/BuildHistogramImageProcessingStage.java" changelist="c601d356-f788-4d61-b6a9-f64e45081852" time="1355679929266" ignored="false" />
     <file path="/BuildHistogramImageProcessingStageTest.java" changelist="c601d356-f788-4d61-b6a9-f64e45081852" time="1355655067842" ignored="false" />
     <file path="/MultimediaLab1_2_RgbToYuvAndBackTest.java" changelist="c601d356-f788-4d61-b6a9-f64e45081852" time="1355332545165" ignored="false" />
@@ -36,7 +35,7 @@
     <file path="/ImageJoiner.java" changelist="c601d356-f788-4d61-b6a9-f64e45081852" time="1355678926240" ignored="false" />
     <file path="/SimpleInput.java" changelist="c601d356-f788-4d61-b6a9-f64e45081852" time="1356080988146" ignored="false" />
     <file path="/IBitGroup.java" changelist="c601d356-f788-4d61-b6a9-f64e45081852" time="1356080878634" ignored="false" />
-    <file path="/ImagePart.java" changelist="c601d356-f788-4d61-b6a9-f64e45081852" time="1356283911314" ignored="false" />
+    <file path="/ImagePart.java" changelist="c601d356-f788-4d61-b6a9-f64e45081852" time="1356284833866" ignored="false" />
     <file path="/ImagePartStub.java" changelist="c601d356-f788-4d61-b6a9-f64e45081852" time="1356279723500" ignored="false" />
     <file path="/IImagePart.java" changelist="c601d356-f788-4d61-b6a9-f64e45081852" time="1356277515926" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -116,7 +115,31 @@
     <favorites_list name="huffman-rle-compressor" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="Image.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/Image.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="75" column="29" selection-start="2398" selection-end="2398" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#2165#2827#0" expanded="true" />
+                <element signature="e#2816#2817#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ImagePart.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/ImagePart.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="26" column="0" selection-start="844" selection-end="844" vertical-scroll-proportion="0.3135392">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -153,10 +176,10 @@
         <option value="$PROJECT_DIR$/src/com/harrycodeman/compression/IBitGroup.java" />
         <option value="$PROJECT_DIR$/src/com/harrycodeman/compression/ISimpleInput.java" />
         <option value="$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/IImagePart.java" />
-        <option value="$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/Image.java" />
         <option value="$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/ImagePartStub.java" />
-        <option value="$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/ImagePart.java" />
         <option value="$PROJECT_DIR$/src/test/com/harrycodeman/compression/colorspaces/ImageTest.java" />
+        <option value="$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/ImagePart.java" />
+        <option value="$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/Image.java" />
       </list>
     </option>
   </component>
@@ -814,7 +837,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32946634" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32991803" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -829,7 +852,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2264382" sideWeight="0.20391706" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32986537" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3996328" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21481028" sideWeight="0.6105991" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21481028" sideWeight="0.6105991" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38940093" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" x="99" y="125" width="826" height="376" />
       <window_info id="DSM" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="92" y="92" width="1496" height="826" />
@@ -914,13 +937,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/harrycodeman/compression/IBitGroup.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="0" selection-start="204" selection-end="204" vertical-scroll-proportion="0.19905214">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/ImageJoiner.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="13" selection-start="202" selection-end="202" vertical-scroll-proportion="0.11374407">
@@ -984,13 +1000,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/IImagePart.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="29" selection-start="80" selection-end="80" vertical-scroll-proportion="0.057007127">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/ThreeComponentPixelBlock.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="57" column="0" selection-start="1432" selection-end="1432" vertical-scroll-proportion="0.543943">
@@ -998,25 +1007,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/Image.java">
+    <entry file="file://$PROJECT_DIR$/src/test/com/harrycodeman/compression/colorspaces/ImageTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="32" selection-start="1790" selection-end="1790" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/ImagePart.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="6" selection-start="2253" selection-end="2253" vertical-scroll-proportion="0.2304038">
+        <state line="78" column="34" selection-start="3953" selection-end="3953" vertical-scroll-proportion="1.1401426">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/com/harrycodeman/compression/colorspaces/ImageTest.java">
+    <entry file="file://$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/BuildHistogramImageProcessingStage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="78" column="34" selection-start="3953" selection-end="3953" vertical-scroll-proportion="1.1401426">
+        <state line="15" column="7" selection-start="606" selection-end="606" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/labs/MultimediaLab1_2_RgbToYuvAndBackTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="7" selection-start="179" selection-end="179" vertical-scroll-proportion="0.14251782">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/com/harrycodeman/compression/colorspaces/BuildHistogramImageProcessingStageTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="7" selection-start="532" selection-end="532" vertical-scroll-proportion="0.14251782">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/Image.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="75" column="29" selection-start="2398" selection-end="2398" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#2165#2827#0" expanded="true" />
+            <element signature="e#2816#2817#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/ImagePart.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="0" selection-start="844" selection-end="844" vertical-scroll-proportion="0.3135392">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
