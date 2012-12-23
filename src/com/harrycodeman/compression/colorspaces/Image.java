@@ -6,6 +6,9 @@ import static java.lang.String.format;
 
 public class Image implements Iterable<ThreeComponentPixelBlock> {
     // TODO: introduce rows
+    // TODO: introduce columns
+    // TODO: introduce matrix
+
     private int height;
     private int width;
     private List<ThreeComponentPixelBlock> pixelBlocks;
@@ -57,18 +60,12 @@ public class Image implements Iterable<ThreeComponentPixelBlock> {
         return pixelBlocks.subList(index*width, (index + 1)*width);
     }
 
-    public Collection<ThreeComponentPixelBlock> getPart(int left, int top, int right, int bottom) {
-        List<ThreeComponentPixelBlock> result = new ArrayList<ThreeComponentPixelBlock>();
-        for (int i = top; i < bottom; i++) {
-            for (int j = left; j < right; j++) {
-                result.add(pixelBlocks.get(i*width + j));
-            }
-        }
-        return result;
-    }
-
     public int size() {
         return pixelBlocks.size();
+    }
+
+    public ImagePart get8x8Part(int index) {
+        return new ImagePart(width, height, index, pixelBlocks);
     }
 
     @Override
