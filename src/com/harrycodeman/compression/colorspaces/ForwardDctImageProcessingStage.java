@@ -1,51 +1,35 @@
 package com.harrycodeman.compression.colorspaces;
 
+import static com.harrycodeman.compression.colorspaces.DctMatrices.DCT_TABLE;
+import static com.harrycodeman.compression.colorspaces.DctMatrices.T_DCT_TABLE;
+import static com.harrycodeman.compression.colorspaces.DctMatrices.LUMINANCE_QT;
+import static com.harrycodeman.compression.colorspaces.DctMatrices.CHROMINANCE_QR;
+
 public class ForwardDctImageProcessingStage implements IImageProcessingStage {
-    private static final CoefficientsMatrix dctTable = new CoefficientsMatrix(8,
-            0.35355339059327373, 0.35355339059327373, 0.35355339059327373, 0.35355339059327373, 0.35355339059327373, 0.35355339059327373, 0.35355339059327373, 0.35355339059327373,
-            0.4903926402016152, 0.4157348061512726, 0.27778511650980114, 0.09754516100806417, -0.0975451610080641, -0.277785116509801, -0.4157348061512727, -0.4903926402016152,
-            0.46193976625564337, 0.19134171618254492, -0.19134171618254486, -0.46193976625564337, -0.4619397662556434, -0.19134171618254517, 0.191341716182545, 0.46193976625564326,
-            0.4157348061512726, -0.0975451610080641, -0.4903926402016152, -0.2777851165098011, 0.2777851165098009, 0.4903926402016153, 0.09754516100806396, -0.41573480615127206,
-            0.3535533905932738, -0.35355339059327373, -0.35355339059327384, 0.3535533905932737, 0.35355339059327384, -0.35355339059327334, -0.35355339059327356, 0.3535533905932733,
-            0.27778511650980114, -0.4903926402016152, 0.09754516100806415, 0.4157348061512728, -0.41573480615127256, -0.09754516100806489, 0.49039264020161516, -0.27778511650980076,
-            0.19134171618254492, -0.4619397662556434, 0.46193976625564326, -0.19134171618254495, -0.19134171618254528, 0.4619397662556437, -0.46193976625564354, 0.19134171618254314,
-            0.09754516100806417, -0.2777851165098011, 0.4157348061512728, -0.4903926402016153, 0.4903926402016152, -0.415734806151272, 0.2777851165098022, -0.09754516100806254
-    );
-
-    private static final CoefficientsMatrix tDctTable = new CoefficientsMatrix(8,
-            0.35355339059327373, 0.4903926402016152, 0.46193976625564337, 0.4157348061512726, 0.3535533905932738, 0.27778511650980114, 0.19134171618254492, 0.09754516100806417,
-            0.35355339059327373, 0.4157348061512726, 0.19134171618254492, -0.0975451610080641, -0.35355339059327373, -0.4903926402016152, -0.4619397662556434, -0.2777851165098011,
-            0.35355339059327373, 0.27778511650980114, -0.19134171618254486, -0.4903926402016152, -0.35355339059327384, 0.09754516100806415, 0.46193976625564326, 0.4157348061512728,
-            0.35355339059327373, 0.09754516100806417, -0.46193976625564337, -0.2777851165098011, 0.3535533905932737, 0.4157348061512728, -0.19134171618254495, -0.4903926402016153,
-            0.35355339059327373, -0.0975451610080641, -0.4619397662556434, 0.2777851165098009, 0.35355339059327384, -0.41573480615127256, -0.19134171618254528, 0.4903926402016152,
-            0.35355339059327373, -0.277785116509801, -0.19134171618254517, 0.4903926402016153, -0.35355339059327334, -0.09754516100806489, 0.4619397662556437, -0.415734806151272,
-            0.35355339059327373, -0.4157348061512727, 0.191341716182545, 0.09754516100806396, -0.35355339059327356, 0.49039264020161516, -0.46193976625564354, 0.2777851165098022,
-            0.35355339059327373, -0.4903926402016152, 0.46193976625564326, -0.41573480615127206, 0.3535533905932733, -0.27778511650980076, 0.19134171618254314, -0.09754516100806254
-    );
-
     @Override
     public Image executeFor(Image image) throws Exception {
-        // TODO: use components with sign!!!
         for (ImagePart p : image.get8x8Parts()) {
-            transform(p);
+            CoefficientsMatrixBase firstComponentMatrix = new CoefficientsMatrixForImagePart(p, 0);
+            firstComponentMatrix.copyByElementFrom(
+                    DCT_TABLE.multiply(firstComponentMatrix)
+                            .multiply(T_DCT_TABLE)
+                            .divideByElement(LUMINANCE_QT)
+            );
+
+            CoefficientsMatrixBase secondComponentMatrix = new CoefficientsMatrixForImagePart(p, 1);
+            secondComponentMatrix.copyByElementFrom(
+                    DCT_TABLE.multiply(secondComponentMatrix)
+                            .multiply(T_DCT_TABLE)
+                            .divideByElement(CHROMINANCE_QR)
+            );
+
+            CoefficientsMatrixBase thirdComponentMatrix = new CoefficientsMatrixForImagePart(p, 2);
+            thirdComponentMatrix.copyByElementFrom(
+                    DCT_TABLE.multiply(thirdComponentMatrix)
+                            .multiply(T_DCT_TABLE)
+                            .divideByElement(CHROMINANCE_QR)
+            );
         }
         return image;
     }
-
-    private static void transform(ImagePart part) {
-        CoefficientsMatrix firstComponentMatrix = new CoefficientsMatrix(8, new double[64]);
-        for (int x = 0; x < 8; x++) {
-            for (int y = 0; y < 8; y++) {
-                ThreeComponentPixelBlock b = part.get(x, y);
-                int first = b.getFirst();
-
-                double current = 0.0;
-                for (int s = 0; s < 8; s++) {
-//                    current +=
-                }
-            }
-        }
-    }
-
-    // TODO: implement multiplication of Coefficient matrices with each ImagePart
 }

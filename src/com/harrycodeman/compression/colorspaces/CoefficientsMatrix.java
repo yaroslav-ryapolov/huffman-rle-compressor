@@ -1,19 +1,23 @@
 package com.harrycodeman.compression.colorspaces;
 
-public class CoefficientsMatrix {
-    private final int width;
+public class CoefficientsMatrix extends CoefficientsMatrixBase {
     private final double[] coefficients;
 
-    public CoefficientsMatrix(int width, double... coefficients) {
-        this.width = width;
+    public CoefficientsMatrix() {
+        coefficients = new double[WIDTH * WIDTH];
+    }
+
+    public CoefficientsMatrix(double... coefficients) {
         this.coefficients = coefficients;
     }
 
+    @Override
     public double get(int x, int y) {
-        return coefficients[(y * width) + x];
+        return coefficients[(y * WIDTH) + x];
     }
 
+    @Override
     public void set(int x, int y, double value) {
-        coefficients[(y * width) + x] = value;
+        coefficients[(y * WIDTH) + x] = value;
     }
 }

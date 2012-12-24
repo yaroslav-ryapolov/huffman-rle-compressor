@@ -1,0 +1,61 @@
+package com.harrycodeman.compression.colorspaces;
+
+import static java.lang.Math.round;
+
+public class CoefficientsMatrixForImagePart extends CoefficientsMatrixBase {
+    private ImagePart imagePart;
+    private int componentIndex;
+
+    public CoefficientsMatrixForImagePart(ImagePart imagePart, int componentIndex) {
+        this.imagePart = imagePart;
+        this.componentIndex = componentIndex;
+    }
+
+    @Override
+    public double get(int x, int y) {
+        switch (componentIndex) {
+            case 0:
+                return imagePart.get(x, y).getFirst();
+            case 1:
+                return imagePart.get(x, y).getSecond();
+            case 2:
+                return imagePart.get(x, y).getThird();
+            default:
+                return 0.0;
+        }
+    }
+
+    @Override
+    public void set(int x, int y, double value) {
+        ThreeComponentPixelBlock b = imagePart.get(x, y);
+        switch (componentIndex) {
+            case 0:
+                imagePart.set(x, y,
+                        new ThreeComponentPixelBlock(
+                                (byte)round(value),
+                                b.getSecond(),
+                                b.getThird()
+                        )
+                );
+                break;
+            case 1:
+                imagePart.set(x, y,
+                        new ThreeComponentPixelBlock(
+                                b.getFirst(),
+                                (byte)round(value),
+                                b.getThird()
+                        )
+                );
+                break;
+            case 2:
+                imagePart.set(x, y,
+                        new ThreeComponentPixelBlock(
+                                b.getFirst(),
+                                b.getSecond(),
+                                (byte)round(value)
+                        )
+                );
+                break;
+        }
+    }
+}

@@ -12,7 +12,7 @@ import static java.lang.Math.sqrt;
 public class MultimediaLab4_Matrices {
     @Test
     public void generateMatrices() throws IOException {
-        CoefficientsMatrix result = new CoefficientsMatrix(8, new double[64]);
+        CoefficientsMatrix result = new CoefficientsMatrix();
 
         for (int q = 0; q < 8; q++) {
             result.set(0, q, 1 / sqrt(8.0));
