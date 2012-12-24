@@ -34,6 +34,16 @@ public abstract class CoefficientsMatrixBase {
         return result;
     }
 
+    public CoefficientsMatrixBase multiplyByElement(CoefficientsMatrixBase other) {
+        CoefficientsMatrix result = new CoefficientsMatrix();
+        for (int x = 0; x < WIDTH; x++) {
+            for (int y = 0; y < WIDTH; y++) {
+                result.set(x, y, get(x, y) * other.get(x, y));
+            }
+        }
+        return result;
+    }
+
     public void copyByElementFrom(CoefficientsMatrixBase other) {
         for (int x = 0; x < WIDTH; x++) {
             for (int y = 0; y < WIDTH; y++) {

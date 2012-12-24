@@ -28,11 +28,12 @@ public class CoefficientsMatrixForImagePart extends CoefficientsMatrixBase {
     @Override
     public void set(int x, int y, double value) {
         ThreeComponentPixelBlock b = imagePart.get(x, y);
+        byte valueAsByte = value > 127.0 ? 127 : value < -128.0 ? -128 : (byte)round(value);
         switch (componentIndex) {
             case 0:
                 imagePart.set(x, y,
                         new ThreeComponentPixelBlock(
-                                (byte)round(value),
+                                valueAsByte,
                                 b.getSecond(),
                                 b.getThird()
                         )
@@ -42,7 +43,7 @@ public class CoefficientsMatrixForImagePart extends CoefficientsMatrixBase {
                 imagePart.set(x, y,
                         new ThreeComponentPixelBlock(
                                 b.getFirst(),
-                                (byte)round(value),
+                                valueAsByte,
                                 b.getThird()
                         )
                 );
@@ -52,7 +53,7 @@ public class CoefficientsMatrixForImagePart extends CoefficientsMatrixBase {
                         new ThreeComponentPixelBlock(
                                 b.getFirst(),
                                 b.getSecond(),
-                                (byte)round(value)
+                                valueAsByte
                         )
                 );
                 break;
