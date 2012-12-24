@@ -1,29 +1,25 @@
 package test.labs;
 
 import com.harrycodeman.compression.colorspaces.*;
-import org.junit.Before;
 import org.junit.Test;
 
 public class MultimediaLab4_DCT {
-    private static final String SOURCE_FILE_NAME = "./data/lenna.pnm";
-    private static final String SAVE_FILE_NAME = "./data/multimedia/lenna";
-
-    private Image rgbImage;
-
-    @Before
-    public void initializeClass() throws Exception {
-        ImageReader rgbReader = new PpmImageReader(SOURCE_FILE_NAME);
-        rgbImage = rgbReader.loadImage();
+    @Test
+    public void runForAllImages() throws Exception {
+        runForImage("./data/lenna.pnm", "./data/multimedia/lenna");
+        runForImage("./data/black-white.ppm", "./data/multimedia/black-white");
+        runForImage("./data/house.ppm", "./data/multimedia/house");
+        runForImage("./data/mountains.ppm", "./data/multimedia/mountains");
     }
 
-    @Test
-    public void fdctThenIdct() throws Exception {
+    public void runForImage(String sourceFileName, String saveFileName) throws Exception {
         new ImageProcessingPipeline(
+                new PpmImageReader(sourceFileName),
                 new FloatRgbToYuvImageProcessingStage(),
                 new ForwardDctImageProcessingStage(),
                 new InverseDctImageProcessingStage(),
                 new FloatYuvToRgbImageProcessingStage(),
-                new PpmImageWriter(SAVE_FILE_NAME + ".dctQuantizeAndBack.pnm")
-        ).executeFor(rgbImage);
+                new PpmImageWriter(saveFileName + ".dctQuantizeAndBack.pnm")
+        ).executeFromReader();
     }
 }

@@ -2,11 +2,11 @@ package com.harrycodeman.compression.colorspaces;
 
 import static java.lang.Math.round;
 
-public class CoefficientsMatrixForImagePart extends CoefficientsMatrixBase {
+public class CoefficientsMatrixWrapperForImagePart extends CoefficientsMatrixBase {
     private ImagePart imagePart;
     private int componentIndex;
 
-    public CoefficientsMatrixForImagePart(ImagePart imagePart, int componentIndex) {
+    public CoefficientsMatrixWrapperForImagePart(ImagePart imagePart, int componentIndex) {
         this.imagePart = imagePart;
         this.componentIndex = componentIndex;
     }

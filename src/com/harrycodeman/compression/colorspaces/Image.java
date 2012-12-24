@@ -5,7 +5,6 @@ import java.util.*;
 import static java.lang.String.format;
 
 public class Image implements Iterable<ThreeComponentPixelBlock> {
-    // TODO: introduce matrix
     private int height;
     private int width;
     private List<ThreeComponentPixelBlock> pixelBlocks;
