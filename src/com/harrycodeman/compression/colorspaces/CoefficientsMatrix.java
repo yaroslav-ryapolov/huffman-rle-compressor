@@ -12,4 +12,8 @@ public class CoefficientsMatrix {
     public double get(int x, int y) {
         return coefficients[(y * width) + x];
     }
+
+    public void set(int x, int y, double value) {
+        coefficients[(y * width) + x] = value;
+    }
 }

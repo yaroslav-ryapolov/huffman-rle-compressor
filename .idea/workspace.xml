@@ -2,16 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c601d356-f788-4d61-b6a9-f64e45081852" name="Default" comment="File workspace.xml changed? I don't know why!`">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/CoefficientsMatrix.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/ForwardDctImageProcessingStage.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/labs/MultimediaLab4_Matricies.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/QuantizationImageProcessingStage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/ImagePart.java" afterPath="$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/ImagePart.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/labs/MultimediaLab4_Matrices.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/labs/MultimediaLab4_Matricies.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/CoefficientsMatrix.java" afterPath="$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/CoefficientsMatrix.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/ForwardDctImageProcessingStage.java" afterPath="$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/ForwardDctImageProcessingStage.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="huffman-rle-compressor.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="c601d356-f788-4d61-b6a9-f64e45081852" time="1356250183019" ignored="false" />
+    <file path="/Dummy.txt" changelist="c601d356-f788-4d61-b6a9-f64e45081852" time="1356333508217" ignored="false" />
     <file path="/a.groovy" changelist="c601d356-f788-4d61-b6a9-f64e45081852" time="1355246819721" ignored="false" />
     <file path="/Image.java" changelist="c601d356-f788-4d61-b6a9-f64e45081852" time="1356285053182" ignored="false" />
     <file path="/BuildHistogramImageProcessingStage.java" changelist="c601d356-f788-4d61-b6a9-f64e45081852" time="1355679929266" ignored="false" />
@@ -41,11 +40,13 @@
     <file path="/ImagePartStub.java" changelist="c601d356-f788-4d61-b6a9-f64e45081852" time="1356279723500" ignored="false" />
     <file path="/IImagePart.java" changelist="c601d356-f788-4d61-b6a9-f64e45081852" time="1356277515926" ignored="false" />
     <file path="/CoefficientMatrix.java" changelist="c601d356-f788-4d61-b6a9-f64e45081852" time="1356285910035" ignored="false" />
-    <file path="/CoefficientsMatrix.java" changelist="c601d356-f788-4d61-b6a9-f64e45081852" time="1356285877889" ignored="false" />
+    <file path="/CoefficientsMatrix.java" changelist="c601d356-f788-4d61-b6a9-f64e45081852" time="1356330214611" ignored="false" />
     <file path="/ImagePartTest.java" changelist="c601d356-f788-4d61-b6a9-f64e45081852" time="1356286749336" ignored="false" />
     <file path="/DctImageProcessingStage.java" changelist="c601d356-f788-4d61-b6a9-f64e45081852" time="1356287662352" ignored="false" />
-    <file path="/QuantizationImageProcessingStage.java" changelist="c601d356-f788-4d61-b6a9-f64e45081852" time="1356287403683" ignored="false" />
-    <file path="/ForwardDctImageProcessingStage.java" changelist="c601d356-f788-4d61-b6a9-f64e45081852" time="1356287694456" ignored="false" />
+    <file path="/QuantizationImageProcessingStage.java" changelist="c601d356-f788-4d61-b6a9-f64e45081852" time="1356331926542" ignored="false" />
+    <file path="/ForwardDctImageProcessingStage.java" changelist="c601d356-f788-4d61-b6a9-f64e45081852" time="1356333281364" ignored="false" />
+    <file path="/MultimediaLab4_Matricies.java" changelist="c601d356-f788-4d61-b6a9-f64e45081852" time="1356331006059" ignored="false" />
+    <file path="/MultimediaLab4_Matrices.java" changelist="c601d356-f788-4d61-b6a9-f64e45081852" time="1356330352696" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,9 +73,8 @@
     <groupTables value="false" />
   </component>
   <component name="DebuggerManager">
-    <breakpoint_rules default_suspend_policy="SuspendAll" default_condition_enabled="true" />
-    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -109,6 +109,7 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
+    <breakpoint_rules default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -124,14 +125,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Image.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/Image.java">
+      <file leaf-file-name="ForwardDctImageProcessingStage.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/ForwardDctImageProcessingStage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="111" column="35" selection-start="3370" selection-end="3370" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#2165#2827#0" expanded="true" />
-                <element signature="e#2816#2817#0" expanded="true" />
-              </folding>
+            <state line="37" column="34" selection-start="3634" selection-end="3634" vertical-scroll-proportion="0.33673468">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -139,39 +137,17 @@
       <file leaf-file-name="ImagePart.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/ImagePart.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="62" column="5" selection-start="2286" selection-end="2286" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ForwardDctImageProcessingStage.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/ForwardDctImageProcessingStage.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="0" selection-start="361" selection-end="361" vertical-scroll-proportion="0.0">
+            <state line="55" column="18" selection-start="2000" selection-end="2000" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="QuantizationImageProcessingStage.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/QuantizationImageProcessingStage.java">
+      <file leaf-file-name="CoefficientsMatrix.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/CoefficientsMatrix.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="0" selection-start="318" selection-end="318" vertical-scroll-proportion="0.28503564">
+            <state line="19" column="0" selection-start="496" selection-end="496" vertical-scroll-proportion="0.0">
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ImageTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/com/harrycodeman/compression/colorspaces/ImageTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="5" selection-start="1680" selection-end="1680" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -201,22 +177,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/com/harrycodeman/compression/SimpleInput.java" />
         <option value="$PROJECT_DIR$/src/com/harrycodeman/compression/IBitGroup.java" />
         <option value="$PROJECT_DIR$/src/com/harrycodeman/compression/ISimpleInput.java" />
         <option value="$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/IImagePart.java" />
         <option value="$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/ImagePartStub.java" />
         <option value="$PROJECT_DIR$/src/test/com/harrycodeman/compression/colorspaces/ImageTest.java" />
         <option value="$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/Image.java" />
-        <option value="$PROJECT_DIR$/src/test/labs/MultimediaLab4_Matricies.java" />
         <option value="$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/DctCoefficientsMatrix.java" />
-        <option value="$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/CoefficientsMatrix.java" />
         <option value="$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/CoefficientMatrix.java" />
         <option value="$PROJECT_DIR$/src/test/com/harrycodeman/compression/colorspaces/ImagePartTest.java" />
         <option value="$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/ImagePart.java" />
         <option value="$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/DctImageProcessingStage.java" />
-        <option value="$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/ForwardDctImageProcessingStage.java" />
+        <option value="$PROJECT_DIR$/src/test/labs/MultimediaLab4_Matricies.java" />
+        <option value="$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/CoefficientsMatrix.java" />
+        <option value="$PROJECT_DIR$/src/test/labs/MultimediaLab4_Matrices.java" />
         <option value="$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/QuantizationImageProcessingStage.java" />
+        <option value="$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/ForwardDctImageProcessingStage.java" />
       </list>
     </option>
   </component>
@@ -227,10 +203,8 @@
     <option name="jreName" value="1.6" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1696" />
-    <option name="height" value="1026" />
+    <option name="width" value="1024" />
+    <option name="height" value="575" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -275,6 +249,30 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="PackagesPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="huffman-rle-compressor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="huffman-rle-compressor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -354,82 +352,6 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="compression" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="colorspaces" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="huffman-rle-compressor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="huffman-rle-compressor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="compression" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="huffman-rle-compressor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="huffman-rle-compressor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="compression" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="colorspaces" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="PackagesPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="huffman-rle-compressor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="huffman-rle-compressor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
@@ -465,7 +387,7 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
-    <property name="options.lastSelected" value="editor" />
+    <property name="options.lastSelected" value="reference.settingsdialog.IDE.editor.colors.Font" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers" value="true" />
@@ -489,7 +411,7 @@
       <recent name="com.harrycodeman.compression" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.Full prject test">
+  <component name="RunManager" selected="JUnit.MultimediaLab4_Matrices">
     <configuration default="false" name="ImageTest.testGet8x8Part" type="JUnit" factoryName="JUnit" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="huffman-rle-compressor" />
@@ -574,6 +496,29 @@
       </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="MultimediaLab4_Matrices" type="JUnit" factoryName="JUnit" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="huffman-rle-compressor" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="test.labs" />
+      <option name="MAIN_CLASS_NAME" value="test.labs.MultimediaLab4_Matrices" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
@@ -774,7 +719,7 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <list size="7">
+    <list size="8">
       <item index="0" class="java.lang.String" itemvalue="JUnit.Full prject test" />
       <item index="1" class="java.lang.String" itemvalue="JUnit.MultimediaLab1_2" />
       <item index="2" class="java.lang.String" itemvalue="JUnit.EncryptionLab1" />
@@ -782,12 +727,14 @@
       <item index="4" class="java.lang.String" itemvalue="JUnit.ImageTest.testGet8x8Part" />
       <item index="5" class="java.lang.String" itemvalue="JUnit.ImageTest" />
       <item index="6" class="java.lang.String" itemvalue="JUnit.ImageTest.testGet8x8PartWithRightCropped" />
+      <item index="7" class="java.lang.String" itemvalue="JUnit.MultimediaLab4_Matrices" />
     </list>
     <recent_temporary>
-      <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.ImageTest.testGet8x8PartWithRightCropped" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.ImageTest" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.ImageTest.testGet8x8Part" />
+      <list size="4">
+        <item index="0" class="java.lang.String" itemvalue="JUnit.MultimediaLab4_Matrices" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.ImageTest.testGet8x8PartWithRightCropped" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.ImageTest" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.ImageTest.testGet8x8Part" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -877,8 +824,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
-    <editor active="false" />
+    <frame x="0" y="0" width="1024" height="575" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32946634" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32991803" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -888,13 +835,12 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.328341" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20930232" sideWeight="0.4078341" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32947975" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2937788" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32373273" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2264382" sideWeight="0.20391706" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32986537" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3996328" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21481028" sideWeight="0.6105991" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38940093" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21296297" sideWeight="0.612529" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.387471" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" x="99" y="125" width="826" height="376" />
       <window_info id="DSM" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="92" y="92" width="1496" height="826" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
@@ -906,6 +852,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30645162" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Kotlin" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2937788" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5942196" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Duplicates" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -978,18 +925,21 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.10.jar!/org/junit/internal/runners/model/EachTestNotifier.class">
+    <entry file="file://$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/QuantizationImageProcessingStage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="16" selection-start="490" selection-end="490" vertical-scroll-proportion="-7.08">
+        <state line="10" column="0" selection-start="318" selection-end="318" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.10.jar!/org/junit/internal/runners/model/EachTestNotifier.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="16" selection-start="490" selection-end="490" vertical-scroll-proportion="-7.08" />
+      </provider>
+    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.10.jar!/org/junit/runners/ParentRunner.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="25" selection-start="2400" selection-end="2400" vertical-scroll-proportion="-7.08">
-          <folding />
-        </state>
+        <state line="44" column="25" selection-start="2400" selection-end="2400" vertical-scroll-proportion="-7.08" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/PpmImageWriter.java">
@@ -1001,9 +951,7 @@
     </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.10.jar!/org/junit/runners/BlockJUnit4ClassRunner.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="19" selection-start="420" selection-end="420" vertical-scroll-proportion="0.33514494">
-          <folding />
-        </state>
+        <state line="9" column="19" selection-start="420" selection-end="420" vertical-scroll-proportion="0.33514494" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/ThreeComponentPixelBlock.java">
@@ -1034,33 +982,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/labs/MultimediaLab4_Matricies.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="39" selection-start="59" selection-end="59" vertical-scroll-proportion="0.057007127">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/CoefficientsMatrix.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="25" selection-start="139" selection-end="139" vertical-scroll-proportion="0.11401425">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/Image.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="111" column="35" selection-start="3370" selection-end="3370" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#2165#2827#0" expanded="true" />
-            <element signature="e#2816#2817#0" expanded="true" />
-          </folding>
+        <state line="123" column="0" selection-start="3665" selection-end="3665" vertical-scroll-proportion="2.5036855">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/com/harrycodeman/compression/colorspaces/ImageTest.java">
+    <entry file="file://$PROJECT_DIR$/src/test/com/harrycodeman/compression/FileOutputAndInputTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="5" selection-start="1680" selection-end="1680" vertical-scroll-proportion="0.0">
+        <state line="10" column="13" selection-start="202" selection-end="202" vertical-scroll-proportion="0.04557641">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/QuantizationImageProcessingStage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="80" selection-start="131" selection-end="131" vertical-scroll-proportion="0.078125">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/labs/MultimediaLab4_Matrices.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="8" selection-start="1109" selection-end="1109" vertical-scroll-proportion="0.75">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1069,23 +1014,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/ImagePart.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="5" selection-start="2286" selection-end="2286" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="55" column="18" selection-start="2000" selection-end="2000" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/CoefficientsMatrix.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="0" selection-start="496" selection-end="496" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/ForwardDctImageProcessingStage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="0" selection-start="361" selection-end="361" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/QuantizationImageProcessingStage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="0" selection-start="318" selection-end="318" vertical-scroll-proportion="0.28503564">
+        <state line="37" column="34" selection-start="3634" selection-end="3634" vertical-scroll-proportion="0.33673468">
           <folding />
         </state>
       </provider>
