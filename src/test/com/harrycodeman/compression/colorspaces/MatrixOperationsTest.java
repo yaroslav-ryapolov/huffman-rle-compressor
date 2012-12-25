@@ -1,6 +1,6 @@
 package test.com.harrycodeman.compression.colorspaces;
 
-import com.harrycodeman.compression.colorspaces.CoefficientsMatrix;
+import com.harrycodeman.compression.colorspaces.SquareMatrix;
 import org.junit.Test;
 
 import static com.harrycodeman.compression.colorspaces.DctMatrices.DCT_TABLE;
@@ -10,7 +10,7 @@ public class MatrixOperationsTest {
     @Test
     public void testMatrixMultiply() throws Exception {
         assertEquals(
-                new CoefficientsMatrix(
+                new SquareMatrix(8,
                         82.0243656,         84.852792,          87.6812184,         90.5096448,         93.3380712,         96.1664976,         98.994924,          101.8233504,
                         -51.5385,           -51.5384984,        -51.5384968,        -51.5384952,        -51.5384936,        -51.538492,         -51.5384904,        -51.5384888,
                         8.1199999996784E-5, 8.4000000001083E-5, 8.6800000005383E-5, 8.9600000002577E-5, 9.2399999996218E-5, 9.520000000407E-5,  9.8000000004816E-5, 0.0001007999999949,
@@ -21,7 +21,7 @@ public class MatrixOperationsTest {
                         -0.4055616,         -0.40556,           -0.4055584,         -0.4055568,         -0.4055552,         -0.4055536,         -0.405552,          -0.4055504
                 ),
                 DCT_TABLE.multiply(
-                        new CoefficientsMatrix(
+                        new SquareMatrix(8,
                                 1,  2,  3,  4,  5,  6,  7,  8,
                                 9,  10, 11, 12, 13, 14, 15, 16,
                                 17, 18, 19, 20, 21, 22, 23, 24,
@@ -38,7 +38,7 @@ public class MatrixOperationsTest {
     @Test
     public void testMatrixDivideByElement() throws Exception {
         assertEquals(
-                new CoefficientsMatrix(
+                new SquareMatrix(8,
                         1, 1, 1, 1, 1, 1, 1, 1,
                         1, 1, 1, 1, 1, 1, 1, 1,
                         1, 1, 1, 1, 1, 1, 1, 1,
@@ -48,7 +48,7 @@ public class MatrixOperationsTest {
                         1, 1, 1, 1, 1, 1, 1, 1,
                         1, 1, 1, 1, 1, 1, 1, 1
                 ),
-                new CoefficientsMatrix(
+                new SquareMatrix(8,
                         1,  2,  3,  4,  5,  6,  7,  8,
                         9,  10, 11, 12, 13, 14, 15, 16,
                         17, 18, 19, 20, 21, 22, 23, 24,
@@ -58,7 +58,7 @@ public class MatrixOperationsTest {
                         49, 50, 51, 52, 53, 54, 55, 56,
                         57, 58, 59, 60, 61, 62, 63, 64
                 ).divideByElement(
-                    new CoefficientsMatrix(
+                    new SquareMatrix(8,
                             1,  2,  3,  4,  5,  6,  7,  8,
                             9,  10, 11, 12, 13, 14, 15, 16,
                             17, 18, 19, 20, 21, 22, 23, 24,

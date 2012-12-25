@@ -5,7 +5,7 @@ import java.util.List;
 
 import static java.util.Collections.addAll;
 
-public class ImagePart {
+public class ImagePart8x8 {
     public static final int WIDTH = 8;
     public static final int HEIGHT = 8;
     public static final ThreeComponentPixelBlock EMPTY = new ThreeComponentPixelBlock(0, 0, 0);
@@ -16,7 +16,7 @@ public class ImagePart {
     private final int yIndex;
     private final List<ThreeComponentPixelBlock> pixelBlocks;
 
-    public ImagePart(ThreeComponentPixelBlock... pixelBlocks) {
+    public ImagePart8x8(ThreeComponentPixelBlock... pixelBlocks) {
         imageWidth = WIDTH;
         imageHeight = HEIGHT;
         xIndex = 0;
@@ -25,7 +25,7 @@ public class ImagePart {
         addAll(this.pixelBlocks, pixelBlocks);
     }
 
-    public ImagePart(int imageWidth, int imageHeight, int index, List<ThreeComponentPixelBlock> pixelBlocks) {
+    public ImagePart8x8(int imageWidth, int imageHeight, int index, List<ThreeComponentPixelBlock> pixelBlocks) {
         this.imageWidth = imageWidth;
         this.imageHeight = imageHeight;
         this.xIndex = getHorizontalShift(imageWidth, index);
@@ -64,13 +64,13 @@ public class ImagePart {
 
     @Override
     public boolean equals(Object other) {
-        return other.getClass() == ImagePart.class
-                && equals((ImagePart)other);
+        return other.getClass() == ImagePart8x8.class
+                && equals((ImagePart8x8)other);
     }
 
-    public boolean equals(ImagePart other) {
-        for (int i = 0; i < ImagePart.WIDTH; i++) {
-            for (int j = 0; j < ImagePart.HEIGHT; j++) {
+    public boolean equals(ImagePart8x8 other) {
+        for (int i = 0; i < ImagePart8x8.WIDTH; i++) {
+            for (int j = 0; j < ImagePart8x8.HEIGHT; j++) {
                 if (!get(i, j).equals(other.get(i, j))) {
                     return false;
                 }
@@ -82,8 +82,8 @@ public class ImagePart {
     @Override
     public String toString() {
         String result = "";
-        for (int j = 0; j < ImagePart.HEIGHT; j++) {
-            for (int i = 0; i < ImagePart.WIDTH; i++) {
+        for (int j = 0; j < ImagePart8x8.HEIGHT; j++) {
+            for (int i = 0; i < ImagePart8x8.WIDTH; i++) {
                 result += get(i, j);
             }
             result += "\n";

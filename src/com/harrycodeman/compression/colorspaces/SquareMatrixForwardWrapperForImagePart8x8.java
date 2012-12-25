@@ -2,12 +2,13 @@ package com.harrycodeman.compression.colorspaces;
 
 import static java.lang.Math.round;
 
-public class CoefficientsMatrixWrapperForImagePart extends CoefficientsMatrixBase {
-    private ImagePart imagePart;
+public class SquareMatrixForwardWrapperForImagePart8x8 extends SquareMatrixBase {
+    private ImagePart8x8 imagePart8x8;
     private int componentIndex;
 
-    public CoefficientsMatrixWrapperForImagePart(ImagePart imagePart, int componentIndex) {
-        this.imagePart = imagePart;
+    public SquareMatrixForwardWrapperForImagePart8x8(ImagePart8x8 imagePart8x8, int componentIndex) {
+        super(ImagePart8x8.WIDTH);
+        this.imagePart8x8 = imagePart8x8;
         this.componentIndex = componentIndex;
     }
 
@@ -15,11 +16,11 @@ public class CoefficientsMatrixWrapperForImagePart extends CoefficientsMatrixBas
     public double get(int x, int y) {
         switch (componentIndex) {
             case 0:
-                return imagePart.get(x, y).getFirst();
+                return (double)imagePart8x8.get(x, y).getFirstAsPositiveInt() - 128;
             case 1:
-                return imagePart.get(x, y).getSecond();
+                return (double)imagePart8x8.get(x, y).getSecondAsPositiveInt() - 128;
             case 2:
-                return imagePart.get(x, y).getThird();
+                return (double)imagePart8x8.get(x, y).getThirdAsPositiveInt() - 128;
             default:
                 return 0.0;
         }
@@ -27,11 +28,11 @@ public class CoefficientsMatrixWrapperForImagePart extends CoefficientsMatrixBas
 
     @Override
     public void set(int x, int y, double value) {
-        ThreeComponentPixelBlock b = imagePart.get(x, y);
+        ThreeComponentPixelBlock b = imagePart8x8.get(x, y);
         byte valueAsByte = (byte)round(value);
         switch (componentIndex) {
             case 0:
-                imagePart.set(x, y,
+                imagePart8x8.set(x, y,
                         new ThreeComponentPixelBlock(
                                 valueAsByte,
                                 b.getSecond(),
@@ -40,7 +41,7 @@ public class CoefficientsMatrixWrapperForImagePart extends CoefficientsMatrixBas
                 );
                 break;
             case 1:
-                imagePart.set(x, y,
+                imagePart8x8.set(x, y,
                         new ThreeComponentPixelBlock(
                                 b.getFirst(),
                                 valueAsByte,
@@ -49,7 +50,7 @@ public class CoefficientsMatrixWrapperForImagePart extends CoefficientsMatrixBas
                 );
                 break;
             case 2:
-                imagePart.set(x, y,
+                imagePart8x8.set(x, y,
                         new ThreeComponentPixelBlock(
                                 b.getFirst(),
                                 b.getSecond(),

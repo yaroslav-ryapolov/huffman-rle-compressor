@@ -1,7 +1,7 @@
 package test.com.harrycodeman.compression.colorspaces;
 
 import com.harrycodeman.compression.colorspaces.Image;
-import com.harrycodeman.compression.colorspaces.ImagePart;
+import com.harrycodeman.compression.colorspaces.ImagePart8x8;
 import com.harrycodeman.compression.colorspaces.ThreeComponentPixelBlock;
 import org.junit.Before;
 import org.junit.Test;
@@ -21,7 +21,7 @@ public class ImageTest {
     @Test
     public void testGet8x8PartAtCenter() {
         assertEquals(
-                new ImagePart(
+                new ImagePart8x8(
                         pb(0, 0), pb(0, 1), pb(0, 2), pb(0, 3), pb(0, 4), pb(0, 5), pb(0, 6), pb(0, 7),
                         pb(1, 0), pb(1, 1), pb(1, 2), pb(1, 3), pb(1, 4), pb(1, 5), pb(1, 6), pb(1, 7),
                         pb(2, 0), pb(2, 1), pb(2, 2), pb(2, 3), pb(2, 4), pb(2, 5), pb(2, 6), pb(2, 7),
@@ -42,7 +42,7 @@ public class ImageTest {
     @Test
     public void testGet8x8PartWithRightCropped() {
         assertEquals(
-                new ImagePart(
+                new ImagePart8x8(
                         pb(0, 16), pb(0, 17), pb(0, 18), pb(0, 19), empty(), empty(), empty(), empty(),
                         pb(1, 16), pb(1, 17), pb(1, 18), pb(1, 19), empty(), empty(), empty(), empty(),
                         pb(2, 16), pb(2, 17), pb(2, 18), pb(2, 19), empty(), empty(), empty(), empty(),
@@ -62,7 +62,7 @@ public class ImageTest {
     @Test
     public void testGet8x8PartWithBottomCropped() {
         assertEquals(
-                new ImagePart(
+                new ImagePart8x8(
                         pb(16, 0), pb(16, 1), pb(16, 2), pb(16, 3), pb(16, 4), pb(16, 5), pb(16, 6), pb(16, 7),
                         pb(17, 0), pb(17, 1), pb(17, 2), pb(17, 3), pb(17, 4), pb(17, 5), pb(17, 6), pb(17, 7),
                         pb(18, 0), pb(18, 1), pb(18, 2), pb(18, 3), pb(18, 4), pb(18, 5), pb(18, 6), pb(18, 7),
@@ -76,7 +76,7 @@ public class ImageTest {
 
     @Test
     public void testGet8x8PartWithRightAndBottomCropped() {
-        assertEquals(new ImagePart(
+        assertEquals(new ImagePart8x8(
                 pb(16, 16), pb(16, 17), pb(16, 18), pb(16, 19), empty(), empty(), empty(), empty(),
                 pb(17, 16), pb(17, 17), pb(17, 18), pb(17, 19), empty(), empty(), empty(), empty(),
                 pb(18, 16), pb(18, 17), pb(18, 18), pb(18, 19), empty(), empty(), empty(), empty(),

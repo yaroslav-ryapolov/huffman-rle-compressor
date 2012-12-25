@@ -1,6 +1,6 @@
 package test.labs;
 
-import com.harrycodeman.compression.colorspaces.CoefficientsMatrix;
+import com.harrycodeman.compression.colorspaces.SquareMatrix;
 import org.junit.Test;
 
 import java.io.*;
@@ -12,7 +12,7 @@ import static java.lang.Math.sqrt;
 public class MultimediaLab4_Matrices {
     @Test
     public void generateMatrices() throws IOException {
-        CoefficientsMatrix result = new CoefficientsMatrix();
+        SquareMatrix result = new SquareMatrix(8);
 
         for (int q = 0; q < 8; q++) {
             result.set(0, q, 1 / sqrt(8.0));

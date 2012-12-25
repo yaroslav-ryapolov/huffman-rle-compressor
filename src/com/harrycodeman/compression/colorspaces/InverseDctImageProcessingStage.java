@@ -1,31 +1,30 @@
 package com.harrycodeman.compression.colorspaces;
 
-import static com.harrycodeman.compression.colorspaces.DctMatrices.*;
+import static com.harrycodeman.compression.colorspaces.DctMatrices.inverseDct;
 
 public class InverseDctImageProcessingStage implements IImageProcessingStage {
+    private final SquareMatrixBase quantizationTable;
+
+    public InverseDctImageProcessingStage(SquareMatrixBase quantizationTable) {
+        this.quantizationTable = quantizationTable;
+    }
+
     @Override
     public Image executeFor(Image image) throws Exception {
-        for (ImagePart p : image.get8x8Parts()) {
-            CoefficientsMatrixBase firstComponentMatrix = new CoefficientsMatrixWrapperForImagePart(p, 0);
-            firstComponentMatrix.copyByPositiveElementFrom(
-                    T_DCT_TABLE.multiply(
-                            firstComponentMatrix.multiplyByElement(LUMINANCE_QT)
-                    ).multiply(DCT_TABLE)
+        for (ImagePart8x8 p : image.get8x8Parts()) {
+            SquareMatrixBase firstComponentMatrix = new SquareMatrixInverseWrapperForImagePart8x8(p, 0);
+            firstComponentMatrix.copyByElementFrom(
+                    inverseDct(firstComponentMatrix.multiplyByElement(quantizationTable))
             );
 
-            CoefficientsMatrixBase secondComponentMatrix = new CoefficientsMatrixWrapperForImagePart(p, 1);
-            secondComponentMatrix.copyByPositiveElementFrom(
-                    T_DCT_TABLE.multiply(
-                            secondComponentMatrix.multiplyByElement(CHROMINANCE_QR)
-                    ).multiply(DCT_TABLE)
-
+            SquareMatrixBase secondComponentMatrix = new SquareMatrixInverseWrapperForImagePart8x8(p, 1);
+            secondComponentMatrix.copyByElementFrom(
+                    inverseDct(secondComponentMatrix.multiplyByElement(quantizationTable))
             );
 
-            CoefficientsMatrixBase thirdComponentMatrix = new CoefficientsMatrixWrapperForImagePart(p, 2);
-            thirdComponentMatrix.copyByPositiveElementFrom(
-                    T_DCT_TABLE.multiply(
-                            thirdComponentMatrix.multiplyByElement(CHROMINANCE_QR)
-                    ).multiply(DCT_TABLE)
+            SquareMatrixBase thirdComponentMatrix = new SquareMatrixInverseWrapperForImagePart8x8(p, 2);
+            thirdComponentMatrix.copyByElementFrom(
+                    inverseDct(thirdComponentMatrix.multiplyByElement(quantizationTable))
             );
         }
         return image;

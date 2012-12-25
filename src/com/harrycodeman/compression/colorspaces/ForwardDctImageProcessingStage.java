@@ -1,30 +1,30 @@
 package com.harrycodeman.compression.colorspaces;
 
-import static com.harrycodeman.compression.colorspaces.DctMatrices.*;
+import static com.harrycodeman.compression.colorspaces.DctMatrices.forwardDct;
 
 public class ForwardDctImageProcessingStage implements IImageProcessingStage {
+    private final SquareMatrixBase quantizationTable;
+
+    public ForwardDctImageProcessingStage(SquareMatrixBase quantizationTable) {
+        this.quantizationTable = quantizationTable;
+    }
+
     @Override
     public Image executeFor(Image image) throws Exception {
-        for (ImagePart p : image.get8x8Parts()) {
-            CoefficientsMatrixBase firstComponentMatrix = new CoefficientsMatrixWrapperForImagePart(p, 0);
+        for (ImagePart8x8 p : image.get8x8Parts()) {
+            SquareMatrixBase firstComponentMatrix = new SquareMatrixForwardWrapperForImagePart8x8(p, 0);
             firstComponentMatrix.copyByElementFrom(
-                    DCT_TABLE.multiply(firstComponentMatrix)
-                            .multiply(T_DCT_TABLE)
-                            .divideByElement(LUMINANCE_QT)
+                    forwardDct(firstComponentMatrix).divideByElement(quantizationTable)
             );
 
-            CoefficientsMatrixBase secondComponentMatrix = new CoefficientsMatrixWrapperForImagePart(p, 1);
+            SquareMatrixBase secondComponentMatrix = new SquareMatrixForwardWrapperForImagePart8x8(p, 1);
             secondComponentMatrix.copyByElementFrom(
-                    DCT_TABLE.multiply(secondComponentMatrix)
-                            .multiply(T_DCT_TABLE)
-                            .divideByElement(CHROMINANCE_QR)
+                    forwardDct(firstComponentMatrix).divideByElement(quantizationTable)
             );
 
-            CoefficientsMatrixBase thirdComponentMatrix = new CoefficientsMatrixWrapperForImagePart(p, 2);
+            SquareMatrixBase thirdComponentMatrix = new SquareMatrixForwardWrapperForImagePart8x8(p, 2);
             thirdComponentMatrix.copyByElementFrom(
-                    DCT_TABLE.multiply(thirdComponentMatrix)
-                            .multiply(T_DCT_TABLE)
-                            .divideByElement(CHROMINANCE_QR)
+                    forwardDct(thirdComponentMatrix).divideByElement(quantizationTable)
             );
         }
         return image;

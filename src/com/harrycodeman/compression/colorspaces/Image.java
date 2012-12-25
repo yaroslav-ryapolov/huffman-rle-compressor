@@ -60,16 +60,16 @@ public class Image implements Iterable<ThreeComponentPixelBlock> {
         return pixelBlocks.size();
     }
 
-    public Iterable<ImagePart> get8x8Parts() {
-        final int imagePartWidth = (width % ImagePart.WIDTH) == 0 ? (width / ImagePart.WIDTH)
-                : (width / ImagePart.WIDTH) + 1;
-        final int imagePartHeight = (height % ImagePart.HEIGHT) == 0 ? (height / ImagePart.HEIGHT)
-                : (height / ImagePart.HEIGHT) + 1;
+    public Iterable<ImagePart8x8> get8x8Parts() {
+        final int imagePartWidth = (width % ImagePart8x8.WIDTH) == 0 ? (width / ImagePart8x8.WIDTH)
+                : (width / ImagePart8x8.WIDTH) + 1;
+        final int imagePartHeight = (height % ImagePart8x8.HEIGHT) == 0 ? (height / ImagePart8x8.HEIGHT)
+                : (height / ImagePart8x8.HEIGHT) + 1;
         final int imagePartsCount = imagePartWidth * imagePartHeight;
-        return new Iterable<ImagePart>() {
+        return new Iterable<ImagePart8x8>() {
             @Override
-            public Iterator<ImagePart> iterator() {
-                return new Iterator<ImagePart>() {
+            public Iterator<ImagePart8x8> iterator() {
+                return new Iterator<ImagePart8x8>() {
                     private int currentIndex = 0;
 
                     @Override
@@ -78,7 +78,7 @@ public class Image implements Iterable<ThreeComponentPixelBlock> {
                     }
 
                     @Override
-                    public ImagePart next() {
+                    public ImagePart8x8 next() {
                         return get8x8Part(currentIndex++);
                     }
 
@@ -90,8 +90,8 @@ public class Image implements Iterable<ThreeComponentPixelBlock> {
         };
     }
 
-    public ImagePart get8x8Part(int index) {
-        return new ImagePart(width,  height, index, pixelBlocks);
+    public ImagePart8x8 get8x8Part(int index) {
+        return new ImagePart8x8(width,  height, index, pixelBlocks);
     }
 
     @Override

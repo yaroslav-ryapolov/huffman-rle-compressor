@@ -1,7 +1,9 @@
 package com.harrycodeman.compression.colorspaces;
 
+import static java.lang.Math.*;
+
 public class DctMatrices {
-    public static final CoefficientsMatrix DCT_TABLE = new CoefficientsMatrix(
+    public static final SquareMatrix DCT_TABLE = new SquareMatrix(8,
             0.35355339059327373, 0.35355339059327373, 0.35355339059327373, 0.35355339059327373, 0.35355339059327373, 0.35355339059327373, 0.35355339059327373, 0.35355339059327373,
             0.4903926402016152, 0.4157348061512726, 0.27778511650980114, 0.09754516100806417, -0.0975451610080641, -0.277785116509801, -0.4157348061512727, -0.4903926402016152,
             0.46193976625564337, 0.19134171618254492, -0.19134171618254486, -0.46193976625564337, -0.4619397662556434, -0.19134171618254517, 0.191341716182545, 0.46193976625564326,
@@ -11,7 +13,7 @@ public class DctMatrices {
             0.19134171618254492, -0.4619397662556434, 0.46193976625564326, -0.19134171618254495, -0.19134171618254528, 0.4619397662556437, -0.46193976625564354, 0.19134171618254314,
             0.09754516100806417, -0.2777851165098011, 0.4157348061512728, -0.4903926402016153, 0.4903926402016152, -0.415734806151272, 0.2777851165098022, -0.09754516100806254
     );
-    public static final CoefficientsMatrix T_DCT_TABLE = new CoefficientsMatrix(
+    public static final SquareMatrix T_DCT_TABLE = new SquareMatrix(8,
             0.35355339059327373, 0.4903926402016152, 0.46193976625564337, 0.4157348061512726, 0.3535533905932738, 0.27778511650980114, 0.19134171618254492, 0.09754516100806417,
             0.35355339059327373, 0.4157348061512726, 0.19134171618254492, -0.0975451610080641, -0.35355339059327373, -0.4903926402016152, -0.4619397662556434, -0.2777851165098011,
             0.35355339059327373, 0.27778511650980114, -0.19134171618254486, -0.4903926402016152, -0.35355339059327384, 0.09754516100806415, 0.46193976625564326, 0.4157348061512728,
@@ -21,7 +23,17 @@ public class DctMatrices {
             0.35355339059327373, -0.4157348061512727, 0.191341716182545, 0.09754516100806396, -0.35355339059327356, 0.49039264020161516, -0.46193976625564354, 0.2777851165098022,
             0.35355339059327373, -0.4903926402016152, 0.46193976625564326, -0.41573480615127206, 0.3535533905932733, -0.27778511650980076, 0.19134171618254314, -0.09754516100806254
     );
-    public static final CoefficientsMatrix LUMINANCE_QT = new CoefficientsMatrix(
+    public static final SquareMatrix QUANTIZATION_TABLE_16 = new SquareMatrix(8,
+            16, 16, 16, 16, 16, 16, 16, 16,
+            16, 16, 16, 16, 16, 16, 16, 16,
+            16, 16, 16, 16, 16, 16, 16, 16,
+            16, 16, 16, 16, 16, 16, 16, 16,
+            16, 16, 16, 16, 16, 16, 16, 16,
+            16, 16, 16, 16, 16, 16, 16, 16,
+            16, 16, 16, 16, 16, 16, 16, 16,
+            16, 16, 16, 16, 16, 16, 16, 16
+    );
+    public static final SquareMatrix QUANTIZATION_TABLE_JPEG = new SquareMatrix(8,
             16, 11, 10, 16, 24,  40,  51,  61,
             12, 12, 14, 19, 26,  58,  60,  55,
             14, 13, 16, 24, 40,  57,  69,  56,
@@ -31,14 +43,62 @@ public class DctMatrices {
             49, 64, 78, 87, 103, 121, 120, 101,
             72, 92, 95, 98, 112, 100, 103, 99
     );
-    public static final CoefficientsMatrix CHROMINANCE_QR = new CoefficientsMatrix(
-            17, 18, 24, 47, 99, 99, 99, 99,
-            18, 21, 26, 66, 99, 99, 99, 99,
-            24, 26, 56, 99, 99, 99, 99, 99,
-            47, 66, 99, 99, 99, 99, 99, 99,
-            99, 99, 99, 99, 99, 99, 99, 99,
-            99, 99, 99, 99, 99, 99, 99, 99,
-            99, 99, 99, 99, 99, 99, 99, 99,
-            99, 99, 99, 99, 99, 99, 99, 99
+    public static final SquareMatrix QUANTIZATION_TABLE_T_JPEG = new SquareMatrix(8,
+            16, 12, 14, 14, 18,  24,  49,  72,
+            11, 12, 13, 17, 22,  35,  64,  92,
+            10, 14, 16, 22, 37,  55,  78,  95,
+            16, 19, 24, 29, 56,  64,  87,  98,
+            24, 26, 40, 51, 68,  81,  103, 112,
+            40, 58, 57, 87, 109, 104, 121, 100,
+            51, 60, 69, 80, 103, 113, 120, 103,
+            61, 55, 56, 62, 77,  92,  101, 99
     );
+
+    public static SquareMatrixBase forwardDct(SquareMatrixBase matrix) {
+        SquareMatrixBase result = new SquareMatrix(matrix.getDim());
+        for (int u = 0; u < matrix.getDim(); u++) {
+            for (int v = 0; v < matrix.getDim(); v++) {
+                result.set(u, v, calculateForwardCoefficient(u, v, matrix));
+            }
+        }
+        return result;
+    }
+
+    private static double calculateForwardCoefficient(int u, int v, SquareMatrixBase matrix) {
+        double sum = 0.0;
+        for (int k = 0; k < matrix.getDim(); k++) {
+            for (int l = 0; l < matrix.getDim(); l++) {
+                double cosU = cos(((2.0 * (double)k + 1.0) * (double)u * PI) / (2.0 * (double)matrix.getDim()));
+                double cosV = cos(((2.0 * (double)l + 1.0) * (double)v * PI) / (2.0 * (double)matrix.getDim()));
+                sum += matrix.get(k, l) * cosU * cosV;
+            }
+        }
+        double cu = u == 0 ? sqrt(1.0 / (double)matrix.getDim()) : sqrt(2.0 / (double)matrix.getDim());
+        double cv = v == 0 ? sqrt(1.0 / (double)matrix.getDim()) : sqrt(2.0 / (double)matrix.getDim());
+        return cu * cv * sum;
+    }
+
+    public static SquareMatrixBase inverseDct(SquareMatrixBase matrix) {
+        SquareMatrixBase result = new SquareMatrix(matrix.getDim());
+        for (int k = 0; k < matrix.getDim(); k++) {
+            for (int l = 0; l < matrix.getDim(); l++) {
+                result.set(k, l, calculateInverseCoefficient(k, l, matrix));
+            }
+        }
+        return result;
+    }
+
+    private static double calculateInverseCoefficient(int k, int l, SquareMatrixBase matrix) {
+        double sum = 0.0;
+        for (int u = 0; u < matrix.getDim(); u++) {
+            for (int v = 0; v < matrix.getDim(); v++) {
+                double cu = u == 0 ? sqrt(1.0/(double)matrix.getDim()) : sqrt(2.0/(double)matrix.getDim());
+                double cv = v == 0 ? sqrt(1.0/(double)matrix.getDim()) : sqrt(2.0/(double)matrix.getDim());
+                double cosU = cos(((2.0 * (double)k + 1.0) * (double)u * PI) / (2.0 * matrix.getDim()));
+                double cosV = cos(((2.0 * (double)l + 1.0) * (double)v * PI) / (2.0 * matrix.getDim()));
+                sum += cu * cv * matrix.get(u, v) * cosU * cosV;
+            }
+        }
+        return sum;
+    }
 }
