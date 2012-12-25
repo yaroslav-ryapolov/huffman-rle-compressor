@@ -6,10 +6,10 @@ import org.junit.Test;
 public class MultimediaLab4_DCT {
     @Test
     public void runForAllImages() throws Exception {
-        runForImage("./data/lenna.pnm", "./data/multimedia/lenna");
+//        runForImage("./data/lenna.pnm", "./data/multimedia/lenna");
         runForImage("./data/black-white.ppm", "./data/multimedia/black-white");
-        runForImage("./data/house.ppm", "./data/multimedia/house");
-        runForImage("./data/mountains.ppm", "./data/multimedia/mountains");
+//        runForImage("./data/house.ppm", "./data/multimedia/house");
+//        runForImage("./data/mountains.ppm", "./data/multimedia/mountains");
     }
 
     public void runForImage(String sourceFileName, String saveFileName) throws Exception {

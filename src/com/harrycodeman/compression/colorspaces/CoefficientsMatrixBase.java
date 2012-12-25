@@ -52,6 +52,14 @@ public abstract class CoefficientsMatrixBase {
         }
     }
 
+    public void copyByPositiveElementFrom(CoefficientsMatrixBase other) {
+        for (int x = 0; x < WIDTH; x++) {
+            for (int y = 0; y < WIDTH; y++) {
+                set(x, y, other.get(x, y) - 128);
+            }
+        }
+    }
+
     @Override
     public boolean equals(Object other) {
         return other.getClass() == CoefficientsMatrix.class

@@ -28,7 +28,7 @@ public class CoefficientsMatrixWrapperForImagePart extends CoefficientsMatrixBas
     @Override
     public void set(int x, int y, double value) {
         ThreeComponentPixelBlock b = imagePart.get(x, y);
-        byte valueAsByte = value > 127.0 ? 127 : value < -128.0 ? -128 : (byte)round(value);
+        byte valueAsByte = (byte)round(value);
         switch (componentIndex) {
             case 0:
                 imagePart.set(x, y,
