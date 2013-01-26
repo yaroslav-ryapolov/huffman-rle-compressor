@@ -1,21 +1,21 @@
 package com.harrycodeman.compression.hamming;
 
 public class HammingCode {
-    private static final int r1 = 0b11011010101;
-    private static final int r2 = 0b10110110011;
-    private static final int i0 = 0b10000000000;
-    private static final int r3 = 0b01110001111;
-    private static final int i1 = 0b01000000000;
-    private static final int i2 = 0b00100000000;
-    private static final int i3 = 0b00010000000;
-    private static final int r4 = 0b00001111111;
-    private static final int i4 = 0b00001000000;
-    private static final int i5 = 0b00000100000;
-    private static final int i6 = 0b00000010000;
-    private static final int i7 = 0b00000001000;
-    private static final int i8 = 0b00000000100;
-    private static final int i9 = 0b00000000010;
-    private static final int i10 = 0b00000000001;
+    private static final int r1 = 1749;
+    private static final int r2 = 1459;
+    private static final int i0 = 1024;
+    private static final int r3 = 911;
+    private static final int i1 = 512;
+    private static final int i2 = 256;
+    private static final int i3 = 128;
+    private static final int r4 = 127;
+    private static final int i4 = 64;
+    private static final int i5 = 32;
+    private static final int i6 = 16;
+    private static final int i7 = 8;
+    private static final int i8 = 4;
+    private static final int i9 = 2;
+    private static final int i10 = 1;
 
     public static int encode(int value) {
         int result = 0;

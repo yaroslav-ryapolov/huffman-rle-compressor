@@ -8,8 +8,8 @@ import static junit.framework.Assert.assertEquals;
 public class HammingCodeTest {
     @Test
     public void testSimpleEncode() throws Exception {
-        int toEncode = 0b10101101011;
-        int expected = 0b111001011101011;
+        int toEncode = 1387;
+        int expected = 29419;
         assertEquals(expected, HammingCode.encode(toEncode));
     }
 }
