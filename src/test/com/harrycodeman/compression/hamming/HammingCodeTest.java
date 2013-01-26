@@ -9,7 +9,7 @@ public class HammingCodeTest {
     @Test
     public void testSimpleEncode() throws Exception {
         int toEncode = 1387;
-        int expected = 29419;
-        assertEquals(expected, HammingCode.encode(toEncode));
+        int expected = 22205;
+        assertEquals(expected, HammingCode.encode7by4(toEncode));
     }
 }
