@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c601d356-f788-4d61-b6a9-f64e45081852" name="Default" comment="File workspace.xml changed? I don't know why!`">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/harrycodeman/compression/longarithmetic/DivideResult.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/com/harrycodeman/compression/longarithmetic/LongArithmeticTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/harrycodeman/compression/longarithmetic/LongNumber.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/harrycodeman/compression/longarithmetic/DivideResult.java" afterPath="$PROJECT_DIR$/src/com/harrycodeman/compression/longarithmetic/LongNumberDivideResult.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/com/harrycodeman/compression/longarithmetic/LongArithmeticTest.java" afterPath="$PROJECT_DIR$/src/test/com/harrycodeman/compression/longarithmetic/LongArithmeticTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/harrycodeman/compression/longarithmetic/LongNumber.java" afterPath="$PROJECT_DIR$/src/com/harrycodeman/compression/longarithmetic/LongNumber.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="huffman-rle-compressor.iws" />
@@ -72,9 +72,9 @@
     <file path="/EncryptionLab2_HammingCode_Decoding.java" changelist="c601d356-f788-4d61-b6a9-f64e45081852" time="1359292173024" ignored="false" />
     <file path="/EncryptionLab2_HammingCode_Encoding.java" changelist="c601d356-f788-4d61-b6a9-f64e45081852" time="1359291920860" ignored="false" />
     <file path="/LongArithmetic.java" changelist="c601d356-f788-4d61-b6a9-f64e45081852" time="1359320799431" ignored="false" />
-    <file path="/LongArithmeticTest.java" changelist="c601d356-f788-4d61-b6a9-f64e45081852" time="1359320732344" ignored="false" />
-    <file path="/LongNumber.java" changelist="c601d356-f788-4d61-b6a9-f64e45081852" time="1359319529079" ignored="false" />
-    <file path="/DivideResult.java" changelist="c601d356-f788-4d61-b6a9-f64e45081852" time="1359320971952" ignored="false" />
+    <file path="/LongArithmeticTest.java" changelist="c601d356-f788-4d61-b6a9-f64e45081852" time="1359323533585" ignored="false" />
+    <file path="/LongNumber.java" changelist="c601d356-f788-4d61-b6a9-f64e45081852" time="1359326996324" ignored="false" />
+    <file path="/DivideResult.java" changelist="c601d356-f788-4d61-b6a9-f64e45081852" time="1359321248560" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,7 +135,22 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
-    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
+      <breakpoint url="file://$PROJECT_DIR$/src/com/harrycodeman/compression/longarithmetic/LongNumber.java" line="87" class="com.harrycodeman.compression.longarithmetic.LongNumber" package="com.harrycodeman.compression.longarithmetic">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </line_breakpoints>
     <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
@@ -155,7 +170,7 @@
       <file leaf-file-name="LongNumber.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/harrycodeman/compression/longarithmetic/LongNumber.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="0" selection-start="54" selection-end="54" vertical-scroll-proportion="0.066055045">
+            <state line="51" column="9" selection-start="1708" selection-end="1708" vertical-scroll-proportion="0.3559908">
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#383#392#0" expanded="true" />
@@ -167,7 +182,7 @@
       <file leaf-file-name="LongArithmeticTest.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/com/harrycodeman/compression/longarithmetic/LongArithmeticTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="39" selection-start="377" selection-end="377" vertical-scroll-proportion="0.0">
+            <state line="59" column="1" selection-start="2210" selection-end="2210" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -200,7 +215,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/README" />
         <option value="$PROJECT_DIR$/src/com/harrycodeman/compression/hamming/UnrecoverableErrorsException.java" />
         <option value="$PROJECT_DIR$/src/com/harrycodeman/compression/hamming/HammingCode.java" />
         <option value="$PROJECT_DIR$/src/test/com/harrycodeman/compression/hamming/HammingCodeTest.java" />
@@ -213,9 +227,10 @@
         <option value="$PROJECT_DIR$/src/test/labs/EncryptionLab2_HammingCode.java" />
         <option value="$PROJECT_DIR$/data/encryption/hamming.encoded.txt" />
         <option value="$PROJECT_DIR$/src/com/harrycodeman/compression/longarithmetic/LongArithmetic.java" />
+        <option value="$PROJECT_DIR$/src/com/harrycodeman/compression/longarithmetic/DivideResult.java" />
+        <option value="$PROJECT_DIR$/src/com/harrycodeman/compression/longarithmetic/LongNumberDivideResult.java" />
         <option value="$PROJECT_DIR$/src/test/com/harrycodeman/compression/longarithmetic/LongArithmeticTest.java" />
         <option value="$PROJECT_DIR$/src/com/harrycodeman/compression/longarithmetic/LongNumber.java" />
-        <option value="$PROJECT_DIR$/src/com/harrycodeman/compression/longarithmetic/DivideResult.java" />
       </list>
     </option>
   </component>
@@ -891,7 +906,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1615" height="1026" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.328341" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32991803" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -908,7 +923,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32986537" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.3996328" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24729127" sideWeight="0.6438809" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.35611907" sideWeight="0.497552" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35611907" sideWeight="0.497552" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" x="99" y="125" width="826" height="376" />
       <window_info id="DSM" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="92" y="92" width="1496" height="826" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
@@ -1078,25 +1093,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/harrycodeman/compression/longarithmetic/LongNumberDivideResult.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="32" selection-start="265" selection-end="273" vertical-scroll-proportion="0.1430193">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/com/harrycodeman/compression/longarithmetic/LongArithmeticTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="39" selection-start="377" selection-end="377" vertical-scroll-proportion="0.0">
+        <state line="59" column="1" selection-start="2210" selection-end="2210" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/harrycodeman/compression/longarithmetic/DivideResult.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="20" selection-start="412" selection-end="412" vertical-scroll-proportion="0.32690126">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/harrycodeman/compression/longarithmetic/LongNumber.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="0" selection-start="54" selection-end="54" vertical-scroll-proportion="0.066055045">
+        <state line="51" column="9" selection-start="1708" selection-end="1708" vertical-scroll-proportion="0.3559908">
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#383#392#0" expanded="true" />

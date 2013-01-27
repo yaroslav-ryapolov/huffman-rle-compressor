@@ -18,7 +18,7 @@ public class LongNumber {
 
     public LongNumber add(LongNumber other) throws Exception {
         LongNumber result = new LongNumber();
-        int length = alignDigits(other);
+        int length = alignDigitsByLeftZeros(other);
         int k = 0;
         for (int j = 0; j < length; j++) {
             long value = (long)digits.get(j) + (long)other.digits.get(j) + (long)k;
@@ -31,7 +31,7 @@ public class LongNumber {
         return result;
     }
 
-    private int alignDigits(LongNumber other) {
+    private int alignDigitsByLeftZeros(LongNumber other) {
         while (digits.size() < other.digits.size()) {
             digits.add(0);
         }
@@ -43,11 +43,11 @@ public class LongNumber {
 
     public LongNumber subtract(LongNumber other) throws Exception {
         LongNumber result = new LongNumber();
-        int length = alignDigits(other);
+        int length = alignDigitsByLeftZeros(other);
         int k = 0;
         for (int j = 0; j < length; j++) {
             long value = (long)digits.get(j) - (long)other.digits.get(j) + (long)k;
-            result.digits.add((int)(value % LONG_BASE));
+            result.digits.add((int)((value + LONG_BASE) % LONG_BASE));
             k = value < 0 ? -1 : 0;
         }
         return result;
@@ -75,8 +75,36 @@ public class LongNumber {
         return result;
     }
 
-    public LongNumber divide(LongNumber other) throws Exception {
-        return this;
+    public LongNumberDivideResult divide(LongNumber other) throws Exception {
+        LongNumber dividend = new LongNumber();
+        dividend.digits = new ArrayList<Integer>(digits);
+        LongNumber quotient = new LongNumber();
+        int lengthDiff = other.digits.size() - digits.size();
+        while (other.digits.size() < digits.size()) {
+            other.digits.add(0, 0);
+        }
+        for (int i = 0; i <= lengthDiff; i++) {
+            int w;
+            for (w = 0; dividend.isGreaterThanOrEqual(other); w++) {
+                dividend = dividend.subtract(other);
+            }
+            quotient.digits.add(0, w);
+            other.digits.remove(0);
+        }
+
+        return new LongNumberDivideResult(quotient, dividend);
+    }
+
+    public boolean isGreaterThanOrEqual(LongNumber other) throws Exception {
+        if (digits.size() != other.digits.size()) {
+            return digits.size() > other.digits.size();
+        }
+        for (int i = digits.size() - 1; i >= 0; i--) {
+            if (!digits.get(i).equals(other.digits.get(i))) {
+                return digits.get(i) > other.digits.get(i);
+            }
+        }
+        return true;
     }
 
     @Override
