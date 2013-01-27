@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c601d356-f788-4d61-b6a9-f64e45081852" name="Default" comment="File workspace.xml changed? I don't know why!`">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/harrycodeman/compression/CompressInputImpl.java" afterPath="$PROJECT_DIR$/src/com/harrycodeman/compression/CompressInput.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/com/harrycodeman/compression/rle/BytesRleCompressorTest.java" afterPath="$PROJECT_DIR$/src/test/com/harrycodeman/compression/rle/BytesRleCompressorTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/com/harrycodeman/compression/rle/BytesRleDecompressorTest.java" afterPath="$PROJECT_DIR$/src/test/com/harrycodeman/compression/rle/BytesRleDecompressorTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/com/harrycodeman/compression/huffman/CompressPrefixCodesTableTest.java" afterPath="$PROJECT_DIR$/src/test/com/harrycodeman/compression/huffman/CompressPrefixCodesTableTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/labs/EncryptionLab1_HuffmanAndRle.java" afterPath="$PROJECT_DIR$/src/test/labs/EncryptionLab1_HuffmanAndRle.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/labs/EncryptionLab2_HammingCode.java" afterPath="$PROJECT_DIR$/src/test/labs/EncryptionLab2_HammingCode.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/com/harrycodeman/compression/huffman/HuffmanCompressOutputTest.java" afterPath="$PROJECT_DIR$/src/test/com/harrycodeman/compression/huffman/HuffmanCompressOutputTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/harrycodeman/compression/longarithmetic/DivideResult.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/com/harrycodeman/compression/longarithmetic/LongArithmeticTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/harrycodeman/compression/longarithmetic/LongNumber.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="huffman-rle-compressor.iws" />
@@ -19,7 +15,7 @@
     <file path="/BuildHistogramImageProcessingStage.java" changelist="c601d356-f788-4d61-b6a9-f64e45081852" time="1355679929266" ignored="false" />
     <file path="/BuildHistogramImageProcessingStageTest.java" changelist="c601d356-f788-4d61-b6a9-f64e45081852" time="1355655067842" ignored="false" />
     <file path="/MultimediaLab1_2_RgbToYuvAndBackTest.java" changelist="c601d356-f788-4d61-b6a9-f64e45081852" time="1355332545165" ignored="false" />
-    <file path="/fragment.java" changelist="c601d356-f788-4d61-b6a9-f64e45081852" time="1359292399321" ignored="false" />
+    <file path="/fragment.java" changelist="c601d356-f788-4d61-b6a9-f64e45081852" time="1359305710259" ignored="false" />
     <file path="/MultimediaLab3_Histogram.java" changelist="c601d356-f788-4d61-b6a9-f64e45081852" time="1355660065139" ignored="false" />
     <file path="$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/ImageTest.java" changelist="c601d356-f788-4d61-b6a9-f64e45081852" time="1355337810782" ignored="false" />
     <file path="/ImageTest.java" changelist="c601d356-f788-4d61-b6a9-f64e45081852" time="1356283928024" ignored="false" />
@@ -75,6 +71,10 @@
     <file path="/hamming.txt" changelist="c601d356-f788-4d61-b6a9-f64e45081852" time="1359270678580" ignored="false" />
     <file path="/EncryptionLab2_HammingCode_Decoding.java" changelist="c601d356-f788-4d61-b6a9-f64e45081852" time="1359292173024" ignored="false" />
     <file path="/EncryptionLab2_HammingCode_Encoding.java" changelist="c601d356-f788-4d61-b6a9-f64e45081852" time="1359291920860" ignored="false" />
+    <file path="/LongArithmetic.java" changelist="c601d356-f788-4d61-b6a9-f64e45081852" time="1359320799431" ignored="false" />
+    <file path="/LongArithmeticTest.java" changelist="c601d356-f788-4d61-b6a9-f64e45081852" time="1359320732344" ignored="false" />
+    <file path="/LongNumber.java" changelist="c601d356-f788-4d61-b6a9-f64e45081852" time="1359319529079" ignored="false" />
+    <file path="/DivideResult.java" changelist="c601d356-f788-4d61-b6a9-f64e45081852" time="1359320971952" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,7 +151,31 @@
     <favorites_list name="huffman-rle-compressor" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="LongNumber.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/harrycodeman/compression/longarithmetic/LongNumber.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="0" selection-start="54" selection-end="54" vertical-scroll-proportion="0.066055045">
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#383#392#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LongArithmeticTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/com/harrycodeman/compression/longarithmetic/LongArithmeticTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="39" selection-start="377" selection-end="377" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -176,10 +200,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/com/harrycodeman/compression/colorspaces/DctMatrices.java" />
-        <option value="$PROJECT_DIR$/src/test/labs/MultimediaLab4_DCT.java" />
-        <option value="$PROJECT_DIR$/src/com/harrycodeman/compression/IBitGroup.java" />
-        <option value="$PROJECT_DIR$/src/test/labs/EncryptionLab2_Matrices.java" />
         <option value="$PROJECT_DIR$/README" />
         <option value="$PROJECT_DIR$/src/com/harrycodeman/compression/hamming/UnrecoverableErrorsException.java" />
         <option value="$PROJECT_DIR$/src/com/harrycodeman/compression/hamming/HammingCode.java" />
@@ -192,6 +212,10 @@
         <option value="$PROJECT_DIR$/src/test/labs/EncryptionLab2_HammingCode_Encoding.java" />
         <option value="$PROJECT_DIR$/src/test/labs/EncryptionLab2_HammingCode.java" />
         <option value="$PROJECT_DIR$/data/encryption/hamming.encoded.txt" />
+        <option value="$PROJECT_DIR$/src/com/harrycodeman/compression/longarithmetic/LongArithmetic.java" />
+        <option value="$PROJECT_DIR$/src/test/com/harrycodeman/compression/longarithmetic/LongArithmeticTest.java" />
+        <option value="$PROJECT_DIR$/src/com/harrycodeman/compression/longarithmetic/LongNumber.java" />
+        <option value="$PROJECT_DIR$/src/com/harrycodeman/compression/longarithmetic/DivideResult.java" />
       </list>
     </option>
   </component>
@@ -340,6 +364,32 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="compression" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="longarithmetic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="huffman-rle-compressor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="huffman-rle-compressor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="compression" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -362,7 +412,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="huffman" />
+              <option name="myItemId" value="longarithmetic" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -376,15 +426,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="compression" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hamming" />
+              <option name="myItemId" value="data" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -445,15 +487,15 @@
     <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="" />
-    </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="test.com.harrycodeman.compression.longarithmetic" />
       <recent name="test.com.harrycodeman.compression.hamming" />
       <recent name="test.com.harrycodeman.compression.colorspaces" />
       <recent name="com.harrycodeman.compression.colorspaces" />
       <recent name="test.com.harrycodeman.compression.rle" />
-      <recent name="test.com.harrycodeman.compression.huffman" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.harrycodeman.compression.colorspaces" />
@@ -463,7 +505,7 @@
       <recent name="com.harrycodeman.compression" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.EncryptionLab2_HammingCode.decode">
+  <component name="RunManager" selected="JUnit.Full prject test">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
@@ -849,7 +891,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1615" height="1026" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.328341" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32991803" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -865,8 +907,8 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2264382" sideWeight="0.20391706" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32986537" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.3996328" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24729127" sideWeight="0.6438809" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35611907" sideWeight="0.497552" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24729127" sideWeight="0.6438809" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.35611907" sideWeight="0.497552" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" x="99" y="125" width="826" height="376" />
       <window_info id="DSM" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="92" y="92" width="1496" height="826" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
@@ -1027,25 +1069,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/encryption/hamming.decoded.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/encryption/hamming.encoded.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="1" selection-start="1" selection-end="1" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/labs/EncryptionLab2_HammingCode.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="30" column="0" selection-start="1030" selection-end="1030" vertical-scroll-proportion="0.61293983">
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/com/harrycodeman/compression/longarithmetic/LongArithmeticTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="39" selection-start="377" selection-end="377" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/harrycodeman/compression/longarithmetic/DivideResult.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="20" selection-start="412" selection-end="412" vertical-scroll-proportion="0.32690126">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/harrycodeman/compression/longarithmetic/LongNumber.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="0" selection-start="54" selection-end="54" vertical-scroll-proportion="0.066055045">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#383#392#0" expanded="true" />
           </folding>
         </state>
       </provider>
