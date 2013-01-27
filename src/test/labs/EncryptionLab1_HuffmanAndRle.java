@@ -1,6 +1,6 @@
 package test.labs;
 
-import com.harrycodeman.compression.CompressInputImpl;
+import com.harrycodeman.compression.CompressInput;
 import com.harrycodeman.compression.huffman.CompressPrefixCodesTable;
 import com.harrycodeman.compression.huffman.HuffmanDecompressInput;
 import com.harrycodeman.compression.huffman.StreamHuffmanCompressOutput;
@@ -19,7 +19,7 @@ public class EncryptionLab1_HuffmanAndRle {
 
     public void compressAndDecompress(String filePath, String savePath) throws Exception {
 // COMPRESSION
-        CompressInputImpl toCompress = new CompressInputImpl(new FileInputStream(filePath));
+        CompressInput toCompress = new CompressInput(new FileInputStream(filePath));
 // ----- RLE
         BytesRleCompressor rleCompressor = new BytesRleCompressor(toCompress);
         List<BytesBlock> compressedByRle = rleCompressor.compress();
@@ -47,7 +47,7 @@ public class EncryptionLab1_HuffmanAndRle {
         HuffmanDecompressInput huffmanDecompressor = new HuffmanDecompressInput(
                 new FileInputStream(savePath + ".compressed"));
         huffmanDecompressor.decompress();
-        CompressInputImpl toRleDecompression = new CompressInputImpl(huffmanDecompressor.decompressedBytes);
+        CompressInput toRleDecompression = new CompressInput(huffmanDecompressor.decompressedBytes);
         BytesRleDecompressor rleDecompressor = new BytesRleDecompressor(toRleDecompression);
         List<Integer> decompressed = rleDecompressor.decompress();
         // Output

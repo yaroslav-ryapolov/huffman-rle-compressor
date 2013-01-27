@@ -1,6 +1,6 @@
 package test.com.harrycodeman.compression.rle;
 
-import com.harrycodeman.compression.CompressInputImpl;
+import com.harrycodeman.compression.CompressInput;
 import com.harrycodeman.compression.ICompressInput;
 import com.harrycodeman.compression.rle.*;
 import org.junit.Test;
@@ -82,7 +82,7 @@ public class BytesRleCompressorTest {
     }
 
     private BytesRleCompressor getCompressorForString(String s) {
-        ICompressInput stream = new CompressInputImpl(s);
+        ICompressInput stream = new CompressInput(s);
         return new BytesRleCompressor(stream);
     }
 }

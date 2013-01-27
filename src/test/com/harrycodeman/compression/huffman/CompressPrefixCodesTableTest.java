@@ -1,6 +1,6 @@
 package test.com.harrycodeman.compression.huffman;
 
-import com.harrycodeman.compression.CompressInputImpl;
+import com.harrycodeman.compression.CompressInput;
 import com.harrycodeman.compression.huffman.CompressPrefixCodesTable;
 import com.harrycodeman.compression.huffman.HuffmanTreeNode;
 import com.harrycodeman.compression.huffman.HuffmanedByte;
@@ -17,7 +17,7 @@ public class CompressPrefixCodesTableTest extends CompressPrefixCodesTable {
     @Test
     public void testCountOneByteRepetition() throws IOException {
         assertCounterEquals(new HuffmanedByte[] { new HuffmanedByte('a', 3) },
-            CompressPrefixCodesTable.buildPrefixTableForUncompressedStream(new CompressInputImpl("aaa"))
+            CompressPrefixCodesTable.buildPrefixTableForUncompressedStream(new CompressInput("aaa"))
         );
     }
 
@@ -27,14 +27,14 @@ public class CompressPrefixCodesTableTest extends CompressPrefixCodesTable {
                 new HuffmanedByte('b', 3),
                 new HuffmanedByte('c', 2),
             },
-            CompressPrefixCodesTable.buildPrefixTableForUncompressedStream(new CompressInputImpl("bcbbc"))
+            CompressPrefixCodesTable.buildPrefixTableForUncompressedStream(new CompressInput("bcbbc"))
         );
     }
 
     @Test
     public void testCountOneSingleByte() throws IOException {
         assertCounterEquals(new HuffmanedByte[] { new HuffmanedByte('d', 1) },
-            CompressPrefixCodesTable.buildPrefixTableForUncompressedStream(new CompressInputImpl("d"))
+            CompressPrefixCodesTable.buildPrefixTableForUncompressedStream(new CompressInput("d"))
         );
     }
 
@@ -88,7 +88,7 @@ public class CompressPrefixCodesTableTest extends CompressPrefixCodesTable {
     @Test
     public void testCompress() throws IOException {
         CompressPrefixCodesTable table = CompressPrefixCodesTable.buildPrefixTableForUncompressedStream(
-                new CompressInputImpl(
+                new CompressInput(
                         new byte[]{
                                 100, 101, 101, 102, 102, 102, 102, 103, 103, 103, 103, 103, 104, 104, 104, 104, 104,
                                 104, 105, 105, 105, 105, 105, 105, 105, 105, 106, 106, 106, 106, 106, 106, 106, 106,

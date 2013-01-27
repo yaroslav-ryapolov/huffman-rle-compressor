@@ -6,7 +6,7 @@ import java.io.InputStream;
 import java.util.Iterator;
 import java.util.List;
 
-public class CompressInputImpl implements ICompressInput {
+public class CompressInput implements ICompressInput {
     private class StreamIterator implements Iterator<Integer> {
         @Override
         public boolean hasNext() {
@@ -35,7 +35,7 @@ public class CompressInputImpl implements ICompressInput {
 
     private InputStream stream;
 
-    public CompressInputImpl(List<Integer> bytesList) {
+    public CompressInput(List<Integer> bytesList) {
         byte[] bytes = ConvertToByteArray(bytesList);
         stream = new ByteArrayInputStream(bytes);
     }
@@ -48,16 +48,16 @@ public class CompressInputImpl implements ICompressInput {
         return result;
     }
 
-    public CompressInputImpl(byte[] bytes) {
+    public CompressInput(byte[] bytes) {
         stream = new ByteArrayInputStream(bytes);
     }
 
-    public CompressInputImpl(String symbols) {
+    public CompressInput(String symbols) {
         byte[] bytes = ConvertToByteArray(symbols.toCharArray());
         stream = new ByteArrayInputStream(bytes);
     }
 
-    public CompressInputImpl(InputStream stream) {
+    public CompressInput(InputStream stream) {
         this.stream = stream;
     }
 
